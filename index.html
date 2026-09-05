@@ -1,6 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-JsJoxBT0VUvqKnRewzkV2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<script>
+/* CMS prospect attribution v2 - cookieless, stores nothing, no personal data */
+(function(){
+  function P(name,props){try{window.plausible(name,props?{props:props}:{});}catch(e){}}
+  var q=new URLSearchParams(location.search);
+  var r=(q.get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);
+  var base={r:r||'direct'};
+
+  /* 1 - who opened it */
+  if(r){
+    P('Prospect Open',base);
+    try{window.plausible('pageview',{u:location.origin+location.pathname+'visit/'+r});}catch(e){}
+  }
+
+  /* 2 - how long they stayed */
+  [[30,'Dwell 30s'],[60,'Dwell 1m'],[180,'Dwell 3m'],[300,'Dwell 5m'],[600,'Dwell 10m']]
+    .forEach(function(m){setTimeout(function(){P(m[1],base);},m[0]*1000);});
+
+  /* 3 - which chapters they reached */
+  var names={ch01:'Beirut',ch02:'Dubai',ch03:'Paris',ch04:'Milano',ch05:'Istanbul',ch06:'Barcelona',ch07:'Jewellery'};
+  var seen={};
+  function watch(id,label){
+    var el=document.getElementById(id);
+    if(!el||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting&&!seen[id]){seen[id]=1;P(label,base);}});
+    },{threshold:0.4}).observe(el);
+  }
+  function boot(){
+    Object.keys(names).forEach(function(id){watch(id,'Chapter '+names[id]);});
+    watch('films','Reached Films');
+    watch('calendar','Reached Calendar');
+    watch('contact','Reached Contact');
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+
+  /* 4 - what they clicked */
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('drive.google.com')>-1)  P('Film Play',base);
+    else if(h.indexOf('calendly.com')>-1) P('Click Calendly',base);
+    else if(h.indexOf('wa.me')>-1)        P('Click WhatsApp',base);
+    else if(h.indexOf('mailto:')===0)     P('Click Email',base);
+  },true);
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Charbel Msallem Studios — fashion films and campaign imagery for couture houses and jewellery maisons. Beirut, Dubai, Paris, Milano, Istanbul, Barcelona.">
