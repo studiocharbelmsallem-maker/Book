@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-JsJoxBT0VUvqKnRewzkV2.js"></script>
+<!-- Analytics by Microsoft Clarity (free) -->
 <script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window,document,"clarity","script","z0n2deh343");
 </script>
 <script>
-/* CMS prospect attribution v3 - cookieless, stores nothing, no personal data */
+/* CMS prospect attribution v4 - Clarity. Each visit is tagged with the link code (?r=) */
 (function(){
   var fired={};
-  function P(name,props){
-    if(fired[name])return; fired[name]=1;
-    try{window.plausible(name,props?{props:props}:{});}catch(e){}
-  }
   var q=new URLSearchParams(location.search);
   var r=(q.get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);
-  var base={r:r||'direct'};
+  var who=r||'direct';
+  try{
+    window.clarity('set','ref',who);
+    if(r){window.clarity('identify',r);}
+  }catch(e){}
+  function P(name){
+    if(fired[name])return; fired[name]=1;
+    try{window.clarity('event',name);}catch(e){}
+  }
+  var base=null;
 
   /* 1 - who opened it */
-  if(r){
-    P('Prospect Open',base);
-    try{window.plausible('pageview',{u:location.origin+location.pathname+'visit/'+r});}catch(e){}
-  }
+  if(r){P('Prospect Open');}
 
   /* 2 - how long they stayed */
   [[30,'Dwell 30s'],[60,'Dwell 1m'],[180,'Dwell 3m'],[300,'Dwell 5m'],[600,'Dwell 10m']]
