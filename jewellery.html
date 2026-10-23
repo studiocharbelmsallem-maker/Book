@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Internal-visit filter: links with ?r=test… or ?r=charbel… (and any later visit from that same browser) are never counted.
+     ?r=untest clears the flag on that browser. -->
+<script>
+(function(){
+  var q=new URLSearchParams(location.search), r=(q.get('r')||'').toLowerCase(), internal=false;
+  try{
+    if(r==='untest'){localStorage.removeItem('cms-internal');}
+    else if(/^(test|charbel)/.test(r)){localStorage.setItem('cms-internal','1');}
+    internal=localStorage.getItem('cms-internal')==='1';
+  }catch(e){ internal=/^(test|charbel)/.test(r); }
+  window.__cmsInternal=internal;
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+  if(internal)return;
+  /* Privacy-friendly analytics by Plausible (restored 23 Oct 2026, runs alongside Clarity) */
+  var p=document.createElement('script');p.async=1;p.src='https://plausible.io/js/pa-JsJoxBT0VUvqKnRewzkV2.js';document.head.appendChild(p);
+  plausible.init();
+  /* Analytics by Microsoft Clarity (free) */
+  var c=document.createElement('script');c.async=1;c.src='https://www.clarity.ms/tag/z0n2deh343';document.head.appendChild(c);
+})();
+</script>
+<script>
+/* CMS prospect attribution v5 - Plausible + Clarity. Each visit is tagged with the link code (?r=) in both.
+   Jewellery edition: every event also carries ed:jewellery; chapter events = Jewellery, Couture. */
+(function(){
+  var fired={};
+  var q=new URLSearchParams(location.search);
+  var r=(q.get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);
+  var who=r||'direct';
+  try{
+    window.clarity('set','ref',who);
+    window.clarity('set','edition','jewellery');
+    if(r){window.clarity('identify',r);}
+  }catch(e){}
+  function P(name){
+    if(fired[name])return; fired[name]=1;
+    try{window.clarity('event',name);}catch(e){}
+    try{window.plausible(name,{props:{r:who,ed:'jewellery'}});}catch(e){}
+  }
+  var base=null;
+
+  /* 1 - who opened it */
+  if(r){
+    P('Prospect Open');
+    try{window.plausible('pageview',{u:location.origin+location.pathname.replace(/[^\/]*$/,'')+'jewellery/visit/'+r});}catch(e){}
+  }
+
+  /* 2 - how long they stayed */
+  [[30,'Dwell 30s'],[60,'Dwell 1m'],[180,'Dwell 3m'],[300,'Dwell 5m'],[600,'Dwell 10m']]
+    .forEach(function(m){setTimeout(function(){P(m[1],base);},m[0]*1000);});
+
+  /* 3 - which chapters they reached.
+        The chapter sections are taller than the viewport, so a 40% threshold
+        can never be met. Observe the small <h2> heading inside each instead. */
+  var names={ch07:'Jewellery',couture:'Couture'};
+
+  function observe(el,label,threshold){
+    if(!el||!('IntersectionObserver' in window)){return;}
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){P(label,base);io.disconnect();}
+      });
+    },{threshold:threshold});
+    io.observe(el);
+  }
+
+  function boot(){
+    Object.keys(names).forEach(function(id){
+      var sec=document.getElementById(id);
+      if(!sec)return;
+      var head=sec.querySelector('h2')||sec.querySelector('header')||sec;
+      observe(head,'Chapter '+names[id],0.5);
+    });
+    observe(document.getElementById('films'),'Reached Films',0.2);
+    observe(document.getElementById('concept'),'Reached Concept',0.2);
+    observe(document.getElementById('contact'),'Reached Contact',0.2);
+    var deep=document.getElementById('couture');
+    if(deep)observe(deep.querySelector('h2')||deep,'Read To The End',0.5);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+
+  /* 4 - what they clicked */
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('drive.google.com')>-1)  P('Film Play',base);
+    else if(h.indexOf('calendly.com')>-1) P('Click Calendly',base);
+    else if(h.indexOf('wa.me')>-1)        P('Click WhatsApp',base);
+    else if(h.indexOf('mailto:')===0)     P('Click Email',base);
+  },true);
+})();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Charbel Msallem Studios — the jewellery edition. Campaigns and films for jewellery maisons, directed from Beirut, Paris and Dubai.">
+<meta name="theme-color" content="#F3F2EE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charbel Msallem — The Jewellery Edition">
+<meta property="og:description" content="Every jewel has a light that belongs to it. Campaigns and films for jewellery maisons since 2012.">
+<meta property="og:image" content="https://studiocharbelmsallem-maker.github.io/Book/cover-jewellery.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://studiocharbelmsallem-maker.github.io/Book/jewellery.html">
+<meta property="og:image:alt" content="A model in black opera gloves wearing diamond earrings, necklace, bracelet and ring against a red box">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#F3F2EE; --paper-2:#EAE8E1; --ink:#201F1C; --ink-2:#4A4842; --mute:#8B8A83;
+  --gold:#8B7027; --gold-soft:#B89A57; --rule:rgba(32,31,28,.14); --btn-bg:#201F1C; --btn-fg:#F3F2EE;
+  --hero-fade:rgba(18,16,12,.88);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#171613; --paper-2:#211F1B; --ink:#EDE9E0; --ink-2:#C9C4B8; --mute:#7E7A70;
+  --gold:#C9A85C; --gold-soft:#A88E4F; --rule:rgba(237,233,224,.14); --btn-bg:#EDE9E0; --btn-fg:#171613;
+  --hero-fade:rgba(12,11,9,.92);
+}}
+:root[data-theme="dark"]{
+  --paper:#171613; --paper-2:#211F1B; --ink:#EDE9E0; --ink-2:#C9C4B8; --mute:#7E7A70;
+  --gold:#C9A85C; --gold-soft:#A88E4F; --rule:rgba(237,233,224,.14); --btn-bg:#EDE9E0; --btn-fg:#171613;
+  --hero-fade:rgba(12,11,9,.92);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:'EB Garamond',Georgia,'Times New Roman',serif;font-size:18px;line-height:1.5}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.lab{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.lab.mute{color:var(--mute)}
+.wrap{padding:0 22px}
+.rule{height:1px;background:var(--rule)}
+h1,h2,h3{font-weight:500;text-wrap:balance}
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;padding:18px 22px 14px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:20}
+.brand{font-size:15px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+.mast .lab{font-size:10px;text-align:right;max-width:48%;line-height:1.5}
+.mast .lg{display:none}
+@media (min-width:720px){.mast .lg{display:inline}}
+/* hero */
+.hero{position:relative;height:min(78vh,640px);overflow:hidden;background:#2a2723}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:62%;background:linear-gradient(to top,var(--hero-fade) 0%,rgba(18,16,12,.55) 45%,rgba(18,16,12,0) 100%)}
+.hero .txt{position:absolute;left:22px;right:22px;bottom:26px;z-index:2;color:#FAF8F3}
+.hero .lab{color:#D9CFA8;margin-bottom:12px}
+.hero h1{font-size:clamp(34px,9.4vw,46px);line-height:1.08}
+.hero h1 em{font-style:italic;color:#E2C982;font-weight:400}
+.hero p{font-style:italic;font-size:17px;color:#E9E5DA;margin-top:12px;max-width:44ch}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;padding:16px 22px;min-height:48px}
+.btn.solid{background:var(--btn-bg);color:var(--btn-fg)}
+.btn.line{border:1px solid var(--gold);color:var(--gold)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* start here */
+.start{padding:34px 22px 30px;border-bottom:1px solid var(--rule)}
+.start h2{font-size:34px;line-height:1.12;margin:10px 0 12px}
+.start p.sub{font-style:italic;color:var(--ink-2);max-width:36ch}
+.stops{margin:24px 0 6px;border-top:1px solid var(--rule)}
+.stop{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.stop .d{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.stop .t{font-size:21px;line-height:1.15}
+.stop .s{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.stop .tag{grid-column:2;grid-row:1/4;align-self:center;font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.ctas{display:grid;gap:10px;margin-top:22px}
+.ctas .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.small{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:12px;color:var(--ink-2);line-height:1.8;margin-top:14px}
+.small a{border-bottom:1px solid var(--rule)}
+/* chapter nav */
+.nav{position:sticky;top:53px;z-index:19;background:var(--paper);border-bottom:1px solid var(--rule);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav ul{display:flex;gap:8px;list-style:none;padding:10px 16px;width:max-content}
+.nav a{display:flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--rule);border-radius:999px;font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.nav a:active{background:var(--paper-2)}
+.nav a.on{background:var(--gold);border-color:var(--gold);color:#fff}
+/* chapter index */
+.index{padding:34px 22px 10px;border-bottom:1px solid var(--rule)}
+.index h2{font-size:26px;line-height:1.25;margin:8px 0 8px;max-width:26ch}
+.index p{color:var(--ink-2);font-style:italic;margin-bottom:18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#2a2723;border-radius:2px}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:active img{transform:scale(1.03)}
+.tile .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,.85) 0%,rgba(18,16,12,.25) 55%,rgba(18,16,12,0) 100%)}
+.tile .tx{position:absolute;left:14px;right:12px;bottom:12px;color:#FAF8F3}
+.tile .n{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#D9CFA8}
+.tile .c{font-size:26px;line-height:1.05;margin:4px 0 2px}
+.tile .f{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#E9E5DA;opacity:.9;display:flex;justify-content:space-between;align-items:center}
+.tile .f b{font-weight:400;font-size:16px}
+.tile.wide{grid-column:1/-1;aspect-ratio:16/8}
+.nextch{display:flex;justify-content:space-between;align-items:center;margin:26px 22px 8px;padding:16px 18px;border:1px solid var(--rule);min-height:56px}
+.nextch .lab{font-size:10px}
+.nextch .t{font-size:22px;line-height:1.1;margin-top:2px}
+.nextch .arr{font-size:26px;color:var(--gold)}
+/* houses */
+.houses{padding:32px 22px}
+.houses h2{font-size:32px;margin:8px 0 10px}
+.houses p{color:var(--ink-2);font-size:16px;max-width:38ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.grid div{background:#fff;border:1px solid rgba(32,31,28,.1);aspect-ratio:191/120;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.grid img{width:100%;height:100%;object-fit:contain}
+/* chapters */
+.ch{padding:40px 0 10px;border-top:1px solid var(--rule)}
+.ch header{padding:0 22px 22px}
+.ch header .num{display:flex;justify-content:space-between}
+.ch h2{font-size:44px;line-height:1;margin:8px 0 2px}
+.ch .tagline{font-style:italic;color:var(--gold);font-size:19px}
+.ch .bar{width:56px;height:1px;background:var(--gold);margin:16px 0}
+.ch .intro{color:var(--ink-2);font-size:16.5px;line-height:1.55;max-width:60ch}
+.ch .hl{margin-top:18px;font-size:16px;line-height:1.45}
+.ch .hl span{display:block}
+.sess{padding:26px 22px 8px}
+.sess .cap{font-style:italic;font-size:20px;line-height:1.35;max-width:32ch}
+.sess .meta{margin-top:6px}
+.feed{display:grid;gap:6px;padding:6px 6px 0}
+.feed img{width:100%;height:auto;background:var(--paper-2)}
+.feed .row2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+/* films */
+.films{padding:34px 22px 26px;border-bottom:1px solid var(--rule)}
+.films h2{font-size:38px;margin:8px 0 4px}
+.films p{color:var(--ink-2);font-size:16px;max-width:38ch}
+.film{display:grid;grid-template-columns:1fr auto;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule)}
+.film .t{font-size:24px;line-height:1.1}
+.film .k{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.film .play{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:12px 16px}
+/* film tiles */
+.films .ftiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;align-items:start}
+.ftile{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#2a2723;border-radius:2px}
+.ftile img{width:100%;height:100%;object-fit:cover}
+.ftile .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,.88) 0%,rgba(18,16,12,.3) 55%,rgba(18,16,12,.05) 100%)}
+.ftile .play{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;border:1.5px solid rgba(250,248,243,.9);background:rgba(18,16,12,.35);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center}
+.ftile .play::after{content:"";margin-left:4px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #FAF8F3}
+.ftile .tx{position:absolute;left:14px;right:12px;bottom:12px;color:#FAF8F3}
+.ftile .c{font-size:26px;line-height:1.05}
+.ftile .k{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#D9CFA8;margin-top:4px}
+.ftile.wide{grid-column:1/-1;aspect-ratio:16/9}
+/* services */
+.serv{padding:40px 22px 20px;border-top:1px solid var(--rule)}
+.serv h2{font-style:italic;font-size:26px;line-height:1.25;margin-bottom:22px;font-weight:400}
+.sv{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;padding:14px 0;border-top:1px solid var(--rule)}
+.sv .lab{padding-top:5px}
+.sv h3{font-size:23px;line-height:1.15}
+.sv p{grid-column:2;color:var(--ink-2);font-size:15.5px;line-height:1.5}
+/* calendar */
+.cal{padding:36px 22px 28px;border-top:1px solid var(--rule)}
+.cal h2{font-style:italic;font-size:28px;font-weight:400;margin:8px 0 18px}
+/* closing */
+.close{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 22px 72px;background:#120F0C;color:#EDE8DC;border-top:0}
+.close .lab{color:#B89A57}
+.close h2{font-size:clamp(34px,6.2vw,64px);line-height:1.08;font-weight:400;max-width:14ch;margin:26px auto 0}
+.close .rule{width:56px;height:1px;background:rgba(237,232,220,.28);margin:44px auto 40px}
+.close .name{font-size:24px;color:#EDE8DC}
+.close .role{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#B89A57;margin-top:10px}
+.close .ph{display:block;font-size:22px;color:#EDE8DC;margin-top:30px;text-decoration:none;font-variant-numeric:tabular-nums}
+.close .em{display:block;color:#B89A57;font-size:17px;margin-top:8px;text-decoration:none;word-break:break-all}
+.close .call{display:inline-block;font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#EDE8DC;border-bottom:1px solid rgba(237,232,220,.35);padding-bottom:6px;margin-top:40px;text-decoration:none}
+.close .fin{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(237,232,220,.38);margin-top:64px}
+.close .cities{margin-top:34px;padding-top:14px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:12px}
+/* sticky bottom bar */
+.bar-cta{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-top:1px solid var(--rule)}
+.bar-cta a{background:var(--paper);display:flex;align-items:center;justify-content:center;min-height:60px;font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:env(safe-area-inset-bottom)}
+.bar-cta a.solid{background:var(--btn-bg);color:var(--btn-fg)}
+@media (min-width:720px){
+  body{font-size:19px}
+  .wrap,.index,.houses,.films,.serv,.cal,.close,.ch header,.sess{padding-left:max(22px,calc(50vw - 480px));padding-right:max(22px,calc(50vw - 480px))}
+  .tiles{grid-template-columns:repeat(4,1fr)}
+  .tile.wide{grid-column:span 2;aspect-ratio:8/5}
+  .tile.wide img{object-position:50% 30%}
+  .films .ftiles{grid-template-columns:repeat(3,1fr)}
+  .ftile.wide{grid-column:span 3;aspect-ratio:21/9}
+  .feed{padding:6px max(6px,calc(50vw - 496px)) 0}
+  .hero{height:min(86vh,860px)}
+  .grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.reel{background:#120F0C;padding:0;border-top:1px solid var(--rule)}
+.reel .wrap{position:relative;max-width:480px;margin:0 auto;aspect-ratio:9/16;max-height:86vh;overflow:hidden}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.reel .cap{display:flex;justify-content:space-between;align-items:baseline;max-width:480px;margin:0 auto;padding:12px 22px 20px}
+.reel .cap .lab{color:#B89A57}
+.reel .cap a{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#EDE8DC;text-decoration:none;border-bottom:1px solid rgba(237,232,220,.35);padding-bottom:3px}
+@media (min-width:720px){.reel .wrap{max-width:420px}}
+@media (prefers-reduced-motion:reduce){.reel video{display:none}.reel .wrap{background:url(reel_poster.jpg) center/cover}}
+
+.offer{padding:56px 22px 60px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.offer h2{font-size:28px;line-height:1.2;font-weight:400;margin:10px 0 12px;max-width:20ch}
+.offer p{color:var(--ink-2);font-style:italic;font-size:17px;max-width:40ch;margin-bottom:26px}
+.offer .btn{display:flex;width:100%;max-width:420px;margin-bottom:12px}
+.bar-cta{transform:translateY(110%);transition:transform .35s ease}
+.bar-cta.on{transform:none}
+body.has-bar{padding-bottom:64px}
+/* jewellery edition */
+.hero.jw{height:min(84vh,760px)}
+.hero.jw img{object-position:50% 30%}
+.films .ftiles.one{grid-template-columns:1fr;max-width:420px}
+.couture .tiles{margin-top:18px}
+.couture .more{display:flex;margin-top:22px;max-width:420px}
+@media (min-width:720px){.couture .tiles{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<header class="mast">
+  <div class="brand">Charbel Msallem</div>
+  <div class="lab">The Jewellery Edition</div>
+</header>
+<section class="hero jw">
+  <img src="img/jewellery-hero.webp" alt="Diamond earrings, necklace, bracelet and ring worn with black opera gloves against a red box — Charbel Msallem Studios" fetchpriority="high" decoding="async" width="1050" height="1400">
+  <div class="txt">
+    <div class="lab" id="forhouse">Jewellery · Beirut · Paris · Dubai</div>
+    <h1>Every jewel has a <em>light</em> that belongs to it.</h1>
+    <p>Since 2012, for the jewellery maisons and couture houses of Beirut, Paris and Dubai.</p>
+  </div>
+</section>
+<nav class="nav" aria-label="Sections"><ul><li><a href="#ch07">Jewellery</a></li><li><a href="#concept">Concept</a></li><li><a href="#films">Film</a></li><li><a href="#couture">Couture</a></li><li><a href="#houses">Maisons</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="ch" id="ch07">
+  <header>
+    <div class="num"><span class="lab mute">Selected work</span><span class="lab">Chapter 01</span></div>
+    <h2>Jewellery</h2>
+    <div class="tagline">Where the eye rests</div>
+    <div class="bar"></div>
+    <p class="intro">The hardest discipline in the studio. A stone has no silhouette to hide behind, no wind, no walk, no fabric to fall. Only light, hand and intent. Shot so the piece reads as an object of desire rather than a product on a page.</p>
+    <div class="hl"><span class="lab">16 frames</span><span>Kevork · Voyageur · Yeprem · Studio</span></div>
+  </header>
+  <div class="sess"><p class="cap">Objects photographed as though they had a silhouette.</p><div class="lab meta">Jewellery &nbsp;·&nbsp; 3 frames</div></div>
+  <div class="feed"><img decoding="async" src="img/140-f80cecd9.webp" alt="" loading="lazy" width="362" height="482"><div class="row2"><img decoding="async" src="img/141-075b58ac.webp" alt="" loading="lazy" width="362" height="482"><img decoding="async" src="img/142-ff15de62.webp" alt="" loading="lazy" width="362" height="482"></div></div>
+  <div class="sess"><p class="cap">High jewellery on the body — the piece is the subject, the model is the setting.</p><div class="lab meta">Jewellery &nbsp;·&nbsp; 4 frames</div></div>
+  <div class="feed"><img decoding="async" src="img/143-97804c1f.webp" alt="" loading="lazy" width="254" height="450"><img decoding="async" src="img/144-0147ce1f.webp" alt="" loading="lazy" width="360" height="449"><img decoding="async" src="img/145-2bf83bea.webp" alt="" loading="lazy" width="332" height="437"><img decoding="async" src="img/146-af8215b5.webp" alt="" loading="lazy" width="332" height="442"></div>
+  <div class="sess"><p class="cap">The Beirut maison — bold, architectural, unapologetic.</p><div class="lab meta">Jewellery &nbsp;·&nbsp; 4 frames</div></div>
+  <div class="feed"><img decoding="async" src="img/147-37119134.webp" alt="" loading="lazy" width="516" height="690"><img decoding="async" src="img/148-012700e2.webp" alt="" loading="lazy" width="517" height="690"><img decoding="async" src="img/149-b3486455.webp" alt="" loading="lazy" width="368" height="490"><img decoding="async" src="img/150-271d6120.webp" alt="" loading="lazy" width="573" height="860"></div>
+  <div class="sess"><p class="cap">Controlled studio work. Light, hand, intent, nothing else.</p><div class="lab meta">Jewellery &nbsp;·&nbsp; 3 frames</div></div>
+  <div class="feed"><div class="row2"><img decoding="async" src="img/151-000f8806.webp" alt="" loading="lazy" width="342" height="610"><img decoding="async" src="img/152-8d0b8fcd.webp" alt="" loading="lazy" width="344" height="610"></div><img decoding="async" src="img/153-770e04cd.webp" alt="" loading="lazy" width="543" height="542"></div>  <div class="sess"><p class="cap">Where the stone leaves the case — crystal set on skin, chains layered at the throat, the face as the setting.</p><div class="lab meta">Jewellery &nbsp;·&nbsp; 2 frames</div></div>
+  <div class="feed"><div class="row2"><img decoding="async" src="img/014-afb20841.webp" alt="" loading="lazy" width="272" height="482"><img decoding="async" src="img/074-5dac35bd.webp" alt="" loading="lazy" width="286" height="509"></div></div><a class="nextch" href="#concept"><div><div class="lab">Next</div><div class="t">A concept for your maison</div></div><span class="arr">&rarr;</span></a>
+</section>
+<section class="offer" id="concept">
+  <div class="lab">For your next jewellery campaign</div>
+  <h2>A one-page concept, written only for your maison.</h2>
+  <p>A theme, a light and a setting for your next pieces — how each stone will be lit, worn and filmed. Delivered within 48 hours, without a fee.</p>
+  <a class="btn solid wa" href="https://wa.me/96191729713" target="_blank" rel="noopener">Request it on WhatsApp</a>
+  <a class="btn line" href="https://calendly.com/studiocharbelmsallem/30min" target="_blank" rel="noopener">Or thirty minutes on a call</a>
+</section>
+<section class="films" id="films">
+  <div class="lab">Jewellery film · Beirut</div>
+  <h2>The Jewellery Film</h2>
+  <p>A stone has no walk and no fabric to fall. In film it moves only with the hand and the light. Tap the cover to play — it streams from the studio archive, no download, no password.</p>
+  <div class="ftiles one"><a class="ftile" style="aspect-ratio:272/482" href="https://drive.google.com/file/d/16QydWBikieJ4hno042UB7YQybPMcRahq/view" target="_blank" rel="noopener"><img decoding="async" src="img/014-afb20841.webp" alt="" loading="lazy" width="272" height="482"><div class="ov"></div><div class="play"></div><div class="tx"><div class="c">Beirut</div><div class="k">Lebanon · Jewellery showreel 2026</div></div></a></div>
+</section>
+<section class="index couture" id="couture">
+  <div class="lab">And for the couture houses</div>
+  <h2>The same light, worn as a gown.</h2>
+  <p>One frame from each city of the main book. Beirut, Dubai, Paris, Milano, Istanbul, Barcelona.</p>
+  <div class="tiles"><a class="tile" href="index.html#ch01" data-keep-r><span style="display:contents"><img decoding="async" src="img/062-534081ef.webp" alt="Couture · Beirut" loading="lazy" width="537" height="716"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Beirut</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a><a class="tile" href="index.html#ch02" data-keep-r><span style="display:contents"><img decoding="async" src="img/072-7deed6a3.webp" alt="Couture · Dubai" loading="lazy" width="283" height="502"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Dubai</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a><a class="tile" href="index.html#ch03" data-keep-r><span style="display:contents"><img decoding="async" src="img/090-9ba149b8.webp" alt="Couture · Paris" loading="lazy" width="356" height="444"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Paris</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a><a class="tile" href="index.html#ch04" data-keep-r><span style="display:contents"><img decoding="async" src="img/116-a1750cd1.webp" alt="Couture · Milano" loading="lazy" width="355" height="472"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Milano</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a><a class="tile" href="index.html#ch05" data-keep-r><span style="display:contents"><img decoding="async" src="img/127-b25ffcb6.webp" alt="Couture · Istanbul" loading="lazy" width="348" height="464"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Istanbul</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a><a class="tile" href="index.html#ch06" data-keep-r><span style="display:contents"><img decoding="async" src="img/135-052fb22f.webp" alt="Couture · Barcelona" loading="lazy" width="520" height="652"></span><div class="ov"></div><div class="tx"><div class="n">Couture</div><div class="c">Barcelona</div><div class="f"><span>The full chapter</span><b>&rarr;</b></div></div></a></div>
+  <a class="btn line more" href="index.html" data-keep-r>Open the full book</a>
+</section>
+<section class="houses" id="houses">
+  <div class="lab">Selected work · The maisons</div>
+  <h2>Maisons and houses since 2012</h2>
+  <p>Jewellery maisons first, then the couture houses and the fashion weeks that seat them.</p>
+  <div class="grid"><div><img decoding="async" src="img/021-7f02bb0c.webp" alt="Bvlgari" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/027-84293b2e.webp" alt="Yeprem" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/029-5f37f029.webp" alt="Damas" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/031-9c40a5d8.webp" alt="Zoughaib &amp; Co." loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/033-5e96ad8e.webp" alt="Bianca Nera" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/030-9ec33507.webp" alt="Charmaleena" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/028-efcabf94.webp" alt="Voyageur" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/053-e801481c.webp" alt="Kevork" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/015-c73d48c5.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/016-2d1ab33b.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/017-0e7832a2.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/018-800a1b9a.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/019-cbf08583.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/020-9913c6fe.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/022-3c64892a.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/023-b5258dc4.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/024-3477991f.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/025-01b475ad.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/026-b7dab9d2.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/032-2c5caed3.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/034-4bba62ac.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/035-0ca2cd6a.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/036-d658ab37.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/037-90c18e70.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/038-25c8f5c4.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/039-5480d70d.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/040-1468144e.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/041-332de5af.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/042-9c1d0f08.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/043-38320127.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/044-e1275d8c.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/045-833c12f8.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/046-7504e04c.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/047-8d9ccb2e.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/048-65c43064.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/049-07ef702f.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/050-97a8a358.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/051-70a1abe2.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/052-e1666d39.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/054-42e0fda1.webp" alt="" loading="lazy" width="185" height="114"></div><div><img decoding="async" src="img/055-19bdbcbb.webp" alt="" loading="lazy" width="185" height="114"></div></div>
+</section>
+<section class="close" id="contact">
+  <div class="lab">The last page</div>
+  <h2>Every jewel has a light that belongs to it.</h2>
+  <div class="rule"></div>
+  <div class="name">Charbel Msallem</div>
+  <div class="role">Fashion &amp; Jewellery Director</div>
+  <a class="ph" href="tel:+96191729713">+961 91 729 713</a>
+  <a class="call wa" href="https://wa.me/96191729713" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="em" href="mailto:studiocharbelmsallem@gmail.com?subject=The%20light%20inside%20the%20piece">studiocharbelmsallem@gmail.com</a>
+  <a class="call" href="https://calendly.com/studiocharbelmsallem/30min" target="_blank" rel="noopener">Thirty minutes, when it suits you</a>
+  <div class="fin">Beirut · Paris · Dubai · Milano · Istanbul · Barcelona &nbsp;·&nbsp; MMXXVI</div>
+</section>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var secs=Object.keys(map).map(function(id){return document.getElementById(id);}).filter(Boolean);
+  if(!('IntersectionObserver' in window))return;
+  var cur=null;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ cur=e.target.id; } });
+    if(!cur)return;
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+    var on=map[cur]; if(on&&on.scrollIntoView){ on.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'}); }
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){io.observe(s);});
+})();
+</script>
+<nav class="bar-cta" id="barcta" aria-label="Contact"><a class="wa" href="https://wa.me/96191729713" target="_blank" rel="noopener">WhatsApp</a><a class="solid" href="https://calendly.com/studiocharbelmsallem/30min" target="_blank" rel="noopener">Book a call</a></nav>
+<script>
+(function(){
+  var M={"62183d83": "LwxOAUEkHg4GGhw=", "90acb3c3": "IAFECkwoFQgA", "b9c0b74b": "JANZDgAdAB1JLBwQGVgTCw==", "8e97a5cf": "MQxKHBMODFIsCEUkCQYC", "9b39f893": "PAJYChwQFVMuBwYOGAE=", "faff4e9d": "KAJDFE8nGxsDGggF", "92b276de": "IghCFQIKAUcmGwIDEwo=", "0200992a": "NwxAG0EmCA8I"};
+  function fnv(s){var x=0x811c9dc5;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,0x01000193)>>>0;}return ('0000000'+x.toString(16)).slice(-8);}
+  var r=(new URLSearchParams(location.search).get('r')||'').toLowerCase(), house='';
+  try{var e=M[fnv(r)]; if(e){var b=atob(e),o='';for(var i=0;i<b.length;i++)o+=String.fromCharCode(b.charCodeAt(i)^r.charCodeAt(i%r.length));house=decodeURIComponent(escape(o));}}catch(_){}
+  if(house){var l=document.getElementById('forhouse'); if(l) l.textContent='Prepared for '+house+' · January 2027';}
+  var msg='Hello Charbel, I\u2019m writing from '+(house||'___')+'. I\u2019d like the one-page concept for our next jewellery campaign.';
+  [].forEach.call(document.querySelectorAll('a.wa'),function(a){a.href='https://wa.me/96191729713?text='+encodeURIComponent(msg);});
+  /* carry the link code onto links into the main book */
+  var rq=new URLSearchParams(location.search).get('r');
+  if(rq){[].forEach.call(document.querySelectorAll('a[data-keep-r]'),function(a){var h=a.getAttribute('href'),k=h.indexOf('#');a.href=(k<0?h:h.slice(0,k))+'?r='+encodeURIComponent(rq)+(k<0?'':h.slice(k));});}
+  var bar=document.getElementById('barcta'); if(!bar)return; document.body.classList.add('has-bar');
+  var hero=document.querySelector('.hero'), close=document.getElementById('contact');
+  function upd(){var y=window.scrollY,h=hero?hero.offsetHeight:600,c=close?close.getBoundingClientRect().top:1e9;bar.classList.toggle('on',y>h*0.8&&c>window.innerHeight*0.5);}
+  window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
+</body>
+</html>
