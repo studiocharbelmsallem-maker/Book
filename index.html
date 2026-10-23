@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Privacy-friendly analytics by Plausible (restored 23 Oct 2026, runs alongside Clarity) -->
+<script async src="https://plausible.io/js/pa-JsJoxBT0VUvqKnRewzkV2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 <!-- Analytics by Microsoft Clarity (free) -->
 <script>
   (function(c,l,a,r,i,t,y){
@@ -10,7 +16,7 @@
   })(window,document,"clarity","script","z0n2deh343");
 </script>
 <script>
-/* CMS prospect attribution v4 - Clarity. Each visit is tagged with the link code (?r=) */
+/* CMS prospect attribution v5 - Plausible + Clarity. Each visit is tagged with the link code (?r=) in both */
 (function(){
   var fired={};
   var q=new URLSearchParams(location.search);
@@ -23,11 +29,15 @@
   function P(name){
     if(fired[name])return; fired[name]=1;
     try{window.clarity('event',name);}catch(e){}
+    try{window.plausible(name,{props:{r:who}});}catch(e){}
   }
   var base=null;
 
   /* 1 - who opened it */
-  if(r){P('Prospect Open');}
+  if(r){
+    P('Prospect Open');
+    try{window.plausible('pageview',{u:location.origin+location.pathname+'visit/'+r});}catch(e){}
+  }
 
   /* 2 - how long they stayed */
   [[30,'Dwell 30s'],[60,'Dwell 1m'],[180,'Dwell 3m'],[300,'Dwell 5m'],[600,'Dwell 10m']]
