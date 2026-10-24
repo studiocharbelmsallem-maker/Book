@@ -12,18 +12,15 @@
     internal=localStorage.getItem('cms-internal')==='1';
   }catch(e){ internal=/^(test|charbel)/.test(r); }
   window.__cmsInternal=internal;
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
   if(internal)return;
-  /* Privacy-friendly analytics by Plausible (restored 23 Oct 2026, runs alongside Clarity) */
-  var p=document.createElement('script');p.async=1;p.src='https://plausible.io/js/pa-JsJoxBT0VUvqKnRewzkV2.js';document.head.appendChild(p);
-  plausible.init();
+  /* Plausible removed 24 Oct 2026: Clarity is the single analytics tool (recordings + ref tags) */
   /* Analytics by Microsoft Clarity (free) */
   var c=document.createElement('script');c.async=1;c.src='https://www.clarity.ms/tag/z0n2deh343';document.head.appendChild(c);
 })();
 </script>
 <script>
-/* CMS prospect attribution v5 - Plausible + Clarity. Each visit is tagged with the link code (?r=) in both */
+/* CMS prospect attribution v6 - Clarity only. Each visit is tagged with the link code (?r=) as custom tag 'ref' and user id */
 (function(){
   var fired={};
   var q=new URLSearchParams(location.search);
@@ -36,14 +33,12 @@
   function P(name){
     if(fired[name])return; fired[name]=1;
     try{window.clarity('event',name);}catch(e){}
-    try{window.plausible(name,{props:{r:who}});}catch(e){}
   }
   var base=null;
 
   /* 1 - who opened it */
   if(r){
     P('Prospect Open');
-    try{window.plausible('pageview',{u:location.origin+location.pathname+'visit/'+r});}catch(e){}
   }
 
   /* 2 - how long they stayed */
