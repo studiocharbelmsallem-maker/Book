@@ -9,8 +9,8 @@ def mail(house,slug,greet,r=None):
     def wa(n,t): return 'https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose Act {n} · {t}.')
     def film(i,src):
         return (f'<td width="150" valign="middle" align="center"><a href="{B}films/{src}" style="text-decoration:none">'
-                f'<img src="{M}film{i}.jpg" width="150" height="267" alt="Film, 15 seconds" style="display:block;border:0;width:150px;height:267px"></a>'
-                f'<div style="{lab}color:#C9A85C;padding-top:8px">Film · 15 s</div></td>')
+                f'<img src="{M}film{i}.gif" width="150" height="267" alt="Film, 15 seconds" style="display:block;border:0;width:150px;height:267px"></a>'
+                f'<div style="{lab}color:#C9A85C;padding-top:8px">&#9654; Sound on · 15 s</div></td>')
     acts=''
     hs={1:540,2:481,3:540}
     for i,(a,n) in enumerate(zip(F['acts'],['I','II','III']),1):
@@ -51,7 +51,6 @@ def mail(house,slug,greet,r=None):
   <td width="2%">&nbsp;</td>
   <td width="49%" align="center" style="border:1px solid #201F1C"><a href="{B}jewellery.html?r={r}" style="display:block;padding:14px 0;{A}font-size:11px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#201F1C;text-decoration:none">The jewellery book →</a></td>
  </tr></table>
- <div style="{G}font-size:13px;color:#8B8A83;padding-top:14px;text-align:center"><a href="{B}acts/{slug.replace('jewelers','').replace('jewelry','') if False else ''}" style="color:#8B7027"></a></div>
 </td></tr></table>
 <div style="{G}font-size:16px;line-height:1.5;color:#201F1C;padding-top:22px">Warm regards,<br><b style="{A}font-size:12px;letter-spacing:3px;text-transform:uppercase">Charbel Msallem</b> · Fashion Director<br><span style="color:#8B8A83">+961 91 729 713 · studiocharbelmsallem@gmail.com</span></div>'''
 if __name__=='__main__':
