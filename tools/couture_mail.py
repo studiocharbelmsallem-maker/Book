@@ -2,8 +2,8 @@ import sys,urllib.parse as U,html
 sys.path.insert(0,'/home/claude/acts')
 from couture_gen import CITIES
 from jewel_mail import B,INK,INK2,MUTE,GOLD,CH,HAIR,G,A,LAB,btn
-M=B+'acts/mail/couture/'; V='?v=3'
-COVER='saab3.jpg'
+M=B+'acts/mail/couture/'; V='?v=4'
+COVER='saab-cover.jpg'
 RATIO={'beirut':440/551,'paris':262/466,'milano':355/473,'istanbul':264/331,'dubai':440/584,'barcelona':440/552}
 LINE='Every collection has a film inside it. Six cities to find it.'
 PH={'beirut':250,'paris':356,'milano':266,'istanbul':251,'dubai':265,'barcelona':251}
@@ -38,7 +38,7 @@ def mail(house,slug,greet,r=None):
  <div style="{G}font-size:44px;line-height:1.04;color:{INK};padding:12px 0 16px">{H},<br>in <i style="color:{GOLD}">six</i> cities.</div>
  <table role="presentation" width="120" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="{GOLD}" style="font-size:0;line-height:0">&nbsp;</td></tr></table>
  <div style="{G}font-style:italic;font-size:18px;line-height:1.45;color:{INK2};padding:16px 0 26px">{LINE}</div>
- <img src="{M}{COVER}{V}" width="320" height="480" alt="{H}, the first frame" style="display:block;border:0;width:100%;max-width:320px;height:auto">
+ <img src="{M}{COVER}{V}" width="536" height="357" alt="{H}, the first frame" style="display:block;border:0;width:100%;max-width:536px;height:auto">
 </td></tr>
 <tr><td style="padding:34px 32px 0">
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0"><tr><td style="{LAB}padding-bottom:12px">Choose the city</td><td align="right" style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding-bottom:12px">Photo · film · the light</td></tr></table>
