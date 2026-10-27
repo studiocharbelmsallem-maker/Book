@@ -2,9 +2,9 @@ import sys,urllib.parse as U,html
 sys.path.insert(0,'/home/claude/acts')
 from couture_gen import CITIES
 from jewel_mail import B,INK,INK2,MUTE,GOLD,CH,HAIR,G,A,LAB,btn
-M=B+'acts/mail/couture/'; V='?v=2'
+M=B+'acts/mail/couture/'; V='?v=3'
 COVER='saab3.jpg'
-PW={'beirut':224,'paris':157,'milano':210,'istanbul':223,'dubai':211,'barcelona':223}
+RATIO={'beirut':440/551,'paris':262/466,'milano':355/473,'istanbul':264/331,'dubai':440/584,'barcelona':440/552}
 LINE='Every collection has a film inside it. Six cities to find it.'
 PH={'beirut':250,'paris':356,'milano':266,'istanbul':251,'dubai':265,'barcelona':251}
 def mail(house,slug,greet,r=None):
@@ -12,19 +12,19 @@ def mail(house,slug,greet,r=None):
     rows=''
     for n,city,img,date,tag,txt,pos in CITIES:
         wa='https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose {city} · {date}.')
-        pw=PW[img]; tw=pw+8+158
+        rt=RATIO[img]; fw,fh=(236,round(236/rt)) if rt>236/312 else (round(312*rt),312); tw=512
         rows+=(f'<tr><td style="padding:30px 0 34px;border-top:1px solid {HAIR}">'
           f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="baseline" style="{G}font-style:italic;font-size:26px;color:{GOLD};padding-right:14px">{n}</td>'
           f'<td valign="baseline" style="{G}font-size:32px;line-height:1;color:{INK}">{city}</td></tr></table>'
           f'<div style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding:10px 0 4px">{date}</div>'
           f'<div style="{G}font-style:italic;font-size:17px;color:{INK2};padding-bottom:16px">{tag}</div>'
-          f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
-          f'<td valign="top"><img src="{M}{img}.jpg{V}" width="{pw}" height="280" alt="{city}, photograph" style="display:block;border:0;width:{pw}px;height:280px"></td>'
+          f'<table role="presentation" width="536" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:536px"><tr>'
+          f'<td width="264" height="340" align="center" valign="middle" bgcolor="{CH}" style="background:{CH};width:264px;height:340px"><img src="{M}{img}.jpg{V}" width="{fw}" height="{fh}" alt="{city}, photograph" style="display:block;border:0;width:{fw}px;height:{fh}px;margin:0 auto"></td>'
           f'<td width="8" style="font-size:0">&nbsp;</td>'
-          f'<td valign="top"><a href="{page}"><img src="{M}{img}.gif{V}" width="158" height="280" alt="{city}, film" style="display:block;border:0;width:158px;height:280px"></a></td></tr>'
-          f'<tr><td style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:{MUTE};padding-top:8px">Photograph</td><td></td>'
-          f'<td style="{LAB}font-size:8px;letter-spacing:2px;padding-top:8px">&#9654;&nbsp; Film</td></tr></table>'
-          f'<div style="{G}font-size:15px;line-height:1.55;color:{INK2};padding-top:16px;max-width:{max(tw,360)}px">{txt}</div>'
+          f'<td width="264" height="340" align="center" valign="middle" bgcolor="{CH}" style="background:{CH};width:264px;height:340px"><a href="{page}"><img src="{M}{img}.gif{V}" width="175" height="312" alt="{city}, film" style="display:block;border:0;width:175px;height:312px;margin:0 auto"></a></td></tr>'
+          f'<tr><td align="center" style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:{MUTE};padding-top:9px">Photograph</td><td></td>'
+          f'<td align="center" style="{LAB}font-size:8px;letter-spacing:2px;padding-top:9px">&#9654;&nbsp; Film</td></tr></table>'
+          f'<div style="{G}font-size:15px;line-height:1.55;color:{INK2};padding-top:16px;max-width:470px">{txt}</div>'
           f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px"><tr><td>{btn(wa,"This city &rarr;",False)}</td></tr></table>'
           f'</td></tr>')
     cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
