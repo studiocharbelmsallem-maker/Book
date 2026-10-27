@@ -39,6 +39,7 @@ def build(d):
         im=Image.open(srcimg).convert('RGB')
         if im.width>900: im=im.resize((900,round(900*im.height/im.width)),Image.LANCZOS)
         im.save(f'{out}/{name}.jpg',quality=88)
+    for fpo in ['film1.jpg','film2.jpg']: shutil.copy(f'{BOOK}/acts/rutana/{fpo}',f'{out}/{fpo}')
     print('built',out)
 if __name__=='__main__':
     build(json.load(open(sys.argv[1])))
