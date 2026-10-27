@@ -1,48 +1,70 @@
 import json,sys,urllib.parse as U,html
 B='https://studiocharbelmsallem-maker.github.io/Book/'
-M=B+'acts/mail/jewel/'
+M=B+'acts/mail/jewel/'; V='?v=5'
 F=json.load(open('/home/claude/acts/jewel_fixed.json'))
-G="font-family:Georgia,'EB Garamond',serif;"; A="font-family:Helvetica,Arial,sans-serif;"
-LAB=A+"font-size:10px;letter-spacing:3px;text-transform:uppercase;"
+INK='#1E1C18';INK2='#4A4740';MUTE='#8A8478';GOLD='#9A7B2E';CH='#F7F4EC';HAIR='#E6DCC4'
+G="font-family:'EB Garamond',Georgia,'Times New Roman',serif;"; A="font-family:Archivo,Helvetica,Arial,sans-serif;"
+LAB=A+f"font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:{GOLD};"
+def btn(href,txt,solid):
+    st=(f"background:{GOLD};color:#FFFFFF;" if solid else f"background:#FFFFFF;color:{INK};border:1px solid {GOLD};")
+    return f'<a href="{href}" style="display:block;padding:14px 0;{A}font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;{st}">{txt}</a>'
 def mail(house,slug,greet,r=None):
     r=r or 'em-'+slug; H=html.escape(house)
     def wa(n,t): return 'https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose Act {n} · {t}.')
-    cols=''
+    imgs={1:('act1.jpg',300),2:('act2n.jpg',267),3:('act3.jpg',300)}
+    acts=''
     for i,(a,n) in enumerate(zip(F['acts'],['I','II','III']),1):
-        sw=''.join(f'<td height="7" bgcolor="{c}" style="font-size:0;line-height:0">&nbsp;</td>' for c in a['sw'])
-        cols+=(f'<div style="display:inline-block;vertical-align:top;width:100%;max-width:172px;margin:0 2px 26px;text-align:left;font-size:16px">'
-          f'<a href="{wa(n,a["title"])}"><img src="{M}act{i}.jpg" width="172" height="258" alt="{a["title"]}" style="display:block;border:0;width:100%;max-width:172px;height:auto"></a>'
-          f'<div style="{G}font-style:italic;font-size:12px;line-height:1.3;color:#8B7027;padding-top:12px;min-height:32px">Act {n} · {a["kind"]} · {a["for"]}</div>'
-          f'<div style="{G}font-size:23px;line-height:1.1;color:#201F1C;padding:6px 0 8px">{a["title"]}</div>'
-          f'<div style="{G}font-style:italic;font-size:13.5px;line-height:1.4;color:#4A4842;min-height:57px">{a["line"]}</div>'
-          f'<div style="{G}font-size:12px;line-height:1.45;color:#4A4842;padding-top:10px;min-height:122px"><span style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#8B7027">The concept.</span> {a["concept"]}</div>'
-          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:12px 0 10px"><tr>{sw}</tr></table>'
-          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:1px solid #8B7027;background:#ffffff">'
-          f'<a href="{wa(n,a["title"])}" style="display:block;padding:10px 0;{A}font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#201F1C;text-decoration:none">This one →</a></td></tr></table></div>')
+        f,h=imgs[i]
+        sw=''.join(f'<td height="6" bgcolor="{c}" style="font-size:0;line-height:0">&nbsp;</td>' for c in a['sw'])
+        acts+=(f'<tr><td style="padding:0 0 34px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+          f'<td width="200" valign="top"><a href="{wa(n,a["title"])}"><img src="{M}{f}{V}" width="200" height="{h}" alt="Act {n}, {a["title"]}" style="display:block;border:0;width:200px;height:auto"></a></td>'
+          f'<td width="24">&nbsp;</td><td valign="top">'
+          f'<div style="{LAB}font-size:9px">Act {n} · {a["kind"]}</div>'
+          f'<div style="{G}font-size:28px;line-height:1.06;color:{INK};padding:8px 0 4px">{a["title"]}</div>'
+          f'<div style="{G}font-style:italic;font-size:13px;color:{MUTE};padding-bottom:10px">{a["for"].capitalize()}</div>'
+          f'<div style="{G}font-style:italic;font-size:16px;line-height:1.42;color:{INK2}">{a["line"]}</div>'
+          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:14px 0 12px"><tr>{sw}</tr></table>'
+          f'<div style="{G}font-size:14px;line-height:1.5;color:{INK2}"><span style="{LAB}font-size:8px">The concept</span>&nbsp; {a["concept"]}</div>'
+          f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px"><tr><td>{btn(wa(n,a["title"]),"This one &rarr;",False)}</td></tr></table>'
+          f'</td></tr></table></td></tr>')
     cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
-    return f'''<div style="{G}font-size:16px;line-height:1.5;color:#201F1C">Dear {html.escape(greet)},<br><br>As promised, a first look made only for {H}: three ways your next campaign could feel. Choose the act that speaks to you and the other seven frames follow within 48 hours.<br><br></div>
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse">
-<tr><td bgcolor="#13110E" style="background:#13110E;padding:24px 30px 34px">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="{LAB}color:#C9A85C">Charbel Msallem</td><td align="right" style="{LAB}color:#C9A85C">For {H}</td></tr></table>
- <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:26px auto 0"><tr><td style="border:1px solid #5E5137;padding:7px"><img src="{M}cover.jpg" width="250" height="333" alt="{H}" style="display:block;border:0;width:250px;height:333px"></td></tr></table>
- <div style="text-align:center;padding-top:26px"><div style="{LAB}color:#C9A85C">Three acts · one is already yours</div>
- <div style="{G}font-size:42px;line-height:1.08;color:#EDE9E0;padding:12px 0 10px">{H},<br>in <i style="color:#C9A85C">three</i> acts.</div>
- <div style="{G}font-style:italic;font-size:17px;color:#C9C4B8">{F["line"]}</div>
- <div style="{LAB}color:#C9A85C;padding:30px 0 14px">Two films · fifteen seconds each</div></div>
- <div style="font-size:0;text-align:center"><div style="display:inline-block;vertical-align:bottom;width:169px;margin:0 4px 8px"><a href="{B}films/jw15-skin-play.mp4"><img src="{M}film1.gif" width="169" height="300" alt="Film, 15 seconds, sound on" style="display:block;border:0;width:169px;height:300px"></a></div><div style="display:inline-block;vertical-align:bottom;width:100%;max-width:363px;margin:0 0 8px"><a href="{B}films/jw15-coast-play.mp4"><img src="{M}film2.gif" width="363" height="204" alt="Film, 15 seconds, sound on" style="display:block;border:0;width:100%;max-width:363px;height:auto"></a></div></div>
+    return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>As promised, a first look made only for {H}: three ways your next campaign could feel. Choose the act that speaks to you, and the other seven frames follow within 48 hours.<br><br></div>
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid {HAIR}">
+<tr><td style="padding:22px 32px 0">
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR}"><tr><td style="padding-bottom:14px;{G}font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:{INK}">Charbel Msallem<span style="color:{GOLD}">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{A}font-size:9px;letter-spacing:2.2px;color:{GOLD}">Fashion photographer &amp; film director</span></td></tr></table>
 </td></tr>
-<tr><td bgcolor="#F3F2EE" style="background:#F3F2EE;padding:28px 30px 4px">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #DAD8D1;margin-bottom:22px"><tr><td style="{LAB}color:#8B7027;padding-bottom:12px">Choose the act</td><td align="right" style="{LAB}color:#8B7027;padding-bottom:12px">Frame 01 of 08 · each</td></tr></table>
- <div style="font-size:0;text-align:center">{cols}</div>
+<tr><td style="padding:30px 32px 6px">
+ <div style="{LAB}">For {H} · three acts</div>
+ <div style="{G}font-size:44px;line-height:1.04;color:{INK};padding:12px 0 16px">{H},<br>in <i style="color:{GOLD}">three</i> acts.</div>
+ <table role="presentation" width="120" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="{GOLD}" style="font-size:0;line-height:0">&nbsp;</td></tr></table>
+ <div style="{G}font-style:italic;font-size:18px;line-height:1.45;color:{INK2};padding:16px 0 26px">{F["line"]}</div>
+ <img src="{M}cover.jpg{V}" width="360" height="480" alt="{H}, the first frame" style="display:block;border:0;width:100%;max-width:360px;height:auto">
 </td></tr>
-<tr><td bgcolor="#F3F2EE" style="background:#F3F2EE;padding:6px 30px 30px">
- <div style="{G}font-size:24px;line-height:1.25;color:#201F1C;padding-bottom:16px">Pick one. The other <i style="color:#8B7027">seven frames</i> arrive within 48 hours, made only for {H}.</div>
+<tr><td style="padding:34px 32px 8px">
+ <div style="{LAB}padding-bottom:14px">Two films · fifteen seconds each</div>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-  <td width="49%" bgcolor="#201F1C" align="center" style="background:#201F1C"><a href="{cal}" style="display:block;padding:15px 0;{A}font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#F3F2EE;text-decoration:none">Reserve 10 minutes →</a></td>
-  <td width="2%">&nbsp;</td>
-  <td width="49%" align="center" style="border:1px solid #8B7027;background:#ffffff"><a href="{B}jewellery.html?r={r}" style="display:block;padding:14px 0;{A}font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#201F1C;text-decoration:none">The jewellery book →</a></td>
+  <td width="169" valign="bottom"><a href="{B}films/jw15-skin-play.mp4"><img src="{M}film1.gif{V}" width="169" height="300" alt="Film one, plays with sound" style="display:block;border:0;width:169px;height:300px"></a></td>
+  <td width="8" style="font-size:0">&nbsp;</td>
+  <td valign="bottom"><a href="{B}films/jw15-coast-play.mp4"><img src="{M}film2.gif{V}" width="359" height="202" alt="Film two, plays with sound" style="display:block;border:0;width:100%;max-width:359px;height:auto"></a></td>
+ </tr><tr>
+  <td style="{LAB}font-size:9px;padding-top:9px">&#9654;&nbsp; Sound on · 15 s</td><td></td>
+  <td style="{LAB}font-size:9px;padding-top:9px">&#9654;&nbsp; Sound on · 15 s</td>
  </tr></table>
- <div style="padding-top:22px;{G}font-size:14px;color:#8B8A83"><b style="{A}font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#201F1C">Charbel Msallem</b> · Fashion Director<br>+961 91 729 713 · <span style="color:#8B7027">studiocharbelmsallem@gmail.com</span></div>
+</td></tr>
+<tr><td style="padding:26px 32px 0">
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR};margin-bottom:26px"><tr><td style="{LAB}padding-bottom:12px">Choose the act</td><td align="right" style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding-bottom:12px">Frame 01 of 08 · each</td></tr></table>
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{acts}</table>
+</td></tr>
+<tr><td bgcolor="{CH}" style="background:{CH};padding:30px 32px 32px">
+ <div style="{G}font-size:26px;line-height:1.22;color:{INK};padding-bottom:20px">Pick one. The other <i style="color:{GOLD}">seven</i> frames arrive within 48 hours, made only for {H}.</div>
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="49%">{btn(cal,"Reserve 10 minutes &rarr;",True)}</td><td width="2%">&nbsp;</td>
+  <td width="49%">{btn(B+"jewellery.html?r="+r,"The jewellery book &rarr;",False)}</td>
+ </tr></table>
+</td></tr>
+<tr><td style="padding:20px 32px 22px;border-top:1px solid {HAIR}">
+ <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Director</span></div>
+ <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 91 729 713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
 </td></tr></table>'''
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]
