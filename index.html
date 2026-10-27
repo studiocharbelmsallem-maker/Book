@@ -544,5 +544,30 @@ body.has-bar{padding-bottom:64px}
   window.addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
+<script>
+/* Press visits (?r=press-…): the Fashion Week editorial from Paris and Milano opens the book. */
+(function(){
+  var r=(new URLSearchParams(location.search).get('r')||'').toLowerCase();
+  if(r.indexOf('press-')!==0&&r.indexOf('pr-')!==0)return;
+  var keys=['Haussmann interiors, then the courtyard show','Fifteen years to a first Paris Fashion Week','Official Fashion Week coverage'];
+  var sec=document.createElement('section');sec.className='ch';sec.id='runway';
+  var h=document.createElement('header');
+  h.innerHTML='<div class="num"><span class="lab mute">For the press</span><span class="lab">Fashion Week</span></div><h2>The Runway</h2><div class="tagline">Paris · Milano</div><div class="bar"></div><p class="intro">Fashion Week as an editor needs it: the show, the backstage and the room itself, shot in Paris and Milano and finished the same night for the page.</p>';
+  sec.appendChild(h);
+  [].forEach.call(document.querySelectorAll('.ch .sess'),function(s){
+    var t=s.textContent;
+    if(keys.some(function(k){return t.indexOf(k)>=0;})){
+      sec.appendChild(s.cloneNode(true));
+      var f=s.nextElementSibling; if(f&&f.classList.contains('feed')){var c=f.cloneNode(true);[].forEach.call(c.querySelectorAll('img'),function(i){i.loading='eager';});sec.appendChild(c);}
+    }
+  });
+  var nx=document.createElement('a');nx.className='nextch';nx.href='#ch03';nx.innerHTML='<div><div class="lab">Continue · Chapter 03</div><div class="t">Paris</div></div><span class="arr">&rarr;</span>';sec.appendChild(nx);
+  var hero=document.querySelector('.hero');
+  if(hero&&hero.parentNode)hero.parentNode.insertBefore(sec,hero.nextSibling);
+  var l=document.getElementById('forhouse'); if(l&&!/Prepared for/.test(l.textContent)) l.textContent='For the press · Fashion Week, Paris & Milano';
+  var c1=document.getElementById('ch01'),c3=document.getElementById('ch03'),c4=document.getElementById('ch04');
+  if(c1&&c3&&c4){c1.parentNode.insertBefore(c3,c1);c1.parentNode.insertBefore(c4,c1);}
+})();
+</script>
 </body>
 </html>
