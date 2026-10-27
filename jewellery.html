@@ -312,6 +312,14 @@ body.has-bar{padding-bottom:64px}
 .couture .tiles{margin-top:18px}
 .couture .more{display:flex;margin-top:22px;max-width:420px}
 @media (min-width:720px){.couture .tiles{grid-template-columns:repeat(3,1fr)}}
+.fifteen{padding:34px 22px 30px;border-bottom:1px solid var(--rule)}
+.fifteen h2{font-size:38px;margin:8px 0 4px}
+.fifteen p{color:var(--ink-2);font-size:16px;max-width:40ch}
+.fifteen .vt{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+.fifteen figure{margin:0}
+.fifteen video{width:100%;height:auto;display:block;background:#111}
+.fifteen figcaption{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:8px}
+@media(min-width:900px){.fifteen{padding-left:max(22px,calc(50vw - 480px));padding-right:max(22px,calc(50vw - 480px))}.fifteen .vt{grid-template-columns:9fr 16fr;align-items:end}}
 </style>
 
 <header class="mast">
@@ -360,6 +368,15 @@ body.has-bar{padding-bottom:64px}
   <h2>The Jewellery Film</h2>
   <p>A stone has no walk and no fabric to fall. In film it moves only with the hand and the light. Tap the cover to play — it streams from the studio archive, no download, no password.</p>
   <div class="ftiles one"><a class="ftile" style="aspect-ratio:272/482" href="https://drive.google.com/file/d/16QydWBikieJ4hno042UB7YQybPMcRahq/view" target="_blank" rel="noopener"><img decoding="async" src="img/014-afb20841.webp" alt="Beirut jewellery showreel 2026 — fashion film by Charbel Msallem" loading="lazy" width="272" height="482"><div class="ov"></div><div class="play"></div><div class="tx"><div class="c">Beirut</div><div class="k">Lebanon · Jewellery showreel 2026</div></div></a></div>
+</section>
+<section class="fifteen" id="fifteen">
+  <div class="lab">Fifteen seconds</div>
+  <h2>Two short films</h2>
+  <p>The stone moves only with the hand and the light. Fifteen seconds each, made to be watched twice.</p>
+  <div class="vt">
+    <figure><video src="films/jw15-skin.mp4" poster="films/jw15-skin.jpg" autoplay muted loop playsinline preload="metadata" width="720" height="1280" aria-label="High jewellery on skin, fifteen-second film by Charbel Msallem"></video><figcaption>Beirut maison · high jewellery, on skin</figcaption></figure>
+    <figure><video src="films/jw15-coast.mp4" poster="films/jw15-coast.jpg" autoplay muted loop playsinline preload="metadata" width="1280" height="720" aria-label="Jewellery on the Lebanese coast, fifteen-second film by Charbel Msallem"></video><figcaption>The coast · jewellery against stone and sea</figcaption></figure>
+  </div>
 </section>
 <section class="index couture" id="couture">
   <div class="lab">And for the couture houses</div>
