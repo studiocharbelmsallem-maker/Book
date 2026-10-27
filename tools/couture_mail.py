@@ -2,7 +2,9 @@ import sys,urllib.parse as U,html
 sys.path.insert(0,'/home/claude/acts')
 from couture_gen import CITIES
 from jewel_mail import B,INK,INK2,MUTE,GOLD,CH,HAIR,G,A,LAB,btn
-M=B+'acts/mail/couture/'; V='?v=1'
+M=B+'acts/mail/couture/'; V='?v=2'
+COVER='saab3.jpg'
+PW={'beirut':224,'paris':157,'milano':210,'istanbul':223,'dubai':211,'barcelona':223}
 LINE='Every collection has a film inside it. Six cities to find it.'
 PH={'beirut':250,'paris':356,'milano':266,'istanbul':251,'dubai':265,'barcelona':251}
 def mail(house,slug,greet,r=None):
@@ -10,17 +12,20 @@ def mail(house,slug,greet,r=None):
     rows=''
     for n,city,img,date,tag,txt,pos in CITIES:
         wa='https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose {city} · {date}.')
-        rows+=(f'<tr><td style="padding:0 0 38px">'
-          f'<div style="{LAB}font-size:9px">{n} · {date}</div>'
-          f'<div style="{G}font-size:30px;line-height:1.05;color:{INK};padding:8px 0 4px">{city}</div>'
-          f'<div style="{G}font-style:italic;font-size:16px;color:{INK2};padding-bottom:14px">{tag}</div>'
+        pw=PW[img]; tw=pw+8+158
+        rows+=(f'<tr><td style="padding:30px 0 34px;border-top:1px solid {HAIR}">'
+          f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="baseline" style="{G}font-style:italic;font-size:26px;color:{GOLD};padding-right:14px">{n}</td>'
+          f'<td valign="baseline" style="{G}font-size:32px;line-height:1;color:{INK}">{city}</td></tr></table>'
+          f'<div style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding:10px 0 4px">{date}</div>'
+          f'<div style="{G}font-style:italic;font-size:17px;color:{INK2};padding-bottom:16px">{tag}</div>'
           f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
-          f'<td valign="bottom"><img src="{M}{img}.jpg{V}" width="200" height="{PH[img]}" alt="{city}" style="display:block;border:0;width:200px;height:auto"></td>'
-          f'<td width="10" style="font-size:0">&nbsp;</td>'
-          f'<td valign="bottom"><a href="{page}"><img src="{M}{img}.gif{V}" width="160" height="284" alt="{city}, in motion" style="display:block;border:0;width:160px;height:284px"></a></td></tr>'
-          f'<tr><td></td><td></td><td style="{LAB}font-size:9px;padding-top:8px">&#9654;&nbsp; In motion</td></tr></table>'
-          f'<div style="{G}font-size:15px;line-height:1.55;color:{INK2};padding-top:14px;max-width:470px">{txt}</div>'
-          f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px"><tr><td>{btn(wa,"This city &rarr;",False)}</td></tr></table>'
+          f'<td valign="top"><img src="{M}{img}.jpg{V}" width="{pw}" height="280" alt="{city}, photograph" style="display:block;border:0;width:{pw}px;height:280px"></td>'
+          f'<td width="8" style="font-size:0">&nbsp;</td>'
+          f'<td valign="top"><a href="{page}"><img src="{M}{img}.gif{V}" width="158" height="280" alt="{city}, film" style="display:block;border:0;width:158px;height:280px"></a></td></tr>'
+          f'<tr><td style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:{MUTE};padding-top:8px">Photograph</td><td></td>'
+          f'<td style="{LAB}font-size:8px;letter-spacing:2px;padding-top:8px">&#9654;&nbsp; Film</td></tr></table>'
+          f'<div style="{G}font-size:15px;line-height:1.55;color:{INK2};padding-top:16px;max-width:{max(tw,360)}px">{txt}</div>'
+          f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px"><tr><td>{btn(wa,"This city &rarr;",False)}</td></tr></table>'
           f'</td></tr>')
     cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
     return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>A short follow-up. Rather than describe it, I prepared a first look made only for {H}: six cities where your next collection could be filmed. Choose the one that speaks to you, and the concept follows within 48 hours.<br><br></div>
@@ -33,10 +38,10 @@ def mail(house,slug,greet,r=None):
  <div style="{G}font-size:44px;line-height:1.04;color:{INK};padding:12px 0 16px">{H},<br>in <i style="color:{GOLD}">six</i> cities.</div>
  <table role="presentation" width="120" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="{GOLD}" style="font-size:0;line-height:0">&nbsp;</td></tr></table>
  <div style="{G}font-style:italic;font-size:18px;line-height:1.45;color:{INK2};padding:16px 0 26px">{LINE}</div>
- <img src="{M}cover.jpg{V}" width="300" height="533" alt="{H}, the first frame" style="display:block;border:0;width:100%;max-width:300px;height:auto">
+ <img src="{M}{COVER}{V}" width="320" height="480" alt="{H}, the first frame" style="display:block;border:0;width:100%;max-width:320px;height:auto">
 </td></tr>
 <tr><td style="padding:34px 32px 0">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR};margin-bottom:26px"><tr><td style="{LAB}padding-bottom:12px">Choose the city</td><td align="right" style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding-bottom:12px">Photo · film · the light</td></tr></table>
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0"><tr><td style="{LAB}padding-bottom:12px">Choose the city</td><td align="right" style="{A}font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:{MUTE};padding-bottom:12px">Photo · film · the light</td></tr></table>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table>
 </td></tr>
 <tr><td bgcolor="{CH}" style="background:{CH};padding:30px 32px 32px">
