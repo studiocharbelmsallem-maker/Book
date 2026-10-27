@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://studiocharbelmsallem-maker.github.io/Book/sitemap.xml
+Disallow: /x/
