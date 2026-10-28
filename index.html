@@ -167,6 +167,14 @@ h1,h2,h3{font-weight:500;text-wrap:balance}
 .btn.solid{background:var(--btn-bg);color:var(--btn-fg)}
 .btn.line{border:1px solid var(--gold);color:var(--gold)}
 .btn:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.pe{margin:34px auto 0;max-width:420px;text-align:left;border-top:1px solid var(--rule);padding-top:26px;display:grid;gap:10px}
+.pe p{color:var(--ink-2);font-size:16px;line-height:1.5;margin:0 0 6px}
+.pe label{font-family:'Archivo',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.pe input{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid var(--ink-2);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;padding:8px 0;border-radius:0}
+.pe input:focus{outline:none;border-bottom-color:var(--gold)}
+.pe .btn{margin-top:14px;justify-self:start}
+.pe .pe-done{color:var(--gold);font-style:italic;margin-top:8px}
+.pe[data-sent] input,.pe[data-sent] label,.pe[data-sent] #pe-send{display:none}
 /* start here */
 .start{padding:34px 22px 30px;border-bottom:1px solid var(--rule)}
 .start h2{font-size:34px;line-height:1.12;margin:10px 0 12px}
@@ -509,9 +517,43 @@ body.has-bar{padding-bottom:64px}
   <a class="em" href="mailto:admin@charbelmsallem.net?subject=The%20film%20inside%20the%20collection">admin@charbelmsallem.net</a>
   <a class="em" href="https://www.instagram.com/charbelmsallemstudios/" target="_blank" rel="noopener me">@charbelmsallemstudios</a>
   <a class="call" href="https://calendly.com/studiocharbelmsallem/30min" target="_blank" rel="noopener">Thirty minutes, when it suits you</a>
+  <form class="pe" id="pe" autocomplete="on" novalidate>
+    <div class="lab">The private edition</div>
+    <p>A fuller edition of this book, with the films and the pages not shown here. Leave your name and I will send it to you myself.</p>
+    <label for="pe-name">Your name</label>
+    <input id="pe-name" name="name" type="text" maxlength="80" required>
+    <label for="pe-contact">WhatsApp number or email</label>
+    <input id="pe-contact" name="contact" type="text" maxlength="120" inputmode="email" required>
+    <button class="btn solid" id="pe-send" type="submit">Send me the private edition</button>
+    <p class="pe-done" id="pe-done" hidden>Received. It will come from me, not a system.</p>
+    <a class="btn line" id="pe-wa" href="https://wa.me/96191729713" target="_blank" rel="noopener" hidden>Or tell me on WhatsApp</a>
+  </form>
   <div class="fin">Paris · Milano · Dubai · Istanbul · Barcelona · Beirut &nbsp;·&nbsp; MMXXVI</div>
 </section>
 
+<script>
+/* The private edition: the reader's name goes to Clarity as the visit's name and user id, and to WhatsApp as a prefilled message. No server. */
+(function(){
+  var f=document.getElementById('pe'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=(f.name.value||'').trim().slice(0,80), contact=(f.contact.value||'').trim().slice(0,120);
+    if(!name||!contact){ (name?f.contact:f.name).focus(); return; }
+    try{
+      window.clarity('set','name',name);
+      window.clarity('set','contact',contact);
+      window.clarity('identify',contact,undefined,undefined,name);
+      window.clarity('event','Private Edition');
+      window.clarity('upgrade','private edition');
+    }catch(err){}
+    try{ localStorage.setItem('cms_pe',JSON.stringify({name:name,contact:contact,at:Date.now()})); }catch(err){}
+    var q=new URLSearchParams(location.search); var r=(q.get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);
+    var msg='Hello Charbel, I am '+name+'. I would like the private edition of your book.'+(r?' ('+r+')':'');
+    var wa=document.getElementById('pe-wa'); wa.href='https://wa.me/96191729713?text='+encodeURIComponent(msg); wa.hidden=false;
+    document.getElementById('pe-done').hidden=false; f.setAttribute('data-sent','1');
+  });
+})();
+</script>
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.nav a'));
