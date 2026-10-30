@@ -2,7 +2,7 @@
 BASE is the live address today; swap to https://charbelmsallem.net/ when the domain points at GitHub."""
 import json, re, sys
 
-BASE = sys.argv[1] if len(sys.argv) > 1 else "https://studiocharbelmsallem-maker.github.io/Book/"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "https://charbelmsallem.net/"
 EMAIL = "admin@charbelmsallem.net"
 IG = "https://www.instagram.com/charbelmsallemstudios/"
 PHONE = "+96191729713"

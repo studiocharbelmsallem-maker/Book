@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://studiocharbelmsallem-maker.github.io/Book/</loc><changefreq>monthly</changefreq><priority>1.0</priority><image:image><image:loc>https://studiocharbelmsallem-maker.github.io/Book/cover.jpg</image:loc></image:image></url>
-  <url><loc>https://studiocharbelmsallem-maker.github.io/Book/jewellery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://studiocharbelmsallem-maker.github.io/Book/cover-jewellery.jpg</image:loc></image:image></url>
-  <url><loc>https://studiocharbelmsallem-maker.github.io/Book/service.html</loc><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://studiocharbelmsallem-maker.github.io/Book/cover.jpg</image:loc></image:image></url>
+  <url><loc>https://charbelmsallem.net/</loc><changefreq>monthly</changefreq><priority>1.0</priority><image:image><image:loc>https://charbelmsallem.net/cover.jpg</image:loc></image:image></url>
+  <url><loc>https://charbelmsallem.net/jewellery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://charbelmsallem.net/cover-jewellery.jpg</image:loc></image:image></url>
+  <url><loc>https://charbelmsallem.net/service.html</loc><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://charbelmsallem.net/cover.jpg</image:loc></image:image></url>
 </urlset>

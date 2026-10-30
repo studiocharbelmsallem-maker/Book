@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /x/
 
-Sitemap: https://studiocharbelmsallem-maker.github.io/Book/sitemap.xml
+Sitemap: https://charbelmsallem.net/sitemap.xml

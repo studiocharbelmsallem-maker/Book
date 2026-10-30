@@ -1,5 +1,5 @@
 import json,sys,urllib.parse as U,html
-B='https://studiocharbelmsallem-maker.github.io/Book/'
+B='https://charbelmsallem.net/'
 M=B+'acts/mail/jewel/'; V='?v=5'
 F=json.load(open('/home/claude/acts/jewel_fixed.json'))
 INK='#1E1C18';INK2='#4A4740';MUTE='#8A8478';GOLD='#9A7B2E';CH='#F7F4EC';HAIR='#E6DCC4'
