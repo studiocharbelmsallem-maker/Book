@@ -155,7 +155,7 @@ def run():
     xml.append("</urlset>")
     open("sitemap.xml","w").write("\n".join(xml)+"\n")
     root = re.match(r"https?://[^/]+/", BASE).group(0)
-    open("robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
+    open("robots.txt","w").write(f"User-agent: *\nAllow: /\nDisallow: /x/\n\nSitemap: {BASE}sitemap.xml\n")
 
 run()
 print("done for", BASE)
