@@ -1,9 +1,9 @@
 import json,sys,urllib.parse,os
 CITIES=[
- ("I","Beirut","beirut","November – December","Where the light is learned","Customised to every campaign. Where couture learned to decide, not decorate: one source, one hour, no second day.","25% center"),
- ("II","Paris","paris","Couture Week · 21–29 January","Where it is judged","A museum, not a studio. Shot to survive an editor with forty collections on her desk.","center 30%"),
+ ("I","Beirut","beirut","November – December","Where the light is learned","Customised to every campaign. Elegance emerges from the machinery; every crystal catches the light of reinvention.","25% center"),
+ ("II","Paris","paris","Couture Week · 21–29 January","Where it is judged","A museum, not a studio. Precision in structure, softness in motion.","center 30%"),
  ("III","Milano","milano","23 February – 1 March","Where it is sold","Palazzo windows and frescoed rooms. Imagery that holds on a linesheet, in a showroom and above a runway, without a reshoot.","center"),
- ("IV","Istanbul","istanbul","12–19 January","Where it crosses","Vintage moods, modern lens, eternity in a single frame. East and West in silk, for a collection that speaks to Riyadh and Milan at once.","center"),
+ ("IV","Istanbul","istanbul","12–19 January","Where it crosses","Vintage moods, modern lens, eternity in a single frame. Every frame whispers secrets from another time.","center"),
  ("V","Dubai","dubai","March","Where it is wanted","Open desert, open water, no wall to bounce the light. Crystal and tulle read by the sun alone.","center"),
  ("VI","Barcelona","barcelona","14–18 April","Where it breathes","Modernist stone at Mediterranean noon, Gothic shadow at night. Couture with air around it.","center 30%"),
 ]
