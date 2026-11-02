@@ -16,6 +16,76 @@ WA = "9613729713"
 V = "3"
 
 COUNTRIES = {
+    "beirut": {
+        "city": "Beirut",
+        "chapter": "Chapter 01",
+        "tagline": "where the light is learned",
+        "italic": "A city that keeps losing its electricity and never its standard. Here the studio learned to decide instead of decorate: one source, one hour, no second day.",
+        "films": [
+            ("film-couture.jpg", "films/beirut-couture.mp4", "Couture", "17 s"),
+            ("film-casual.jpg", "films/beirut-casual.mp4", "Casual", "12 s"),
+        ],
+        "acts": [
+            ("couture.jpg", "Couture", "The Atelier", "Red-carpet weight, shot for the moment before the flashbulb",
+             "Lilac satin, a bow that becomes a train, and one warm light in an old room.",
+             ["#3A2A22", "#B79AAE", "#8C6A5A", "#D9C3B6"],
+             "Couture is judged on construction, so the light has to explain it. One hard source, placed low and to the side, draws every fold of the satin and leaves the room in shadow. Nothing in the background is brighter than the dress, which is how a house's handwork becomes the only thing the eye can read."),
+            ("editorial.jpg", "Editorial", "The Coast", "Winter couture walked across raw Beirut stone",
+             "A white train poured over dark rock, with the sea opening behind it.",
+             ["#2B2420", "#6E5A4C", "#E8E4DE", "#8FA6B2"],
+             "An editorial gives a collection a place to belong. Pale embroidery against dark volcanic rock is the strongest contrast nature offers, so the beadwork reads from three metres and rewards at thirty centimetres. The open sky behind keeps the frame calm, and the scale of the cliff makes the train feel monumental."),
+            ("casual.jpg", "Casual", "The Field", "Customised to every campaign, aimed at the woman it was cut for",
+             "A pleated white sleeve against a dry summer field and a wide pale sky.",
+             ["#2A2430", "#F2EFEA", "#C8A97A", "#B9B4AE"],
+             "Ready-to-wear sells a life, not an occasion. We take the clothes out of the studio and into open daylight, where pleats move with the wind and fabric shows its real weight. A quiet palette of white, straw and sky lets the silhouette lead, and the image reads in one breath on a phone."),
+        ],
+    },
+    "dubai": {
+        "city": "Dubai",
+        "chapter": "Chapter 02",
+        "tagline": "where the collection is wanted",
+        "italic": "The Gulf does not ask a gown to be quiet. Every frame here has to survive two distances: a phone held at arm's length, and a print three metres wide.",
+        "films": [
+            ("film-dubai.jpg", "films/dubai-16.mp4", "Couture", "16 s"),
+        ],
+        "acts": [
+            ("couture.jpg", "Couture", "The Mosaic", "Shot on the mosaic rather than in front of it",
+             "A gown laid across a myth set in stone, the floor answering the embroidery.",
+             ["#3B2C20", "#B08A5A", "#E7DCCB", "#6B5A48"],
+             "In the Gulf a gown is read as wealth of work, so we give the handwork an equal partner. Shooting from above, on a floor that took years to lay, turns the whole frame into ornament with the dress at its centre. The warm stone keeps gold and ivory rich without a single added light."),
+            ("editorial.jpg", "Editorial", "The Plumes", "Flowers are composed, not picked",
+             "Emerald feathers in open desert, under pampas plumes taller than the model.",
+             ["#1F4A3A", "#3C7A5E", "#E6D3B0", "#7FA7D1"],
+             "An editorial in the desert works because there is nothing to hide behind. Hard sun and a clean blue sky give saturated colour the clarity of a print, and the plumes repeat the texture of the gown in nature. One bold colour against sand is what stops a thumb in the first second."),
+            ("bridal.jpg", "Bridal", "The Desert Train", "Bridal carried into open desert",
+             "Crystal and tulle read by the sun, with no wall to bounce the light.",
+             ["#E9E2D6", "#CDBB9E", "#A7957C", "#DCE4EA"],
+             "Bridal is sold on light more than on the dress itself. Shot with the sun behind her, tulle turns translucent and every crystal catches its own highlight, while the open dunes give the train the length it was cut for. Soft sand tones keep the white pure, never grey."),
+        ],
+    },
+    "barcelona": {
+        "city": "Barcelona",
+        "chapter": "Chapter 06",
+        "tagline": "where it breathes",
+        "italic": "Mediterranean daylight and modernist stone. Light that forgives nothing and flatters everything, used at the hours when it is honest.",
+        "films": [
+            ("film-barcelona.jpg", "films/barcelona-16.mp4", "Bridal", "15 s"),
+        ],
+        "acts": [
+            ("bridal.jpg", "Bridal", "The Staircase", "Wedding shot in open daylight rather than a studio",
+             "A veil that falls the length of a stone stair, in morning light.",
+             ["#F1ECE6", "#C9B79C", "#8F7B62", "#5E5A4A"],
+             "Romance without sentiment is a matter of restraint. We let the architecture carry the grandeur and keep the bride still, so the veil and the staircase draw the same long line. Morning light on warm stone keeps the white soft and the skin true."),
+            ("editorial.jpg", "Editorial", "The Pavilion", "Modernist stone at Mediterranean noon",
+             "Black and ivory volume against carved busts and garlands.",
+             ["#14141A", "#F2EFE6", "#C8B48C", "#7D7266"],
+             "A strong silhouette needs a strong setting. Shot from below, the gown rises against carved stone and the composition becomes graphic, black against ivory against sand. Noon light is unforgiving, so we use it only where the shape is bold enough to take it."),
+            ("evening.jpg", "Evening", "The Colonnade", "Two frames, silver against stone",
+             "Crystal fringe and blue sequins walking along a row of columns.",
+             ["#5A6E9E", "#C9C6CF", "#B98C66", "#E8D9C6"],
+             "Evening wear is about movement and catch-light. Low sun along the colonnade turns every fringe and crystal into a moving highlight as she walks, and the warm columns frame the cool blue of the gown. It is the frame that sells the dress before anyone touches it."),
+        ],
+    },
     "paris": {
         "city": "Paris",
         "chapter": "Chapter 03",
@@ -83,7 +153,7 @@ def build(key, house="{House}"):
     films = films_block(key, city, c["films"])
     acts = "".join(act(key, house, i, a) for i, a in enumerate(c["acts"]))
     cal = f"https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1={quote(house + ' · ' + city + ' concept call')}&utm_source=mail&utm_campaign={key}-{slug}"
-    return f'''<div style="{F_SERIF};font-size:17px;line-height:1.55;color:#1E1C18">Dear {house},<br><br>This is the {city} chapter of the book, opened for you: two films and the three registers a collection can be told in here, with a few lines on why each one works. Tell me which register is closest to your next season, and I will build the first frames around it.<br><br></div>
+    return f'''<div style="{F_SERIF};font-size:17px;line-height:1.55;color:#1E1C18">Dear {house},<br><br>This is the {city} chapter of the book, opened for you: {'two films' if len(c['films']) == 2 else 'a film'} and the three registers a collection can be told in here, with a few lines on why each one works. Tell me which register is closest to your next season, and I will build the first frames around it.<br><br></div>
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid #E6DCC4">
 <tr><td style="padding:22px 32px 0">
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #E6DCC4"><tr><td style="padding-bottom:14px;{F_SERIF};font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:#1E1C18">Charbel Msallem<span style="color:#9A7B2E">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{F_SANS};font-size:9px;letter-spacing:2.2px;color:#9A7B2E">Fashion Photographer &amp; Film Director</span></td></tr></table>
