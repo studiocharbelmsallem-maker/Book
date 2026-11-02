@@ -138,11 +138,11 @@ def films_block(key, city, films):
     head = f'<tr><td style="padding:26px 32px 8px">\n <div style="{KICK};padding-bottom:14px">{"Two films" if len(films) == 2 else "The film"} · {city}</div>\n'
     if len(films) == 1:
         p, m, l, d = films[0]
-        return head + f' <a href="{SITE}/{m}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="300" height="533" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:300px;height:auto"></a>\n <div style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</div>\n</td></tr>\n'
+        return head + f' <a href="{SITE}/films/watch/{m[6:-4]}/?r=em-{key}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="300" height="533" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:300px;height:auto"></a>\n <div style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</div>\n</td></tr>\n'
     cells, caps = [], []
     for n, (p, m, l, d) in enumerate(films):
         if n: cells.append('<td width="8" style="font-size:0">&nbsp;</td>'); caps.append('<td></td>')
-        cells.append(f'<td width="264" valign="top"><a href="{SITE}/{m}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="264" height="469" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:264px;height:auto"></a></td>')
+        cells.append(f'<td width="264" valign="top"><a href="{SITE}/films/watch/{m[6:-4]}/?r=em-{key}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="264" height="469" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:264px;height:auto"></a></td>')
         caps.append(f'<td style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</td>')
     return head + ' <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' + "".join(cells) + '</tr><tr>' + "".join(caps) + '</tr></table>\n</td></tr>\n'
 
