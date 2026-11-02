@@ -13,7 +13,7 @@ from urllib.parse import quote
 
 SITE = "https://charbelmsallem.net"
 WA = "9613729713"
-V = "2"
+V = "3"
 
 COUNTRIES = {
     "paris": {
