@@ -1,0 +1,380 @@
+[
+ {
+  "slug": "tskaff",
+  "house": "TSKAFF",
+  "to": "customercare@tskaff.com",
+  "subject": "TSKAFF, in six cities",
+  "touch": 1,
+  "file": "x/mail-tskaff.html",
+  "due": "2026-11-02"
+ },
+ {
+  "slug": "hebaalqurashi",
+  "house": "Heba Alqurashi",
+  "to": "Pr@hebaalqurashi.com",
+  "subject": "Heba Alqurashi, in six cities",
+  "touch": 1,
+  "file": "x/mail-hebaalqurashi.html",
+  "due": "2026-11-02"
+ },
+ {
+  "slug": "ehsanchamoun",
+  "house": "Ehsan Chamoun",
+  "to": "info@ehsanchamoun.com",
+  "subject": "Ehsan Chamoun, in six cities",
+  "touch": 1,
+  "file": "x/mail-ehsanchamoun.html",
+  "due": "2026-11-02"
+ },
+ {
+  "slug": "wadha",
+  "house": "Wadha",
+  "to": "info@wadha.co",
+  "subject": "Wadha, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-wadha.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "sarapedram",
+  "house": "Sara Pedram",
+  "to": "info@sarapedram.com",
+  "subject": "Sara Pedram, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-sarapedram.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "timaabid",
+  "house": "Tima Abid",
+  "to": "info@timaabid.com",
+  "subject": "Tima Abid, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-timaabid.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "adnanakbar",
+  "house": "Adnan Akbar",
+  "to": "info@adnanakbar.com",
+  "subject": "Adnan Akbar, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-adnanakbar.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "emanalajlan",
+  "house": "Eman Alajlan",
+  "to": "info@emanalajlan.co",
+  "subject": "Eman Alajlan, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-emanalajlan.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "qirdala",
+  "house": "Qirdala",
+  "to": "info@qirdala.com",
+  "subject": "Qirdala, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-qirdala.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "ranizakhem",
+  "house": "Rani Zakhem",
+  "to": "info@ranizakhem.com",
+  "subject": "Rani Zakhem, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-ranizakhem.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "mukhisisters",
+  "house": "Mukhi Sisters",
+  "to": "info@mukhisisters.com",
+  "subject": "Mukhi Sisters, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-mukhisisters.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "khawlaalaiban",
+  "house": "Khawla Alaiban",
+  "to": "info@khawlaalaiban.co",
+  "subject": "Khawla Alaiban, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-khawlaalaiban.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "ronyabouhamdan",
+  "house": "Rony Abou Hamdan",
+  "to": "info@ronyabouhamdan.com",
+  "subject": "Rony Abou Hamdan, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-ronyabouhamdan.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "manel",
+  "house": "Manel",
+  "to": "customercare@manel-fashion.com",
+  "subject": "Manel, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-manel.html",
+  "due": "2026-11-03"
+ },
+ {
+  "slug": "oscarkraye",
+  "house": "Oscar Kraye",
+  "to": "press@oscarkraye.com",
+  "subject": "Oscar Kraye, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-oscarkraye.html",
+  "due": "2026-11-04"
+ },
+ {
+  "slug": "geyannayouness",
+  "house": "Geyanna Youness",
+  "to": "info@geyannayouness.com",
+  "subject": "Geyanna Youness, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-geyannayouness.html",
+  "due": "2026-11-04"
+ },
+ {
+  "slug": "hassidriss",
+  "house": "Hass Idriss",
+  "to": "press@hassidriss.com",
+  "subject": "Hass Idriss, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-hassidriss.html",
+  "due": "2026-11-04"
+ },
+ {
+  "slug": "ikhfashion",
+  "house": "IKH",
+  "to": "customerservice@ikhfashion.sa",
+  "subject": "IKH, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-ikhfashion.html",
+  "due": "2026-11-05"
+ },
+ {
+  "slug": "ferhanturker",
+  "house": "Ferhan Türker",
+  "to": "ferhan.turker.hautecoture@gmail.com",
+  "subject": "Ferhan Türker, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-ferhanturker.html",
+  "due": "2026-11-05"
+ },
+ {
+  "slug": "aleensabbagh",
+  "house": "Aleen Sabbagh",
+  "to": "Customercare@aleensabbagh.com",
+  "subject": "Aleen Sabbagh, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-aleensabbagh.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "hadikatra",
+  "house": "Hadi Katra",
+  "to": "info@hadikatra.com",
+  "subject": "Hadi Katra, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-hadikatra.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "rebirth",
+  "house": "Rebirth",
+  "to": "connect@rebirth.sa",
+  "subject": "Rebirth, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-rebirth.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "reemalkanhal",
+  "house": "Reem Alkanhal",
+  "to": "ReemAlkanhal@outlook.com",
+  "subject": "Reem Alkanhal, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-reemalkanhal.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "renaissancerenaissance",
+  "house": "Renaissance Renaissance",
+  "to": "hello@renaissancerenaissance.com",
+  "subject": "Renaissance Renaissance, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-renaissancerenaissance.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "shakhsia",
+  "house": "Shakhsia",
+  "to": "info@shakhsia-design.com",
+  "subject": "Shakhsia, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-shakhsia.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "tallermarmo",
+  "house": "Taller Marmo",
+  "to": "press@tallermarmo.com",
+  "subject": "Taller Marmo, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-tallermarmo.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "ziyadbuainain",
+  "house": "Ziyad Buainain",
+  "to": "press@ziyadbuainain.com",
+  "subject": "Ziyad Buainain, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-ziyadbuainain.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "hanayencouture",
+  "house": "Hanayen Couture",
+  "to": "info@hanayencouture.com",
+  "subject": "Hanayen Couture, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-hanayencouture.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "manaalalhammadi",
+  "house": "Manaal Al Hammadi",
+  "to": "aa@manaalalhammadi.com",
+  "subject": "Manaal Al Hammadi, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-manaalalhammadi.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "samiragallery",
+  "house": "Samira Gallery",
+  "to": "samirahalawani3@gmail.com",
+  "subject": "Samira Gallery, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-samiragallery.html",
+  "due": "2026-11-06"
+ },
+ {
+  "slug": "daralhanouf",
+  "house": "Dar Al Hanouf",
+  "to": "info@daralhanouf.com",
+  "subject": "Dar Al Hanouf, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-daralhanouf.html",
+  "due": "2026-11-09"
+ },
+ {
+  "slug": "noursabi",
+  "house": "Nour Sabi",
+  "to": "contact@noursabi.com",
+  "subject": "Nour Sabi, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-noursabi.html",
+  "due": "2026-11-09"
+ },
+ {
+  "slug": "antonios",
+  "house": "Antonios Couture",
+  "to": "ga@antonioscouture.com",
+  "subject": "Antonios Couture, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-antonios.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "basilsoda",
+  "house": "Basil Soda",
+  "to": "customercare@basilsoda.com",
+  "subject": "Basil Soda, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-basilsoda.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "francksorbier",
+  "house": "Franck Sorbier",
+  "to": "hautecouturefrancksorbier@gmail.com",
+  "subject": "Franck Sorbier, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-francksorbier.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "jasive",
+  "house": "Jasive",
+  "to": "atencion@jasive.com",
+  "subject": "Jasive, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-jasive.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "laithmaalouf",
+  "house": "Laith Maalouf",
+  "to": "laithmaalouf.sr@gmail.com",
+  "subject": "Laith Maalouf, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-laithmaalouf.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "maisonberrada",
+  "house": "Maison Berrada",
+  "to": "contact.maisonberrada@gmail.com",
+  "subject": "Maison Berrada, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-maisonberrada.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "maisonrabihkayrouz",
+  "house": "Maison Rabih Kayrouz",
+  "to": "sales@maisonrabihkayrouz.com",
+  "subject": "Maison Rabih Kayrouz, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-maisonrabihkayrouz.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "monyibrahim",
+  "house": "Mony Ibrahim",
+  "to": "mony.ibrahim@hotmail.com",
+  "subject": "Mony Ibrahim, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-monyibrahim.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "taghridelhage",
+  "house": "Taghrid El Hage",
+  "to": "taghrid@taghridelhage.com",
+  "subject": "Taghrid El Hage, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-taghridelhage.html",
+  "due": "2026-11-24"
+ },
+ {
+  "slug": "youssefkamoun",
+  "house": "Youssef Kamoun",
+  "to": "shop@youssefkamoun.com",
+  "subject": "Youssef Kamoun, Paris in three registers",
+  "touch": 2,
+  "file": "x/mail-paris-youssefkamoun.html",
+  "due": "2026-11-24"
+ }
+]
