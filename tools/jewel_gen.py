@@ -20,7 +20,7 @@ def build(d):
     head=parts[0]; tail=parts[-1][parts[-1].index('  </div>\n</div></section>'):]
     acts=''
     for k,a in enumerate(d['acts']):
-        wa='https://wa.me/96191729713?text='+urllib.parse.quote(f"Hello Charbel, {H} here. We choose Act {ROMAN[k]} · {a['title']}.")
+        wa='https://wa.me/9613729713?text='+urllib.parse.quote(f"Hello Charbel, {H} here. We choose Act {ROMAN[k]} · {a['title']}.")
         sw=''.join(f'<i style="background:{c}"></i>' for c in a['sw'])
         acts+=f'''    <div class="act">
       <div class="ph" style="background-image:url(act{k+1}.jpg?v=1)"></div>

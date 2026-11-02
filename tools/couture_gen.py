@@ -16,14 +16,14 @@ def page(d):
     H=d['house']; slug=d['slug']
     tiles=''
     for n,city,img,date,tag,txt,pos in CITIES:
-        wa='https://wa.me/96191729713?text='+urllib.parse.quote(f"Hello Charbel, {H} here. We choose {city} · {date}.")
+        wa=f"../mood/{img}/?h={urllib.parse.quote(H)}&amp;r=act-{slug}"
         tiles+=f'''    <div class="city">
       {media(img,city)}
       <div class="n">{n} · {date}</div>
       <h2>{city}</h2>
       <div class="tag">{tag}</div>
       <div class="concept">{txt}</div>
-      <a class="btn" data-ev="{city} chosen" href="{wa}" target="_blank" rel="noopener">This city →</a>
+      <a class="btn" data-ev="{city} chosen" href="{wa}">This city →</a>
     </div>
 '''
     cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+urllib.parse.quote_plus(f"{H} · Concept call")+f'&amp;utm_source=acts&amp;utm_campaign={slug}&amp;utm_content=page'

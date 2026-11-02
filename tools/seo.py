@@ -5,7 +5,7 @@ import json, re, sys
 BASE = sys.argv[1] if len(sys.argv) > 1 else "https://charbelmsallem.net/"
 EMAIL = "admin@charbelmsallem.net"
 IG = "https://www.instagram.com/charbelmsallemstudios/"
-PHONE = "+96191729713"
+PHONE = "+9613729713"
 
 LOGOS = {
  15:"Paris Fashion Week",16:"Milano Fashion Week",17:"Dubai Fashion Week",18:"Beirut Fashion Week",

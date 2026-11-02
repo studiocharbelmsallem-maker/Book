@@ -163,7 +163,7 @@ a{color:inherit;text-decoration:none}
     <a class="btn solid" data-ev="Call" href="https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1=Wadha+%C2%B7+Concept+call&amp;utm_source=acts&amp;utm_campaign=wadha&amp;utm_content=page" target="_blank" rel="noopener">Reserve 10 minutes →</a>
     <a class="btn" data-ev="Book" href="../../?r=acts-wadha">The book →</a>
   </div>
-  <div class="sig"><b>Charbel Msallem</b> · Fashion Director<br>+961 91 729 713 · <a href="mailto:studiocharbelmsallem@gmail.com">studiocharbelmsallem@gmail.com</a></div>
+  <div class="sig"><b>Charbel Msallem</b> · Fashion Photographer &amp; Film Director<br>+961 3 729713 · <a href="mailto:info@charbelmsallem.net">info@charbelmsallem.net</a> · <a href="mailto:studiocharbelmsallem@gmail.com">studiocharbelmsallem@gmail.com</a></div>
 </div></section>
 
 <script>
@@ -171,6 +171,10 @@ document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('c
 document.querySelectorAll('.snd').forEach(function(b){var v=b.previousElementSibling;b.addEventListener('click',function(){document.querySelectorAll('video').forEach(function(o){if(o!==v){o.muted=true;}});document.querySelectorAll('.snd').forEach(function(o){if(o!==b)o.textContent='Sound on';});v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play();cmsEv((v.dataset.city||'Film')+' sound');}b.textContent=v.muted?'Sound on':'Sound off';});});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){});cmsEv((v.dataset.city||'Film')+' seen');}else{v.pause();}});},{threshold:.4});document.querySelectorAll('.pair video').forEach(function(v){io.observe(v);});}
 document.querySelectorAll('.pair video').forEach(function(v){v.addEventListener('timeupdate',function(){if(v.currentTime>12)cmsEv((v.dataset.city||'Film')+' watched');});});
+</script>
+<script>
+(function(){var r=(new URLSearchParams(location.search).get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);if(!r)return;
+document.querySelectorAll('a.btn[href*="/mood/"]').forEach(function(a){a.href=a.href.replace(/([?&]r=)[^&]*/,'$1'+r);});})();
 </script>
 </body>
 </html>

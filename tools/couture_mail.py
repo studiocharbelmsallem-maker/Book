@@ -11,7 +11,7 @@ def mail(house,slug,greet,r=None):
     r=r or 'em-'+slug; H=html.escape(house); page=f'{B}acts/{slug}/?r={r}'
     rows=''
     for n,city,img,date,tag,txt,pos in CITIES:
-        wa='https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose {city} · {date}.')
+        wa=f'https://charbelmsallem.net/acts/mood/{img}/?h={U.quote(house)}&amp;r={r}'
         rt=RATIO[img]; fw,fh=(236,round(236/rt)) if rt>236/312 else (round(312*rt),312); tw=512
         rows+=(f'<tr><td style="padding:30px 0 34px;border-top:1px solid {HAIR}">'
           f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="baseline" style="{G}font-style:italic;font-size:26px;color:{GOLD};padding-right:14px">{n}</td>'
@@ -52,8 +52,8 @@ def mail(house,slug,greet,r=None):
  </tr></table>
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid {HAIR}">
- <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Director</span></div>
- <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 91 729 713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Photographer &amp; Film Director</span></div>
+ <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
 </td></tr></table>'''
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]

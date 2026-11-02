@@ -10,7 +10,7 @@ def btn(href,txt,solid):
     return f'<a href="{href}" style="display:block;padding:14px 0;{A}font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;{st}">{txt}</a>'
 def mail(house,slug,greet,r=None):
     r=r or 'em-'+slug; H=html.escape(house)
-    def wa(n,t): return 'https://wa.me/96191729713?text='+U.quote(f'Hello Charbel, {house} here. We choose Act {n} · {t}.')
+    def wa(n,t): return 'https://wa.me/9613729713?text='+U.quote(f'Hello Charbel, {house} here. We choose Act {n} · {t}.')
     imgs={1:('act1.jpg',300),2:('act2n.jpg',267),3:('act3.jpg',300)}
     acts=''
     for i,(a,n) in enumerate(zip(F['acts'],['I','II','III']),1):
@@ -63,8 +63,8 @@ def mail(house,slug,greet,r=None):
  </tr></table>
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid {HAIR}">
- <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Director</span></div>
- <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 91 729 713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Photographer &amp; Film Director</span></div>
+ <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
 </td></tr></table>'''
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]
