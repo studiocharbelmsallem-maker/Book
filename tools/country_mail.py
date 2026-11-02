@@ -101,11 +101,11 @@ COUNTRIES = {
             ("editorial.jpg", "Editorial", "The Window", "One gesture the height of the room",
              "Black feathers, gold brocade, embroidery laid like armour.",
              ["#1A0E0D", "#77462C", "#C9A77A", "#E8DFD2"],
-             "One gesture the height of the palazzo. A silhouette an editor remembers."),
+             "Arms open, the palazzo behind her. A silhouette an editor remembers."),
             ("bridal.jpg", "Bridal", "The Rotunda", "The room turned into the frame of the train",
              "Organza, lace, pearl. The walls leaned in to listen.",
              ["#2D1D0F", "#89745F", "#D9CEC0", "#F2EEE6"],
-             "The room becomes the frame of the train. Symmetry gives the gown the weight of a ceremony."),
+             "Window light keeps the white pure. Symmetry gives the gown the weight of a ceremony."),
         ],
     },
     "istanbul": {
@@ -126,7 +126,7 @@ COUNTRIES = {
             ("bridal.jpg", "Bridal", "The Grand Stair", "A bride between two traditions",
              "A love story written in the light of chandeliers.",
              ["#2D201B", "#5D483E", "#D8CDBE", "#F0EADF"],
-             "Twin stairs, one bride. Two traditions held in one symmetry."),
+             "Twin stairs under one chandelier. East and West held in one symmetry."),
         ],
     },
     "paris": {
