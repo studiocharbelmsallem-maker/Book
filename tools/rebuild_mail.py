@@ -8,7 +8,7 @@ Second touch: x/mail-paris-<slug>.html the Paris mood board
 Writes x/queue.json: slug, house, to, subject, touch, file, due.
 """
 import json, pathlib, re, shutil, sys
-from urllib.parse import quote
+from urllib.parse import quote, quote_plus
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from country_mail import build
 
@@ -96,7 +96,7 @@ def main():
         if slug != "tskaff":
             house_page(slug, house)
         s = master.replace("Dear TSKAFF,", f"Dear {greet},").replace("TSKAFF", house).replace("tskaff", slug)
-        s = s.replace(f"h={house}&", f"h={quote(house)}&")
+        s = s.replace(f"h={house}&", f"h={quote(house)}&").replace(f"a1={house}+", f"a1={quote_plus(house)}+")
         (X / f"mail-{slug}.html").write_text(s)
         queue.append(dict(slug=slug, house=house, to=to, subject=f"{house}, in six cities", touch=1,
                           file=f"x/mail-{slug}.html", due="2026-11-02"))
