@@ -24,7 +24,8 @@
   "greet": "Abed Mahfouz",
   "subject": "Abed Mahfouz, in six cities",
   "file": "x/c/abedmahfouz.html",
-  "sent": "2026-11-02T20:43"
+  "sent": "2026-11-02T20:43",
+  "bounced": "550 no such user (manager@abedmahfouz.com)"
  },
  {
   "slug": "alanicouture",
@@ -32,7 +33,8 @@
   "to": "alanidubai.com@gmail.com",
   "greet": "Alani Couture",
   "subject": "Alani Couture, in six cities",
-  "file": "x/c/alanicouture.html"
+  "file": "x/c/alanicouture.html",
+  "sent": "2026-11-02T21:00"
  },
  {
   "slug": "aliabinomair",
