@@ -1,9 +1,9 @@
 import json,sys,urllib.parse,os
 CITIES=[
- ("I","Beirut","beirut","November – December","Where the light is learned","Archive rooms, one window, no fill. The city that taught the region scale, and the light every collection is first judged by.","25% center"),
- ("II","Paris","paris","Couture Week · 21–29 January","Where it is judged","Haussmann interiors, a courtyard show, an editor with forty collections open on her desk. Shot to survive her.","center 30%"),
+ ("I","Beirut","beirut","November – December","Where the light is learned","A city that keeps losing its electricity, never its standard. Where couture learned to decide, not decorate: one source, one hour, no second day.","25% center"),
+ ("II","Paris","paris","Couture Week · 21–29 January","Where it is judged","A room that has already seen everything. Not a gown, a presence: shot to survive an editor with forty collections on her desk.","center 30%"),
  ("III","Milano","milano","23 February – 1 March","Where it is sold","Palazzo windows and frescoed rooms. Imagery that holds on a linesheet, in a showroom and above a runway, without a reshoot.","center"),
- ("IV","Istanbul","istanbul","12–19 January","Where it crosses","Ottoman staircases and Byzantine stone. A collection directed to read in two markets at once, from Riyadh to Milan.","center"),
+ ("IV","Istanbul","istanbul","12–19 January","Where it crosses","East and West arguing politely, in silk. Ottoman stairs and chandelier light, for a collection that speaks to Riyadh and Milan at once.","center"),
  ("V","Dubai","dubai","March","Where it is wanted","Open desert, open water, no wall to bounce the light. Crystal and tulle read by the sun alone.","center"),
  ("VI","Barcelona","barcelona","14–18 April","Where it breathes","Modernist stone at Mediterranean noon, Gothic shadow at night. Couture with air around it.","center 30%"),
 ]
