@@ -91,10 +91,10 @@ if(internal)return;var c=document.createElement('script');c.async=1;c.src='https
 <header class="head"><div class="k"><span data-for>For you</span> · {c["chapter"]} · {city}</div>
 <h1>{city},<br><i>{E(c["tagline"])}</i>.</h1><div class="rule"></div><p class="lead">{E(c["italic"])}</p></header>
 {films}<section class="mood"><div class="mh"><div class="k">Choose the register</div><b>The mood board</b></div>{acts}</section>
-<section class="close"><p>Pick one. The first frames follow within <i>48 hours</i>, made only for <span data-house>you</span>.</p>
+<section class="close"><p><span class="k" style="display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i>48 hours</i>, every pixel choreographed, made only for <span data-house>you</span>.</p>
 <div class="two"><a class="btn fill" data-cal href="{CAL}">Reserve 10 minutes &rarr;</a><a class="btn" data-home href="https://charbelmsallem.net/">The {city} chapter &rarr;</a></div></section>
 <section class="other"><span class="k">Another city</span><div>{others}</div></section>
-<footer class="sig">Warm regards,<br>Charbel Msallem · Fashion Photographer &amp; Film Director
+<footer class="sig"><i>Let's create magic together.</i><br><br>Warm regards,<br>Charbel Msallem · Fashion Photographer &amp; Film Director
 <small>CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</small></footer>
 </main><script>
 (function(){{var C={cfg},q=new URLSearchParams(location.search),h=(q.get('h')||'').slice(0,60),

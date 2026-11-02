@@ -28,11 +28,11 @@ COUNTRIES = {
         ],
         "acts": [
             ("couture.jpg", "Couture", "The Atelier", "Red-carpet weight, shot for the moment before the flashbulb",
-             "One warm light in an old room. The satin does the rest.",
+             "Industrial dreams meet couture fantasy. Elegance emerges from the machinery.",
              ["#3A2A22", "#B79AAE", "#8C6A5A", "#D9C3B6"],
              "Couture is judged on construction, so the light must explain it. One hard source, low and to the side, draws every fold and leaves the room in shadow. Nothing in the frame is brighter than the dress. The handwork becomes the only thing the eye can read."),
             ("editorial.jpg", "Editorial", "The Coast", "Winter couture walked across raw Beirut stone",
-             "Embroidery against volcanic stone. The sea keeps its distance.",
+             "Soft fabric against rough stone. The rocky coastline becomes a runway.",
              ["#2B2420", "#6E5A4C", "#E8E4DE", "#8FA6B2"],
              "An editorial gives a collection a place to belong. Pale beadwork on dark rock is the strongest contrast nature offers: it reads at three metres and rewards at thirty centimetres. The cliff gives the train its scale. The open sky keeps the frame calm."),
             ("casual.jpg", "Casual", "The Field", "Customised to every campaign, aimed at the woman it was cut for",
@@ -51,15 +51,15 @@ COUNTRIES = {
         ],
         "acts": [
             ("couture.jpg", "Couture", "The Mosaic", "Shot on the mosaic rather than in front of it",
-             "The myth is underfoot. The gown answers it.",
+             "Haute couture laid on the legendary patterns of Versace.",
              ["#3B2C20", "#B08A5A", "#E7DCCB", "#6B5A48"],
              "In the Gulf a gown is read as wealth of work, so the handwork needs an equal partner. Shot from above, on a floor that took years to lay, the frame becomes ornament with the dress at its centre. Warm stone keeps gold and ivory rich without one added light."),
             ("editorial.jpg", "Editorial", "The Plumes", "Flowers are composed, not picked",
-             "Flowers are composed, not picked. Plume by plume.",
+             "The pampas circle was the loud moment. The handwork finishes the story alone.",
              ["#1F4A3A", "#3C7A5E", "#E6D3B0", "#7FA7D1"],
              "The desert leaves nowhere to hide. Hard sun and a clean sky give colour the clarity of print, and the pampas repeats the texture of the gown in nature. Handwork answering handwork. One bold colour against sand stops the eye in the first second."),
             ("bridal.jpg", "Bridal", "The Desert Train", "Bridal carried into open desert",
-             "Crystal and tulle, read by the sun alone.",
+             "A desert oasis in reflection, and the shimmering allure of crystals.",
              ["#E9E2D6", "#CDBB9E", "#A7957C", "#DCE4EA"],
              "Bridal is sold on light more than on the dress. With the sun behind her, tulle turns translucent and every crystal finds its own highlight. The dunes give the train the length it was cut for. Sand tones keep the white pure, never grey."),
         ],
@@ -74,15 +74,15 @@ COUNTRIES = {
         ],
         "acts": [
             ("bridal.jpg", "Bridal", "The Staircase", "Wedding shot in open daylight rather than a studio",
-             "A veil the length of a stone stair. Romance without sentiment.",
+             "Dare to dream. Dare to rise. Shot in Barcelona, designed in Turkey, envisioned in Lebanon.",
              ["#F1ECE6", "#C9B79C", "#8F7B62", "#5E5A4A"],
              "Romance without sentiment is a matter of restraint. The architecture carries the grandeur and the bride stays still, so veil and stair draw one long line. Morning light on warm stone keeps the white soft and the skin true."),
             ("editorial.jpg", "Editorial", "The Pavilion", "Modernist stone at Mediterranean noon",
-             "Black and ivory against carved stone. Noon forgives nothing.",
+             "Timeless romance in Barcelona's hidden gardens, every detail a story of modern glamour.",
              ["#14141A", "#F2EFE6", "#C8B48C", "#7D7266"],
              "A strong silhouette needs a strong setting. From below, the gown rises against carved busts and garlands, and the frame turns graphic: black, ivory, sand. Noon light is unforgiving, so we use it only where the shape is bold enough to take it."),
             ("evening.jpg", "Evening", "The Colonnade", "Two frames, silver against stone",
-             "Silver against stone, walking.",
+             "Where the artistry of Lebanese couture meets the city's timeless beauty.",
              ["#5A6E9E", "#C9C6CF", "#B98C66", "#E8D9C6"],
              "Evening wear lives in movement and catch-light. Low sun along the colonnade turns every fringe and crystal into a moving highlight as she walks, and warm columns frame the cool blue of the gown. The frame sells the dress before anyone touches it."),
         ],
@@ -95,15 +95,15 @@ COUNTRIES = {
         "films": [("film-milano.jpg", "films/milano.mp4", "Couture", "14 s")],
         "acts": [
             ("couture.jpg", "Couture", "The Frescoes", "A palazzo where the ceiling competes with the gown",
-             "Painted flowers above, embroidered ones below. Only one may win.",
+             "Painting with light, emotion and three hundred years of dialogue. The dress is only the beginning.",
              ["#481806", "#874A2D", "#E3A9B4", "#C8A35A"],
              "In a palazzo the ceiling competes with the gown, and the gown must win. The room stays warm and low, the chandeliers fall away, the brightest light goes to the embroidery. Every flower reads before the ceiling does, on a showroom wall and on a phone."),
             ("editorial.jpg", "Editorial", "The Window", "One gesture the height of the room",
-             "One gesture, the height of the room.",
+             "Black feathers, gold brocade, embroidery laid like armour. The walls still listening.",
              ["#1A0E0D", "#77462C", "#C9A77A", "#E8DFD2"],
              "An editorial gives a collection its attitude. Shot low in a tall window, the black silhouette takes the height of the palazzo, and the daylight behind her cuts the shape clean against gold walls. One strong line is what an editor remembers from forty pages."),
             ("bridal.jpg", "Bridal", "The Rotunda", "The room turned into the frame of the train",
-             "The room becomes the frame of the train.",
+             "The marble has seen kings. It had never seen this.",
              ["#2D1D0F", "#89745F", "#D9CEC0", "#F2EEE6"],
              "Bridal is sold on the length of one moment. We step back and let the rotunda work: dark floor, tall windows, the train laid in a full circle at her feet. Window light keeps the white pure. Symmetry gives the gown the weight of a ceremony."),
         ],
@@ -116,7 +116,7 @@ COUNTRIES = {
         "films": [("film-istanbul.jpg", "films/istanbul.mp4", "Couture", "13 s")],
         "acts": [
             ("couture.jpg", "Couture", "The Workshop", "The gown among the tools of the room",
-             "Midnight satin, one lamp, the tools of the room. Nothing hides.",
+             "Vintage moods, a modern lens, eternity in a single frame.",
              ["#141C4A", "#2A3A7A", "#3F2A2C", "#C98A3A"],
              "Couture earns its price in construction, and satin hides nothing. One warm lamp draws the long folds of the navy and leaves the walls in shadow. The working room behind her says how much hand went into it. The beaded hem stays at the floor, where a buyer looks last."),
             ("editorial.jpg", "Editorial", "The Forest Floor", "Autumn leaves as the only set",
@@ -124,7 +124,7 @@ COUNTRIES = {
              ["#C87971", "#E8C9D2", "#824635", "#572418"],
              "Nature gives its strongest palette when one colour is allowed to answer it. Coral against fallen copper stays warm yet separates clean, and from above the layers of the skirt open like petals. Soft shade keeps the skin true and the sheen intact."),
             ("bridal.jpg", "Bridal", "The Grand Stair", "A bride between two traditions",
-             "East and west, one staircase each. The bride between them.",
+             "A love story written in the light of chandeliers.",
              ["#2D201B", "#5D483E", "#D8CDBE", "#F0EADF"],
              "An Istanbul bride speaks to two traditions at once. Centred between twin stairs under the chandelier, she lets symmetry carry the ceremony, and the long sleeves and beaded column read as one quiet line. The room gives the grandeur. The gown stays the only light thing in it."),
         ],
@@ -140,7 +140,7 @@ COUNTRIES = {
         ],
         "acts": [
             ("show.jpg", "Fashion show", "The Courtyard", "Haussmann interiors, then the courtyard show",
-             "The line steps out of the shade into full sun, one look after another.",
+             "Not a gown. A presence. Five women enter Paris in sculpted light.",
              ["#E9D9B8", "#B8862E", "#2E3FA0", "#9A8C7E"],
              "A show image has one job: to make the collection read as a single idea before it reads as pieces. We shoot the courtyard show in open daylight, with the next looks queued in soft focus behind the first, so the eye reads the sequence of the collection in one frame. Sunlight is honest with fabric: silk keeps its sheen, construction keeps its edges, and the front row's phones in the frame say the moment was real."),
             ("editorial.jpg", "Editorial", "The Château", "A gown in the company of stone that has waited longer",
@@ -217,14 +217,14 @@ def build(key, house="{House}"):
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{acts}</table>
 </td></tr>
 <tr><td bgcolor="#F7F4EC" style="background:#F7F4EC;padding:30px 32px 32px">
- <div style="{F_SERIF};font-size:26px;line-height:1.22;color:#1E1C18;padding-bottom:20px">Pick one. The first frames follow within <i style="color:#9A7B2E">48 hours</i>, made only for {house}.</div>
+ <div style="{F_SERIF};font-size:26px;line-height:1.22;color:#1E1C18;padding-bottom:20px"><span style="{F_SANS};font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#9A7B2E;display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i style="color:#9A7B2E">48 hours</i>, every pixel choreographed, made only for {house}.</div>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
   <td width="49%"><a href="{cal}&utm_content=inline" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#9A7B2E;color:#FFFFFF;">Reserve 10 minutes &rarr;</a></td><td width="2%">&nbsp;</td>
   <td width="49%"><a href="{SITE}/?r=em-{key}-{slug}#chapters" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#FFFFFF;color:#1E1C18;border:1px solid #9A7B2E;">The {city} chapter &rarr;</a></td>
  </tr></table>
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid #E6DCC4">
- <div style="{F_SERIF};font-size:15px;line-height:1.5;color:#1E1C18">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:#8A8478">· Fashion Photographer &amp; Film Director</span></div>
+ <div style="{F_SERIF};font-size:15px;line-height:1.5;color:#1E1C18"><i>Let's create magic together.</i><br><br>Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:#8A8478">· Fashion Photographer &amp; Film Director</span></div>
  <div style="{F_SANS};font-size:10px;letter-spacing:1.4px;color:#8A8478;padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
 </td></tr></table>
 '''
