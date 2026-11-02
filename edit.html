@@ -82,7 +82,7 @@
     if(!a)return;
     var h=a.getAttribute('href')||'';
     if(h.indexOf('drive.google.com')>-1)  P('Film Play',base);
-    else if(h.indexOf('calendly.com')>-1) P('Click Calendly',base);
+    else if(h.indexOf('cal.com/')>-1) P('Click Booking',base);
     else if(h.indexOf('wa.me')>-1)        P('Click WhatsApp',base);
     else if(h.indexOf('mailto:')===0)     P('Click Email',base);
   },true);
@@ -168,9 +168,9 @@ footer{text-align:center;padding:26px 16px 40px;color:var(--mute);font-size:15px
 <video controls playsinline preload="none" poster="reel_poster.jpg" src="reel30.mp4"></video></div>
 <section class="cta" id="contact">
 <h2>A concept for your next collection</h2>
-<p>A theme, a light and a setting, written only for your house, within 48 hours. No fee.</p>
+<p>A theme, a light and a setting, written only for your house, within the week. No fee.</p>
 <a class="btn solid" href="https://wa.me/9613729713?text=Hello%20Charbel%2C%20I%27m%20from%20___%20%E2%80%94%20I%27d%20like%20the%20one-page%20concept%20for%20our%20next%20collection.">Request it on WhatsApp</a><br>
-<a class="btn" href="https://calendly.com/studiocharbelmsallem/30min">Book a 30-minute call</a>
+<a class="btn" href="https://cal.com/charbelmsallem/concept-call">Book a 30-minute call</a>
 <a class="more" id="fullbook" href="./">Open the full book, seven chapters →</a>
 </section>
 </main>

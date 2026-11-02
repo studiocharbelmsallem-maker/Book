@@ -27,11 +27,11 @@ def mail(house,slug,greet,r=None):
           f'<div style="{G}font-size:15px;line-height:1.55;color:{INK2};padding-top:16px;max-width:470px">{txt}</div>'
           f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px"><tr><td>{btn(wa,"This city &rarr;",False)}</td></tr></table>'
           f'</td></tr>')
-    cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
-    return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>A short follow-up. Rather than describe it, I prepared a first look made only for {H}: six cities where your next collection could be filmed. Choose the one that speaks to you, and the concept follows within 48 hours.<br><br></div>
+    cal='https://cal.com/charbelmsallem/concept-call?notes='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
+    return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>A short follow-up. Rather than describe it, I prepared a first look made only for {H}: six cities where your next collection could be filmed. Choose the one that speaks to you, and the concept follows within the week.<br><br></div>
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid {HAIR}">
 <tr><td style="padding:22px 32px 0">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR}"><tr><td style="padding-bottom:14px;{G}font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:{INK}">Charbel Msallem<span style="color:{GOLD}">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{A}font-size:9px;letter-spacing:2.2px;color:{GOLD}">Fashion photographer &amp; film director</span></td></tr></table>
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR}"><tr><td style="padding-bottom:14px;{G}font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:{INK}"><span style="{G}font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:{INK}">Charbel Msallem</span><span style="color:{GOLD}">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{A}font-size:9px;letter-spacing:2.2px;color:{GOLD}">Fashion photographer &amp; film director</span></td></tr></table>
 </td></tr>
 <tr><td style="padding:30px 32px 6px">
  <div style="{LAB}">For {H} · the season 2027</div>
@@ -45,7 +45,7 @@ def mail(house,slug,greet,r=None):
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table>
 </td></tr>
 <tr><td bgcolor="{CH}" style="background:{CH};padding:30px 32px 32px">
- <div style="{G}font-size:26px;line-height:1.22;color:{INK};padding-bottom:20px">Choose a city. The concept for {H} follows within 48 hours: eight frames, the light and the <i style="color:{GOLD}">film</i>, made only for you.</div>
+ <div style="{G}font-size:26px;line-height:1.22;color:{INK};padding-bottom:20px">Choose a city. The concept for {H} follows within the week: eight frames, the light and the <i style="color:{GOLD}">film</i>, made only for you.</div>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
   <td width="49%">{btn(cal,"Reserve 10 minutes &rarr;",True)}</td><td width="2%">&nbsp;</td>
   <td width="49%">{btn(B+"?r="+r,"The couture book &rarr;",False)}</td>
@@ -53,7 +53,8 @@ def mail(house,slug,greet,r=None):
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid {HAIR}">
  <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Photographer &amp; Film Director</span></div>
- <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{G}font-style:italic;font-size:13px;color:{MUTE};padding-top:12px">If this isn't for you, one word back and I won't write again.</div>
 </td></tr></table>'''
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]

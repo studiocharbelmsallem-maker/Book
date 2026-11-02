@@ -26,7 +26,7 @@ def page(d):
       <a class="btn" data-ev="{city} chosen" href="{wa}">This city →</a>
     </div>
 '''
-    cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+urllib.parse.quote_plus(f"{H} · Concept call")+f'&amp;utm_source=acts&amp;utm_campaign={slug}&amp;utm_content=page'
+    cal='https://cal.com/charbelmsallem/concept-call?notes='+urllib.parse.quote_plus(f"{H} · Concept call")+f'&amp;utm_source=acts&amp;utm_campaign={slug}&amp;utm_content=page'
     t=open(os.path.join(os.path.dirname(__file__),'couture_tpl.html')).read()
     for k,v in {'{{HOUSE}}':H.replace('&','&amp;'),'{{SLUG}}':slug,'{{LINE}}':d['line'],'{{TILES}}':tiles,'{{CAL}}':cal}.items(): t=t.replace(k,v)
     return t

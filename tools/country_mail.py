@@ -200,11 +200,11 @@ def build(key, house="{House}"):
     slug = re.sub(r"[^a-z0-9]+", "", house.lower()) or "house"
     films = films_block(key, city, c["films"])
     acts = "".join(act(key, house, i, a) for i, a in enumerate(c["acts"]))
-    cal = f"https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1={quote(house + ' · ' + city + ' concept call')}&utm_source=mail&utm_campaign={key}-{slug}"
+    cal = f"https://cal.com/charbelmsallem/concept-call?notes={quote(house + ' · ' + city + ' concept call')}&utm_source=mail&utm_campaign={key}-{slug}"
     return f'''<div style="{F_SERIF};font-size:17px;line-height:1.55;color:#1E1C18">Dear {house},<br><br>This is the {city} chapter of the book, opened for you: {FILM_WORDS[len(c['films'])]}the three registers a collection can be told in here, with a few lines on why each one works. Tell me which register is closest to your next season, and I will build the first frames around it.<br><br></div>
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid #E6DCC4">
 <tr><td style="padding:22px 32px 0">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #E6DCC4"><tr><td style="padding-bottom:14px;{F_SERIF};font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:#1E1C18">Charbel Msallem<span style="color:#9A7B2E">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{F_SANS};font-size:9px;letter-spacing:2.2px;color:#9A7B2E">Fashion Photographer &amp; Film Director</span></td></tr></table>
+ <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #E6DCC4"><tr><td style="padding-bottom:14px;{F_SERIF};font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:#1E1C18"><span style="{F_SERIF};font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:#1E1C18">Charbel Msallem</span><span style="color:#9A7B2E">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{F_SANS};font-size:9px;letter-spacing:2.2px;color:#9A7B2E">Fashion Photographer &amp; Film Director</span></td></tr></table>
 </td></tr>
 <tr><td style="padding:30px 32px 6px">
  <div style="{KICK}">For {house} · {c["chapter"]} · {city}</div>
@@ -217,7 +217,7 @@ def build(key, house="{House}"):
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{acts}</table>
 </td></tr>
 <tr><td bgcolor="#F7F4EC" style="background:#F7F4EC;padding:30px 32px 32px">
- <div style="{F_SERIF};font-size:26px;line-height:1.22;color:#1E1C18;padding-bottom:20px"><span style="{F_SANS};font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#9A7B2E;display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i style="color:#9A7B2E">48 hours</i>, every frame choreographed, made only for {house}.</div>
+ <div style="{F_SERIF};font-size:26px;line-height:1.22;color:#1E1C18;padding-bottom:20px"><span style="{F_SANS};font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#9A7B2E;display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i style="color:#9A7B2E">the week</i>, every frame choreographed, made only for {house}.</div>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
   <td width="49%"><a href="{cal}&utm_content=inline" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#9A7B2E;color:#FFFFFF;">Reserve 10 minutes &rarr;</a></td><td width="2%">&nbsp;</td>
   <td width="49%"><a href="{SITE}/?r=em-{key}-{slug}#chapters" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#FFFFFF;color:#1E1C18;border:1px solid #9A7B2E;">The {city} chapter &rarr;</a></td>
@@ -226,6 +226,7 @@ def build(key, house="{House}"):
 <tr><td style="padding:20px 32px 22px;border-top:1px solid #E6DCC4">
  <div style="{F_SERIF};font-size:15px;line-height:1.5;color:#1E1C18"><i>Let's create magic together.</i><br><br>Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:#8A8478">· Fashion Photographer &amp; Film Director</span></div>
  <div style="{F_SANS};font-size:10px;letter-spacing:1.4px;color:#8A8478;padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{F_SERIF};font-style:italic;font-size:13px;color:#8A8478;padding-top:12px">If this isn't for you, one word back and I won't write again.</div>
 </td></tr></table>
 '''
 

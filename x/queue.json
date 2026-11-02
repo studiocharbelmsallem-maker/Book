@@ -6,7 +6,8 @@
   "subject": "TSKAFF, in six cities",
   "touch": 1,
   "file": "x/mail-tskaff.html",
-  "due": "2026-11-02"
+  "due": "2026-11-02",
+  "sent": "2026-11-02"
  },
  {
   "slug": "hebaalqurashi",
@@ -15,7 +16,8 @@
   "subject": "Heba Alqurashi, in six cities",
   "touch": 1,
   "file": "x/mail-hebaalqurashi.html",
-  "due": "2026-11-02"
+  "due": "2026-11-02",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ehsanchamoun",
@@ -24,7 +26,8 @@
   "subject": "Ehsan Chamoun, in six cities",
   "touch": 1,
   "file": "x/mail-ehsanchamoun.html",
-  "due": "2026-11-02"
+  "due": "2026-11-02",
+  "sent": "2026-11-02"
  },
  {
   "slug": "wadha",
@@ -33,7 +36,8 @@
   "subject": "Wadha, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-wadha.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "sarapedram",
@@ -42,7 +46,8 @@
   "subject": "Sara Pedram, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-sarapedram.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "timaabid",
@@ -51,7 +56,8 @@
   "subject": "Tima Abid, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-timaabid.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "adnanakbar",
@@ -60,7 +66,8 @@
   "subject": "Adnan Akbar, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-adnanakbar.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "emanalajlan",
@@ -69,7 +76,8 @@
   "subject": "Eman Alajlan, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-emanalajlan.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "qirdala",
@@ -78,7 +86,8 @@
   "subject": "Qirdala, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-qirdala.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ranizakhem",
@@ -87,7 +96,8 @@
   "subject": "Rani Zakhem, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-ranizakhem.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "mukhisisters",
@@ -96,7 +106,8 @@
   "subject": "Mukhi Sisters, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-mukhisisters.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "khawlaalaiban",
@@ -105,7 +116,8 @@
   "subject": "Khawla Alaiban, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-khawlaalaiban.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ronyabouhamdan",
@@ -114,7 +126,8 @@
   "subject": "Rony Abou Hamdan, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-ronyabouhamdan.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "manel",
@@ -123,7 +136,8 @@
   "subject": "Manel, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-manel.html",
-  "due": "2026-11-03"
+  "due": "2026-11-03",
+  "sent": "2026-11-02"
  },
  {
   "slug": "oscarkraye",
@@ -132,7 +146,8 @@
   "subject": "Oscar Kraye, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-oscarkraye.html",
-  "due": "2026-11-04"
+  "due": "2026-11-04",
+  "sent": "2026-11-02"
  },
  {
   "slug": "geyannayouness",
@@ -141,7 +156,8 @@
   "subject": "Geyanna Youness, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-geyannayouness.html",
-  "due": "2026-11-04"
+  "due": "2026-11-09",
+  "note": "mail 1 sent 2 Nov; mail 2 only after a city tap or 9 Nov"
  },
  {
   "slug": "hassidriss",
@@ -150,7 +166,8 @@
   "subject": "Hass Idriss, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-hassidriss.html",
-  "due": "2026-11-04"
+  "due": "2026-11-04",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ikhfashion",
@@ -159,7 +176,8 @@
   "subject": "IKH, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-ikhfashion.html",
-  "due": "2026-11-05"
+  "due": "2026-11-05",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ferhanturker",
@@ -168,7 +186,8 @@
   "subject": "Ferhan Türker, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-ferhanturker.html",
-  "due": "2026-11-05"
+  "due": "2026-11-05",
+  "sent": "2026-11-02"
  },
  {
   "slug": "aleensabbagh",
@@ -177,7 +196,8 @@
   "subject": "Aleen Sabbagh, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-aleensabbagh.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "hadikatra",
@@ -186,7 +206,8 @@
   "subject": "Hadi Katra, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-hadikatra.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "rebirth",
@@ -195,7 +216,8 @@
   "subject": "Rebirth, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-rebirth.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "reemalkanhal",
@@ -204,7 +226,8 @@
   "subject": "Reem Alkanhal, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-reemalkanhal.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "renaissancerenaissance",
@@ -213,7 +236,8 @@
   "subject": "Renaissance Renaissance, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-renaissancerenaissance.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "shakhsia",
@@ -222,7 +246,8 @@
   "subject": "Shakhsia, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-shakhsia.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "tallermarmo",
@@ -231,7 +256,8 @@
   "subject": "Taller Marmo, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-tallermarmo.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "ziyadbuainain",
@@ -240,7 +266,8 @@
   "subject": "Ziyad Buainain, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-ziyadbuainain.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "hanayencouture",
@@ -249,7 +276,8 @@
   "subject": "Hanayen Couture, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-hanayencouture.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "manaalalhammadi",
@@ -258,7 +286,8 @@
   "subject": "Manaal Al Hammadi, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-manaalalhammadi.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "samiragallery",
@@ -267,7 +296,8 @@
   "subject": "Samira Gallery, Paris in three registers",
   "touch": 2,
   "file": "x/mail-paris-samiragallery.html",
-  "due": "2026-11-06"
+  "due": "2026-11-06",
+  "sent": "2026-11-02"
  },
  {
   "slug": "daralhanouf",

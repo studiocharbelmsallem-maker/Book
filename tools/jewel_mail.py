@@ -27,8 +27,8 @@ def mail(house,slug,greet,r=None):
           f'<div style="{G}font-size:14px;line-height:1.5;color:{INK2}"><span style="{LAB}font-size:8px">The concept</span>&nbsp; {a["concept"]}</div>'
           f'<table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px"><tr><td>{btn(wa(n,a["title"]),"This one &rarr;",False)}</td></tr></table>'
           f'</td></tr></table></td></tr>')
-    cal='https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
-    return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>As promised, a first look made only for {H}: three ways your next campaign could feel. Choose the act that speaks to you, and the other seven frames follow within 48 hours.<br><br></div>
+    cal='https://cal.com/charbelmsallem/concept-call?notes='+U.quote_plus(f'{house} · Concept call')+f'&utm_source=mail&utm_campaign={slug}&utm_content=inline'
+    return f'''<div style="{G}font-size:17px;line-height:1.55;color:{INK}">Dear {html.escape(greet)},<br><br>As promised, a first look made only for {H}: three ways your next campaign could feel. Choose the act that speaks to you, and the other seven frames follow within the week.<br><br></div>
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid {HAIR}">
 <tr><td style="padding:22px 32px 0">
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid {HAIR}"><tr><td style="padding-bottom:14px;{G}font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:{INK}">Charbel Msallem<span style="color:{GOLD}">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{A}font-size:9px;letter-spacing:2.2px;color:{GOLD}">Fashion photographer &amp; film director</span></td></tr></table>
@@ -56,7 +56,7 @@ def mail(house,slug,greet,r=None):
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{acts}</table>
 </td></tr>
 <tr><td bgcolor="{CH}" style="background:{CH};padding:30px 32px 32px">
- <div style="{G}font-size:26px;line-height:1.22;color:{INK};padding-bottom:20px">Pick one. The other <i style="color:{GOLD}">seven</i> frames arrive within 48 hours, made only for {H}.</div>
+ <div style="{G}font-size:26px;line-height:1.22;color:{INK};padding-bottom:20px">Pick one. The other <i style="color:{GOLD}">seven</i> frames arrive within the week, made only for {H}.</div>
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
   <td width="49%">{btn(cal,"Reserve 10 minutes &rarr;",True)}</td><td width="2%">&nbsp;</td>
   <td width="49%">{btn(B+"jewellery.html?r="+r,"The jewellery book &rarr;",False)}</td>
