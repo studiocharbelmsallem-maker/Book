@@ -92,7 +92,7 @@ COUNTRIES = {
         "chapter": "Chapter 04",
         "tagline": "where it is sold",
         "italic": "Buyers do not fall in love first. They calculate, and then they fall in love. A Milano image has to hold on a linesheet, in a showroom and above a runway, without being reshot for each.",
-        "films": [],
+        "films": [("film-milano.jpg", "films/milano.mp4", "Couture", "14 s")],
         "acts": [
             ("couture.jpg", "Couture", "The Frescoes", "A palazzo where the ceiling competes with the gown",
              "Embroidered flowers in a room of painted ones, under warm chandeliers.",
@@ -113,7 +113,7 @@ COUNTRIES = {
         "chapter": "Chapter 05",
         "tagline": "where it crosses",
         "italic": "East and west arguing politely, in silk. A collection directed here has to read in two markets at once, from Riyadh to Milan, without apologising to either.",
-        "films": [],
+        "films": [("film-istanbul.jpg", "films/istanbul.mp4", "Couture", "13 s")],
         "acts": [
             ("couture.jpg", "Couture", "The Workshop", "The gown among the tools of the room",
              "Midnight satin falling from the shoulders, a ladder and a single lamp behind her.",
