@@ -77,7 +77,7 @@ def page(key):
     cfg = json.dumps({"city": city, "wa": WA, "cal": CAL})
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>{city}, {E(c["tagline"])} · Charbel Msallem</title>
-<meta property="og:title" content="{city}, {E(c["tagline"])}"><meta property="og:description" content="{E(c["italic"])}"><meta property="og:image" content="https://charbelmsallem.net/acts/mail/{key}/{c["acts"][0][0]}">
+<meta property="og:title" content="{city}, {E(c["tagline"])}"><meta property="og:description" content="{E(c["italic"])}"><meta property="og:image" content="https://studiocharbelmsallem-maker.github.io/Book/acts/mail/{key}/{c["acts"][0][0]}">
 <script>
 (function(){{var q=new URLSearchParams(location.search),r=(q.get('r')||'').toLowerCase(),internal=false;
 try{{if(/^(test|charbel)/.test(r)){{localStorage.setItem('cms-internal','1');}}internal=localStorage.getItem('cms-internal')==='1';}}catch(e){{internal=/^(test|charbel)/.test(r);}}
