@@ -225,7 +225,7 @@ def build(key, house="{House}"):
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid #E6DCC4">
  <div style="{F_SERIF};font-size:15px;line-height:1.5;color:#1E1C18"><i>Let's create magic together.</i><br><br>Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:#8A8478">· Fashion Photographer &amp; Film Director</span></div>
- <div style="{F_SANS};font-size:10px;letter-spacing:1.4px;color:#8A8478;padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{F_SANS};font-size:10px;letter-spacing:1.4px;color:#8A8478;padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · @charbelmsallemstudios</div>
  <div style="{F_SERIF};font-style:italic;font-size:13px;color:#8A8478;padding-top:12px">If this isn't for you, one word back and I won't write again.</div>
 </td></tr></table>
 '''

@@ -64,7 +64,7 @@ def mail(house,slug,greet,r=None):
 </td></tr>
 <tr><td style="padding:20px 32px 22px;border-top:1px solid {HAIR}">
  <div style="{G}font-size:15px;line-height:1.5;color:{INK}">Warm regards,<br><span style="letter-spacing:3px;text-transform:uppercase;font-size:13px">Charbel Msallem</span> <span style="color:{MUTE}">· Fashion Photographer &amp; Film Director</span></div>
- <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</div>
+ <div style="{A}font-size:10px;letter-spacing:1.4px;color:{MUTE};padding-top:8px">CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · @charbelmsallemstudios</div>
 </td></tr></table>'''
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]

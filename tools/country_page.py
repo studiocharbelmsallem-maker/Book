@@ -95,7 +95,7 @@ if(internal)return;var c=document.createElement('script');c.async=1;c.src='https
 <div class="two"><a class="btn fill" data-cal href="{CAL}">Reserve 10 minutes &rarr;</a><a class="btn" data-home href="https://charbelmsallem.net/">The {city} chapter &rarr;</a></div></section>
 <section class="other"><span class="k">Another city</span><div>{others}</div></section>
 <footer class="sig"><i>Let's create magic together.</i><br><br>Warm regards,<br>Charbel Msallem · Fashion Photographer &amp; Film Director
-<small>CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · studiocharbelmsallem@gmail.com · @charbelmsallemstudios</small></footer>
+<small>CHARBEL MSALLEM STUDIOS · +961 3 729713 · info@charbelmsallem.net · @charbelmsallemstudios</small></footer>
 </main><script>
 (function(){{var C={cfg},q=new URLSearchParams(location.search),h=(q.get('h')||'').slice(0,60),
 r=(q.get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40),keep=(h?'h='+encodeURIComponent(h)+'&':'')+(r?'r='+r:'');
