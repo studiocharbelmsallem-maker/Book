@@ -12,6 +12,7 @@ import sys, re, pathlib
 from urllib.parse import quote
 
 SITE = "https://charbelmsallem.net"
+IMG = "https://studiocharbelmsallem-maker.github.io/Book"  # files: the domain serves pages, not static files
 WA = "9613729713"
 V = "3"
 
@@ -130,18 +131,18 @@ def strip(colors):
 def act(key, house, i, a):
     img, register, name, sub, line, colors, concept = a
     link = wa(house, f"For {COUNTRIES[key]['city']} we choose {ROMAN[i]} · {name}.")
-    return f'''<tr><td style="padding:0 0 34px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="200" valign="top"><a href="{link}"><img src="{SITE}/acts/mail/{key}/{img}?v={V}" width="200" height="300" alt="{register}, {name}" style="display:block;border:0;width:200px;height:auto"></a></td><td width="24">&nbsp;</td><td valign="top"><div style="{KICK};font-size:9px">{ROMAN[i]} · {register}</div><div style="{F_SERIF};font-size:28px;line-height:1.06;color:#1E1C18;padding:8px 0 4px">{name}</div><div style="{F_SERIF};font-style:italic;font-size:13px;color:#8A8478;padding-bottom:10px">{sub}</div><div style="{F_SERIF};font-style:italic;font-size:16px;line-height:1.42;color:#4A4740">{line}</div>{strip(colors)}<div style="{F_SERIF};font-size:14px;line-height:1.5;color:#4A4740"><span style="{KICK};font-size:8px">Why it works</span>&nbsp; {concept}</div><table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px"><tr><td><a href="{link}" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#FFFFFF;color:#1E1C18;border:1px solid #9A7B2E;">This one &rarr;</a></td></tr></table></td></tr></table></td></tr>'''
+    return f'''<tr><td style="padding:0 0 34px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="200" valign="top"><a href="{link}"><img src="{IMG}/acts/mail/{key}/{img}?v={V}" width="200" height="300" alt="{register}, {name}" style="display:block;border:0;width:200px;height:auto"></a></td><td width="24">&nbsp;</td><td valign="top"><div style="{KICK};font-size:9px">{ROMAN[i]} · {register}</div><div style="{F_SERIF};font-size:28px;line-height:1.06;color:#1E1C18;padding:8px 0 4px">{name}</div><div style="{F_SERIF};font-style:italic;font-size:13px;color:#8A8478;padding-bottom:10px">{sub}</div><div style="{F_SERIF};font-style:italic;font-size:16px;line-height:1.42;color:#4A4740">{line}</div>{strip(colors)}<div style="{F_SERIF};font-size:14px;line-height:1.5;color:#4A4740"><span style="{KICK};font-size:8px">Why it works</span>&nbsp; {concept}</div><table role="presentation" width="170" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px"><tr><td><a href="{link}" style="display:block;padding:14px 0;{F_SANS};font-size:10px;font-weight:bold;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;text-align:center;background:#FFFFFF;color:#1E1C18;border:1px solid #9A7B2E;">This one &rarr;</a></td></tr></table></td></tr></table></td></tr>'''
 
 
 def films_block(key, city, films):
     head = f'<tr><td style="padding:26px 32px 8px">\n <div style="{KICK};padding-bottom:14px">{"Two films" if len(films) == 2 else "The film"} · {city}</div>\n'
     if len(films) == 1:
         p, m, l, d = films[0]
-        return head + f' <a href="{SITE}/{m}"><img src="{SITE}/acts/mail/{key}/{p}?v={V}" width="300" height="533" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:300px;height:auto"></a>\n <div style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</div>\n</td></tr>\n'
+        return head + f' <a href="{SITE}/{m}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="300" height="533" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:300px;height:auto"></a>\n <div style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</div>\n</td></tr>\n'
     cells, caps = [], []
     for n, (p, m, l, d) in enumerate(films):
         if n: cells.append('<td width="8" style="font-size:0">&nbsp;</td>'); caps.append('<td></td>')
-        cells.append(f'<td width="264" valign="top"><a href="{SITE}/{m}"><img src="{SITE}/acts/mail/{key}/{p}?v={V}" width="264" height="469" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:264px;height:auto"></a></td>')
+        cells.append(f'<td width="264" valign="top"><a href="{SITE}/{m}"><img src="{IMG}/acts/mail/{key}/{p}?v={V}" width="264" height="469" alt="{city} · {l} film, plays with sound" style="display:block;border:0;width:100%;max-width:264px;height:auto"></a></td>')
         caps.append(f'<td style="{KICK};font-size:9px;padding-top:9px">&#9654;&nbsp; {l} · {d}</td>')
     return head + ' <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' + "".join(cells) + '</tr><tr>' + "".join(caps) + '</tr></table>\n</td></tr>\n'
 
