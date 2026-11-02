@@ -2,7 +2,7 @@ import sys,urllib.parse as U,html
 sys.path.insert(0,'/home/claude/acts')
 from couture_gen import CITIES
 from jewel_mail import B,INK,INK2,MUTE,GOLD,CH,HAIR,G,A,LAB,btn
-M=B+'acts/mail/couture/'; V='?v=4'
+M='https://studiocharbelmsallem-maker.github.io/Book/acts/mail/couture/'; V='?v=5'  # images from the file host; links stay on charbelmsallem.net
 COVER='saab-cover.jpg'
 RATIO={'beirut':440/551,'paris':262/466,'milano':355/473,'istanbul':264/331,'dubai':440/584,'barcelona':440/552}
 LINE='Every collection has a film inside it. Six cities to find it.'
