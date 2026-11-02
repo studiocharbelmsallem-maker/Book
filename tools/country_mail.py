@@ -91,7 +91,7 @@ COUNTRIES = {
         "city": "Milano",
         "chapter": "Chapter 04",
         "tagline": "where it is sold",
-        "italic": "Buyers do not fall in love first. They calculate, and then they fall in love. A Milano image has to hold on a linesheet, in a showroom and above a runway, without being reshot for each.",
+        "italic": "The marble has seen kings. In Milano a collection walks into rooms that have judged centuries of beauty, and it has to hold there: on the runway, in the showroom, on the page. Old stone. New devotion.",
         "films": [("film-milano.jpg", "films/milano.mp4", "Couture", "14 s")],
         "acts": [
             ("couture.jpg", "Couture", "The Frescoes", "A palazzo where the ceiling competes with the gown",
