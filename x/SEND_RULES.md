@@ -5,3 +5,5 @@
 3. Houses that received mail 2 on 2 Nov get nothing more by email until they reply or tap; the next step is a personal follow-up only.
 4. Every mail ends with the opt-out line. Booking link: cal.com/charbelmsallem/concept-call. Promise: "within the week", never "48 hours".
 5. Open the draft and check it is not empty before sending (Hanayen Couture received an empty mail on 2 Nov).
+
+6. Pasting a designed mail into Outlook: after Ctrl+V choose Paste options > Keep source formatting, then check the 40px title and all images before Send.
