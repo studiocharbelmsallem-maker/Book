@@ -1,0 +1,162 @@
+[
+ {
+  "slug": "abadia",
+  "house": "Abadia",
+  "to": "info@abadia.me",
+  "greet": "Abadia",
+  "subject": "Abadia, in six cities",
+  "file": "x/c/abadia.html"
+ },
+ {
+  "slug": "abdoaoude",
+  "house": "Abdo Aoude",
+  "to": "abdoaoude@hotmail.com",
+  "greet": "Abdo Aoude",
+  "subject": "Abdo Aoude, in six cities",
+  "file": "x/c/abdoaoude.html"
+ },
+ {
+  "slug": "abedmahfouz",
+  "house": "Abed Mahfouz",
+  "to": "manager@abedmahfouz.com",
+  "greet": "Abed Mahfouz",
+  "subject": "Abed Mahfouz, in six cities",
+  "file": "x/c/abedmahfouz.html"
+ },
+ {
+  "slug": "alanicouture",
+  "house": "Alani Couture",
+  "to": "alanidubai.com@gmail.com",
+  "greet": "Alani Couture",
+  "subject": "Alani Couture, in six cities",
+  "file": "x/c/alanicouture.html"
+ },
+ {
+  "slug": "aliabinomair",
+  "house": "Alia Bin Omair",
+  "to": "contact@aliabinomair.com",
+  "greet": "Alia Bin Omair",
+  "subject": "Alia Bin Omair, in six cities",
+  "file": "x/c/aliabinomair.html"
+ },
+ {
+  "slug": "amalazhari",
+  "house": "Amal Azhari",
+  "to": "creationamale@gmail.com",
+  "greet": "Amal Azhari",
+  "subject": "Amal Azhari, in six cities",
+  "file": "x/c/amalazhari.html"
+ },
+ {
+  "slug": "amardas",
+  "house": "Amardas",
+  "to": "amardascouture@gmail.com",
+  "greet": "Amardas",
+  "subject": "Amardas, in six cities",
+  "file": "x/c/amardas.html"
+ },
+ {
+  "slug": "apollocouture",
+  "house": "Apollo Couture",
+  "to": "info@apollocouture.com",
+  "greet": "Apollo Couture",
+  "subject": "Apollo Couture, in six cities",
+  "file": "x/c/apollocouture.html"
+ },
+ {
+  "slug": "arcadiabyamna",
+  "house": "Arcadia by Amna",
+  "to": "info@arcadiabyamna.com",
+  "greet": "Arcadia by Amna",
+  "subject": "Arcadia by Amna, in six cities",
+  "file": "x/c/arcadiabyamna.html"
+ },
+ {
+  "slug": "arzoselucci",
+  "house": "Arzo Selucci",
+  "to": "info@arzoselucci.com",
+  "greet": "Arzo Selucci",
+  "subject": "Arzo Selucci, in six cities",
+  "file": "x/c/arzoselucci.html"
+ },
+ {
+  "slug": "ashwaqalmarshad",
+  "house": "Ashwaq Almarshad",
+  "to": "ashwaq-almarshad@hotmail.com",
+  "greet": "Ashwaq",
+  "subject": "Ashwaq Almarshad, in six cities",
+  "file": "x/c/ashwaqalmarshad.html"
+ },
+ {
+  "slug": "ateliernuna",
+  "house": "Atelier Nuna",
+  "to": "hello@ateliernuna.com",
+  "greet": "Atelier Nuna",
+  "subject": "Atelier Nuna, in six cities",
+  "file": "x/c/ateliernuna.html"
+ },
+ {
+  "slug": "biancanera",
+  "house": "Bianca Nera",
+  "to": "biancanerakuwait@tmgroupint.com",
+  "greet": "Bianca Nera",
+  "subject": "Bianca Nera, in six cities",
+  "file": "x/c/biancanera.html"
+ },
+ {
+  "slug": "bouguessa",
+  "house": "Bouguessa",
+  "to": "contact@bouguessa.com",
+  "greet": "Faiza",
+  "subject": "Bouguessa, in six cities",
+  "file": "x/c/bouguessa.html"
+ },
+ {
+  "slug": "dinamelwani",
+  "house": "Dina Melwani",
+  "to": "info@dinamelwani.com",
+  "greet": "Dina Melwani",
+  "subject": "Dina Melwani, in six cities",
+  "file": "x/c/dinamelwani.html"
+ },
+ {
+  "slug": "divaatelier",
+  "house": "Diva Atelier",
+  "to": "connect@divaatelier.ae",
+  "greet": "Diva Atelier",
+  "subject": "Diva Atelier, in six cities",
+  "file": "x/c/divaatelier.html"
+ },
+ {
+  "slug": "elieaboumrad",
+  "house": "Elie Abou Mrad",
+  "to": "info@elieaboumrad.com",
+  "greet": "Elie Abou Mrad",
+  "subject": "Elie Abou Mrad, in six cities",
+  "file": "x/c/elieaboumrad.html"
+ },
+ {
+  "slug": "elilhaam",
+  "house": "Elilhaam",
+  "to": "inquiry@elilhaam.com",
+  "greet": "Elilhaam",
+  "subject": "Elilhaam, in six cities",
+  "file": "x/c/elilhaam.html"
+ },
+ {
+  "slug": "emilkhalaf",
+  "house": "Emil Khalaf",
+  "to": "ekhalaf@cyberia.com.lb",
+  "greet": "Emil Khalaf",
+  "subject": "Emil Khalaf, in six cities",
+  "file": "x/c/emilkhalaf.html"
+ },
+ {
+  "slug": "dimitrisidawicouture",
+  "house": "Dimitri Sidawi Couture",
+  "to": "ds@dimitrisidawicouture.com",
+  "greet": "Dimitri Sidawi Couture",
+  "subject": "Dimitri Sidawi Couture, in six cities",
+  "file": "x/c/dimitrisidawicouture.html"
+ }
+]
