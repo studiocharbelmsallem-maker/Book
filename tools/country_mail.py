@@ -87,6 +87,48 @@ COUNTRIES = {
              "Evening wear is about movement and catch-light. Low sun along the colonnade turns every fringe and crystal into a moving highlight as she walks, and the warm columns frame the cool blue of the gown. It is the frame that sells the dress before anyone touches it."),
         ],
     },
+    "milano": {
+        "city": "Milano",
+        "chapter": "Chapter 04",
+        "tagline": "where it is sold",
+        "italic": "Buyers do not fall in love first. They calculate, and then they fall in love. A Milano image has to hold on a linesheet, in a showroom and above a runway, without being reshot for each.",
+        "films": [],
+        "acts": [
+            ("couture.jpg", "Couture", "The Frescoes", "A palazzo where the ceiling competes with the gown",
+             "Embroidered flowers in a room of painted ones, under warm chandeliers.",
+             ["#481806", "#874A2D", "#E3A9B4", "#C8A35A"],
+             "Couture in a palazzo is a contest of detail, and the gown must win it. We keep the room warm and low, let the chandeliers fall away, and place the brightest light on the embroidery, so every flower reads before the ceiling does. The image holds at full height on a showroom wall and still sells the handwork on a phone."),
+            ("editorial.jpg", "Editorial", "The Window", "One gesture the height of the room",
+             "Arms open in a tall doorway, the palazzo framing a single black silhouette.",
+             ["#1A0E0D", "#77462C", "#C9A77A", "#E8DFD2"],
+             "An editorial gives a collection its attitude. Shot from low in a tall window frame, the black silhouette takes the height of the room, and daylight behind her cuts the shape clean against the gold walls. One strong gesture and one strong line are what an editor remembers from forty pages."),
+            ("bridal.jpg", "Bridal", "The Rotunda", "The room turned into the frame of the train",
+             "A train poured in a full circle across a dark polished floor.",
+             ["#2D1D0F", "#89745F", "#D9CEC0", "#F2EEE6"],
+             "Bridal is sold on the length of one moment. We stand back and let the rotunda do the work: a dark floor, tall windows, the train laid in a full circle at her feet. Soft window light keeps the white pure, and the symmetry gives the gown the weight of a ceremony."),
+        ],
+    },
+    "istanbul": {
+        "city": "Istanbul",
+        "chapter": "Chapter 05",
+        "tagline": "where it crosses",
+        "italic": "East and west arguing politely, in silk. A collection directed here has to read in two markets at once, from Riyadh to Milan, without apologising to either.",
+        "films": [],
+        "acts": [
+            ("couture.jpg", "Couture", "The Workshop", "The gown among the tools of the room",
+             "Midnight satin falling from the shoulders, a ladder and a single lamp behind her.",
+             ["#141C4A", "#2A3A7A", "#3F2A2C", "#C98A3A"],
+             "Couture earns its price in construction, and satin hides nothing. A single warm lamp draws the long folds of the navy and leaves the walls in shadow, while the working room behind her reminds the eye how much hand went into it. The embroidered hem stays visible at the floor, where a buyer looks last."),
+            ("editorial.jpg", "Editorial", "The Forest Floor", "Autumn leaves as the only set",
+             "Coral silk spilling across a bed of copper leaves.",
+             ["#C87971", "#E8C9D2", "#824635", "#572418"],
+             "Nature gives the strongest palette when one colour is allowed to answer it. Coral against fallen copper leaves stays warm but separates cleanly, and shooting from above lets the layers of the skirt open like petals. Soft shade under the trees keeps the skin true and the fabric's sheen intact."),
+            ("bridal.jpg", "Bridal", "The Grand Stair", "A bride between two traditions",
+             "Twin staircases and a chandelier, with the veil falling straight to the floor.",
+             ["#2D201B", "#5D483E", "#D8CDBE", "#F0EADF"],
+             "A bridal image from Istanbul has to speak to two traditions at once. We centre her between twin stairs under the chandelier, so the symmetry carries the ceremony, and the long sleeves and beaded column read as one quiet line. The room gives the grandeur; the gown stays the only light thing in it."),
+        ],
+    },
     "paris": {
         "city": "Paris",
         "chapter": "Chapter 03",
@@ -119,6 +161,9 @@ KICK = F_SANS + ";font-size:10px;letter-spacing:2.6px;text-transform:uppercase;c
 ROMAN = ["I", "II", "III"]
 
 
+FILM_WORDS = {0: "", 1: "a film and ", 2: "two films and "}
+
+
 def wa(house, text):
     return f"https://wa.me/{WA}?text=" + quote(f"Hello Charbel, {house} here. {text}")
 
@@ -135,6 +180,8 @@ def act(key, house, i, a):
 
 
 def films_block(key, city, films):
+    if not films:
+        return ""
     head = f'<tr><td style="padding:26px 32px 8px">\n <div style="{KICK};padding-bottom:14px">{"Two films" if len(films) == 2 else "The film"} · {city}</div>\n'
     if len(films) == 1:
         p, m, l, d = films[0]
@@ -154,7 +201,7 @@ def build(key, house="{House}"):
     films = films_block(key, city, c["films"])
     acts = "".join(act(key, house, i, a) for i, a in enumerate(c["acts"]))
     cal = f"https://calendly.com/studiocharbelmsallem/concept-call-10-min?a1={quote(house + ' · ' + city + ' concept call')}&utm_source=mail&utm_campaign={key}-{slug}"
-    return f'''<div style="{F_SERIF};font-size:17px;line-height:1.55;color:#1E1C18">Dear {house},<br><br>This is the {city} chapter of the book, opened for you: {'two films' if len(c['films']) == 2 else 'a film'} and the three registers a collection can be told in here, with a few lines on why each one works. Tell me which register is closest to your next season, and I will build the first frames around it.<br><br></div>
+    return f'''<div style="{F_SERIF};font-size:17px;line-height:1.55;color:#1E1C18">Dear {house},<br><br>This is the {city} chapter of the book, opened for you: {FILM_WORDS[len(c['films'])]}the three registers a collection can be told in here, with a few lines on why each one works. Tell me which register is closest to your next season, and I will build the first frames around it.<br><br></div>
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;border-collapse:collapse;background:#FFFFFF;border:1px solid #E6DCC4">
 <tr><td style="padding:22px 32px 0">
  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #E6DCC4"><tr><td style="padding-bottom:14px;{F_SERIF};font-size:14px;letter-spacing:3.4px;text-transform:uppercase;color:#1E1C18">Charbel Msallem<span style="color:#9A7B2E">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span style="{F_SANS};font-size:9px;letter-spacing:2.2px;color:#9A7B2E">Fashion Photographer &amp; Film Director</span></td></tr></table>
