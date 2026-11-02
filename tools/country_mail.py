@@ -103,7 +103,7 @@ COUNTRIES = {
              ["#1A0E0D", "#77462C", "#C9A77A", "#E8DFD2"],
              "An editorial gives a collection its attitude. Shot low in a tall window, the black silhouette takes the height of the palazzo, and the daylight behind her cuts the shape clean against gold walls. One strong line is what an editor remembers from forty pages."),
             ("bridal.jpg", "Bridal", "The Rotunda", "The room turned into the frame of the train",
-             "The marble has seen kings. It had never seen this.",
+             "Organza, lace, pearl. The walls leaned in to listen.",
              ["#2D1D0F", "#89745F", "#D9CEC0", "#F2EEE6"],
              "Bridal is sold on the length of one moment. We step back and let the rotunda work: dark floor, tall windows, the train laid in a full circle at her feet. Window light keeps the white pure. Symmetry gives the gown the weight of a ceremony."),
         ],
