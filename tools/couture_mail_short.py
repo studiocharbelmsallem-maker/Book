@@ -53,6 +53,34 @@ def mail(house,slug,greet,r=None):
  <div style="{G}font-style:italic;font-size:13px;color:{MUTE};padding-top:12px">If this isn't for you, one word back and I won't write again.</div>
 </td></tr></table>'''
 
+def row(n,city,img,date,tag,house,r,slug):
+    wa=f'https://charbelmsallem.net/acts/mood/{img}/?h={U.quote(house)}&amp;r={r}'
+    rt=RATIO[img]; bw,bh=196,250
+    fw,fh=(bw,round(bw/rt)) if rt>bw/bh else (round(bh*rt),bh)
+    return (f'<tr><td style="padding:22px 0;border-top:1px solid {HAIR}">'
+      f'<table role="presentation" width="536" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:536px"><tr>'
+      f'<td width="196" height="{bh}" align="center" valign="middle" bgcolor="{CH}" style="background:{CH};width:196px;height:{bh}px"><a href="{wa}"><img src="{M}{img}.jpg{V}" width="{fw}" height="{fh}" alt="{city}, photograph" style="display:block;border:0;width:{fw}px;height:{fh}px;margin:0 auto"></a></td>'
+      f'<td width="6" style="font-size:0">&nbsp;</td>'
+      f'<td width="140" height="{bh}" valign="middle" bgcolor="{CH}" style="background:{CH};width:140px;height:{bh}px"><a href="{wa}"><img src="{M}film-{img}.jpg{V}" width="140" height="250" alt="{city}, film" style="display:block;border:0;width:140px;height:250px"></a></td>'
+      f'<td width="20" style="font-size:0">&nbsp;</td>'
+      f'<td valign="middle">'
+      f'<div style="{G}font-style:italic;font-size:17px;color:{GOLD}">{n}</div>'
+      f'<div style="{G}font-size:26px;line-height:1.05;color:{INK};padding-top:2px">{city}</div>'
+      f'<div style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:{MUTE};padding:9px 0 4px">{date}</div>'
+      f'<div style="{G}font-style:italic;font-size:15px;line-height:1.35;color:{INK2};padding-bottom:16px">{tag}</div>'
+      f'<table role="presentation" width="150" cellpadding="0" cellspacing="0" border="0"><tr><td>{btn(wa,"This city &rarr;",False)}</td></tr></table>'
+      f'</td></tr>'
+      f'<tr><td align="center" style="{A}font-size:8px;letter-spacing:2px;text-transform:uppercase;color:{MUTE};padding-top:8px">Photograph</td><td></td>'
+      f'<td align="center" style="{LAB}font-size:8px;letter-spacing:2px;padding-top:8px">&#9654;&nbsp; Film</td><td></td><td></td></tr></table>'
+      f'</td></tr>')
+
+def mail_rows(house,slug,greet,r=None):
+    r=r or 'em-'+slug
+    rows=''.join(row(n,city,img,date,tag,house,r,slug) for n,city,img,date,tag,txt,pos in CITIES)
+    out=mail(house,slug,greet,r)
+    a=out.index('<tr><td style="padding:26px 32px 6px">'); b=out.index('<tr><td bgcolor=')
+    return out[:a]+f'<tr><td style="padding:22px 32px 10px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>\n'+out[b:]
+
 if __name__=='__main__':
     house,slug,greet,out=sys.argv[1:5]
     open(out,'w').write(mail(house,slug,greet,'test' if 'test' in out else None))
