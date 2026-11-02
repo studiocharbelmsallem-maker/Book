@@ -60,7 +60,7 @@ def act(key, c, i, a):
     strip = "".join(f'<i style="background:{x}"></i>' for x in colors)
     return f'''<article class="act"><a href="#" data-pick="{ROMAN[i]} · {E(name)}"><img src="../../mail/{key}/{img}?v={V}" alt="{E(register)}, {E(name)}" loading="lazy"></a><div>
 <div class="k">{ROMAN[i]} · {E(register)}</div><h2>{E(name)}</h2><div class="sub">{E(sub)}</div><div class="line">{E(line)}</div>
-<div class="strip">{strip}</div><div class="why"><span>Why it works</span>&nbsp; {E(concept)}</div>
+<div class="strip">{strip}</div><div class="why"><span>The concept</span>&nbsp; {E(concept)}</div>
 <a class="btn" href="#" data-pick="{ROMAN[i]} · {E(name)}">This one &rarr;</a></div></article>'''
 
 
@@ -91,7 +91,7 @@ if(internal)return;var c=document.createElement('script');c.async=1;c.src='https
 <header class="head"><div class="k"><span data-for>For you</span> · {c["chapter"]} · {city}</div>
 <h1>{city},<br><i>{E(c["tagline"])}</i>.</h1><div class="rule"></div><p class="lead">{E(c["italic"])}</p></header>
 {films}<section class="mood"><div class="mh"><div class="k">Choose the register</div><b>The mood board</b></div>{acts}</section>
-<section class="close"><p><span class="k" style="display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i>48 hours</i>, every pixel choreographed, made only for <span data-house>you</span>.</p>
+<section class="close"><p><span class="k" style="display:block;padding-bottom:12px">Architect your campaign</span>Pick one. The first frames follow within <i>48 hours</i>, every frame choreographed, made only for <span data-house>you</span>.</p>
 <div class="two"><a class="btn fill" data-cal href="{CAL}">Reserve 10 minutes &rarr;</a><a class="btn" data-home href="https://charbelmsallem.net/">The {city} chapter &rarr;</a></div></section>
 <section class="other"><span class="k">Another city</span><div>{others}</div></section>
 <footer class="sig"><i>Let's create magic together.</i><br><br>Warm regards,<br>Charbel Msallem · Fashion Photographer &amp; Film Director
