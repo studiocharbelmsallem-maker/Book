@@ -13,7 +13,7 @@ from urllib.parse import quote
 
 SITE = "https://charbelmsallem.net"
 WA = "9613729713"
-V = "1"
+V = "2"
 
 COUNTRIES = {
     "paris": {
@@ -26,10 +26,10 @@ COUNTRIES = {
             ("film-show.jpg", "films/paris-fashion-show.mp4", "Fashion show", "23 s"),
         ],
         "acts": [
-            ("show.jpg", "Fashion show", "The Salon", "Haussmann interiors, then the courtyard show",
-             "The centre of gravity of the chapter: every look on the floor at once.",
-             ["#190C07", "#EFE7D8", "#B39072", "#82552F"],
-             "A show image has one job: to make the collection read as a single idea before it reads as pieces. That is why we place the line-up inside the room, not in front of it. Gold, candlelight and painted ceilings give the gowns a scale the eye trusts, and the warm palette keeps ivory and black from fighting each other."),
+            ("show.jpg", "Fashion show", "The Courtyard", "Haussmann interiors, then the courtyard show",
+             "The line steps out of the shade into full sun, one look after another.",
+             ["#E9D9B8", "#B8862E", "#2E3FA0", "#9A8C7E"],
+             "A show image has one job: to make the collection read as a single idea before it reads as pieces. We shoot the courtyard show in open daylight, with the next looks queued in soft focus behind the first, so the eye reads the sequence of the collection in one frame. Sunlight is honest with fabric: silk keeps its sheen, construction keeps its edges, and the front row's phones in the frame say the moment was real."),
             ("editorial.jpg", "Editorial", "The Château", "A gown in the company of stone that has waited longer",
              "One silhouette, a château across the water, a grey sky that flatters silk.",
              ["#5B6362", "#868D90", "#B2B5B6", "#E1E3E3"],
