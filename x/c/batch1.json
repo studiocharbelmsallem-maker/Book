@@ -26,7 +26,9 @@
   "subject": "Abed Mahfouz, in six cities",
   "file": "x/c/abedmahfouz.html",
   "sent": "2026-11-02T20:43",
-  "bounced": "550 no such user (manager@abedmahfouz.com)"
+  "bounced": "550 no such user (manager@abedmahfouz.com)",
+  "no_followup": true,
+  "dropped": "forget: no retry, no new address"
  },
  {
   "slug": "alanicouture",
