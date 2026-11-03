@@ -139,7 +139,8 @@
   "to": "connect@divaatelier.ae",
   "greet": "Diva Atelier",
   "subject": "Diva Atelier, in six cities",
-  "file": "x/c/divaatelier.html"
+  "file": "x/c/divaatelier.html",
+  "skipped": "Charbel: do not send (3 Nov)"
  },
  {
   "slug": "elieaboumrad",
@@ -155,7 +156,8 @@
   "to": "inquiry@elilhaam.com",
   "greet": "Elilhaam",
   "subject": "Elilhaam, in six cities",
-  "file": "x/c/elilhaam.html"
+  "file": "x/c/elilhaam.html",
+  "skipped": "Charbel: do not send (3 Nov)"
  },
  {
   "slug": "emilkhalaf",
