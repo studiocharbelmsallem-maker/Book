@@ -125,7 +125,8 @@
   "greet": "Faiza",
   "subject": "Bouguessa, in six cities",
   "file": "x/c/bouguessa.html",
-  "sent": "2026-11-03T08:45"
+  "sent": "2026-11-03T08:45",
+  "bounced": "550 5.1.1 account does not exist (contact@bouguessa.com)"
  },
  {
   "slug": "dinamelwani",
@@ -133,7 +134,8 @@
   "to": "info@dinamelwani.com",
   "greet": "Dina Melwani",
   "subject": "Dina Melwani, in six cities",
-  "file": "x/c/dinamelwani.html"
+  "file": "x/c/dinamelwani.html",
+  "sent": "2026-11-03T09:04"
  },
  {
   "slug": "divaatelier",
