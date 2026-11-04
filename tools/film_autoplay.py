@@ -8,7 +8,7 @@ function open(e){e.preventDefault();e.stopPropagation();document.querySelectorAl
 v.muted=false;v.controls=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});
 if(v.webkitEnterFullscreen&&!v.requestFullscreen){v.webkitEnterFullscreen();}else if(v.requestFullscreen){v.requestFullscreen().catch(function(){if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();});}
 cmsEv((v.dataset.city||'Film')+' full screen');}
-function close(){v.muted=true;v.controls=false;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+function close(){v.muted=true;v.controls=false;setTimeout(function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},300);}
 v.addEventListener('click',function(e){if(!v.controls)open(e);});f.querySelector('.wch').addEventListener('click',open);
 v.addEventListener('webkitendfullscreen',close);document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&v.controls)close();});});
 </script>
