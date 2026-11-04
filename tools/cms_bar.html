@@ -27,4 +27,17 @@ b.querySelector('.wa').addEventListener('click',function(){ev('Bar WhatsApp')});
 document.body.classList.add('cms-has-bar');
 function u(){b.classList.toggle('on',window.scrollY>280)}window.addEventListener('scroll',u,{passive:true});u();})();
 </script>
+<script>
+/* Films open full screen when the visitor presses play (not when they autoplay muted on scroll). */
+(function(){var tap=0;function mark(){tap=Date.now()}
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('video,.snd');if(!t)return;mark();var v=t.tagName==='VIDEO'?t:t.previousElementSibling;if(v&&v.tagName==='VIDEO'&&!v.paused)full(v)},true);
+document.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('video,.snd'))mark()},true);
+document.addEventListener('touchstart',function(e){if(e.target.closest&&e.target.closest('video,.snd'))mark()},{capture:true,passive:true});
+function full(v){if(document.fullscreenElement||document.webkitFullscreenElement)return;
+ try{if(v.requestFullscreen){v.requestFullscreen().catch(function(){if(v.webkitEnterFullscreen)v.webkitEnterFullscreen()})}else if(v.webkitRequestFullscreen){v.webkitRequestFullscreen()}else if(v.webkitEnterFullscreen){v.webkitEnterFullscreen()}}catch(e){}}
+document.querySelectorAll('video').forEach(function(v){v.addEventListener('play',function(){if(Date.now()-tap<1500){if(v.muted&&!v.closest('.pair'))v.muted=false;full(v)}});
+ v.addEventListener('webkitendfullscreen',function(){v.pause()});});
+var fsv=null;document.addEventListener('fullscreenchange',function(){var f=document.fullscreenElement;if(f&&f.tagName==='VIDEO'){fsv=f}else if(!f&&fsv){fsv.pause();fsv=null}});
+})();
+</script>
 <!--/cms-bar-->
