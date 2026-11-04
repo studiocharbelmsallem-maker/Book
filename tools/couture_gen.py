@@ -36,7 +36,8 @@ def page(d):
     cal='https://cal.com/charbelmsallem/concept-call?notes='+urllib.parse.quote_plus(f"{H} · Concept call")+f'&amp;utm_source=acts&amp;utm_campaign={slug}&amp;utm_content=page'
     t=open(os.path.join(os.path.dirname(__file__),'couture_tpl.html')).read()
     for k,v in {'{{HOUSE}}':H.replace('&','&amp;'),'{{SLUG}}':slug,'{{LINE}}':d['line'],'{{TILES}}':tiles,'{{CAL}}':cal}.items(): t=t.replace(k,v)
-    return t
+    import next_block
+    return next_block.apply(t,H,slug)
 if __name__=='__main__':
     d=json.loads(sys.argv[1]); out=sys.argv[2]
     os.makedirs(out,exist_ok=True); open(os.path.join(out,'index.html'),'w').write(_with_bar(page(d))); print('ok',out)
