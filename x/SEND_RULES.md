@@ -7,3 +7,5 @@
 5. Open the draft and check it is not empty before sending (Hanayen Couture received an empty mail on 2 Nov).
 
 6. Pasting a designed mail into Outlook: after Ctrl+V choose Paste options > Keep source formatting, then check the 40px title and all images before Send.
+
+7. The clipboard is shared with Charbel's own computer. Click COPY and paste in the same batch, then check the body starts "Dear <house>," before sending (4 Nov: a first paste picked up text he had copied himself).
