@@ -131,7 +131,9 @@
   "to": "info@reemzeidan.com",
   "greet": "Reem Zeidan",
   "subject": "Reem Zeidan, in six cities",
-  "file": "x/c/reemzeidan.html"
+  "file": "x/c/reemzeidan.html",
+  "sent": "2026-11-04T11:45Z",
+  "bounced": "domain reemzeidan.com does not exist (DNS)"
  },
  {
   "slug": "reemami",
