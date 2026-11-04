@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>copy2</title>
+<style>button{display:block;margin:6px;padding:10px 16px;font:14px monospace}</style>
+<div id="st">ready</div>
+<button id="b0" data-s="glamoda">COPY 0 glamoda</button>
+<button id="b1" data-s="gosacecouture">COPY 1 gosacecouture</button>
+<button id="b2" data-s="hanafashion">COPY 2 hanafashion</button>
+<button id="b3" data-s="hananbakri">COPY 3 hananbakri</button>
+<button id="b4" data-s="hindamme">COPY 4 hindamme</button>
+<button id="b5" data-s="kage">COPY 5 kage</button>
+<button id="b6" data-s="lafshar">COPY 6 lafshar</button>
+<button id="b7" data-s="mariapino">COPY 7 mariapino</button>
+<button id="b8" data-s="marytrufel">COPY 8 marytrufel</button>
+<button id="b9" data-s="mrskeepa">COPY 9 mrskeepa</button>
+<button id="b10" data-s="nemersaade">COPY 10 nemersaade</button>
+<button id="b11" data-s="priveatelierbridal">COPY 11 priveatelierbridal</button>
+<button id="b12" data-s="qormuz">COPY 12 qormuz</button>
+<button id="b13" data-s="ramialalicouture">COPY 13 ramialalicouture</button>
+<button id="b14" data-s="reemzeidan">COPY 14 reemzeidan</button>
+<button id="b15" data-s="reemami">COPY 15 reemami</button>
+<button id="b16" data-s="shathaessa">COPY 16 shathaessa</button>
+<button id="b17" data-s="saher">COPY 17 saher</button>
+<button id="b18" data-s="sanasabini">COPY 18 sanasabini</button>
+<button id="b19" data-s="sharbelazarcouture">COPY 19 sharbelazarcouture</button>
+<script>
+document.querySelectorAll('button').forEach(function(b){b.addEventListener('click',async function(){
+ try{const s=b.dataset.s;const h=await (await fetch(s+'.html?v='+Date.now(),{cache:'no-store'})).text();
+ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([h],{type:'text/html'}),'text/plain':new Blob([' '],{type:'text/plain'})})]);
+ document.getElementById('st').textContent='COPIED '+b.id.slice(1)+' '+s+' '+h.length;}catch(e){document.getElementById('st').textContent='ERR '+e;}});});
+</script>

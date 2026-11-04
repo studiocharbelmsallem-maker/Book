@@ -1,0 +1,162 @@
+[
+ {
+  "slug": "glamoda",
+  "house": "Glamoda",
+  "to": "info@glamoda.com",
+  "greet": "Glamoda",
+  "subject": "Glamoda, in six cities",
+  "file": "x/c/glamoda.html"
+ },
+ {
+  "slug": "gosacecouture",
+  "house": "Gosace Couture",
+  "to": "gosacecouture@gmail.com",
+  "greet": "Gosace Couture",
+  "subject": "Gosace Couture, in six cities",
+  "file": "x/c/gosacecouture.html"
+ },
+ {
+  "slug": "hanafashion",
+  "house": "Hana Fashion",
+  "to": "hana@hanafashion.ae",
+  "greet": "Hana Fashion",
+  "subject": "Hana Fashion, in six cities",
+  "file": "x/c/hanafashion.html"
+ },
+ {
+  "slug": "hananbakri",
+  "house": "Hanan Bakri",
+  "to": "hanan@hananbakri.com",
+  "greet": "Hanan Bakri",
+  "subject": "Hanan Bakri, in six cities",
+  "file": "x/c/hananbakri.html"
+ },
+ {
+  "slug": "hindamme",
+  "house": "Hindamme",
+  "to": "info@hindamme.com",
+  "greet": "Hindamme",
+  "subject": "Hindamme, in six cities",
+  "file": "x/c/hindamme.html"
+ },
+ {
+  "slug": "kage",
+  "house": "KAGE",
+  "to": "info@bykage.com",
+  "greet": "KAGE",
+  "subject": "KAGE, in six cities",
+  "file": "x/c/kage.html"
+ },
+ {
+  "slug": "lafshar",
+  "house": "La Fshar",
+  "to": "info@lafshar.com",
+  "greet": "La Fshar",
+  "subject": "La Fshar, in six cities",
+  "file": "x/c/lafshar.html"
+ },
+ {
+  "slug": "mariapino",
+  "house": "Maria Pino",
+  "to": "contact@mariapino.com",
+  "greet": "Maria Pino",
+  "subject": "Maria Pino, in six cities",
+  "file": "x/c/mariapino.html"
+ },
+ {
+  "slug": "marytrufel",
+  "house": "Mary Trufel",
+  "to": "marytrufel@marytrufel.ae",
+  "greet": "Mary Trufel",
+  "subject": "Mary Trufel, in six cities",
+  "file": "x/c/marytrufel.html"
+ },
+ {
+  "slug": "mrskeepa",
+  "house": "Mrs. Keepa",
+  "to": "queries@mrskeepa.com",
+  "greet": "Mrs. Keepa",
+  "subject": "Mrs. Keepa, in six cities",
+  "file": "x/c/mrskeepa.html"
+ },
+ {
+  "slug": "nemersaade",
+  "house": "Nemer Saade",
+  "to": "info@nemersaade.com",
+  "greet": "Nemer Saade",
+  "subject": "Nemer Saade, in six cities",
+  "file": "x/c/nemersaade.html"
+ },
+ {
+  "slug": "priveatelierbridal",
+  "house": "Privé Atelier Bridal",
+  "to": "bridal@priveatelier.ae",
+  "greet": "Privé Atelier Bridal",
+  "subject": "Privé Atelier Bridal, in six cities",
+  "file": "x/c/priveatelierbridal.html"
+ },
+ {
+  "slug": "qormuz",
+  "house": "Qormuz",
+  "to": "info@qormuz.com",
+  "greet": "Qormuz",
+  "subject": "Qormuz, in six cities",
+  "file": "x/c/qormuz.html"
+ },
+ {
+  "slug": "ramialalicouture",
+  "house": "Rami Al Ali Couture",
+  "to": "info@ramialali.com",
+  "greet": "Rami Al Ali Couture",
+  "subject": "Rami Al Ali Couture, in six cities",
+  "file": "x/c/ramialalicouture.html"
+ },
+ {
+  "slug": "reemzeidan",
+  "house": "Reem Zeidan",
+  "to": "info@reemzeidan.com",
+  "greet": "Reem Zeidan",
+  "subject": "Reem Zeidan, in six cities",
+  "file": "x/c/reemzeidan.html"
+ },
+ {
+  "slug": "reemami",
+  "house": "Reemami",
+  "to": "sara@reemami.com",
+  "greet": "Reemami",
+  "subject": "Reemami, in six cities",
+  "file": "x/c/reemami.html"
+ },
+ {
+  "slug": "shathaessa",
+  "house": "Shatha Essa",
+  "to": "admin@shathaessa.com",
+  "greet": "Shatha Essa",
+  "subject": "Shatha Essa, in six cities",
+  "file": "x/c/shathaessa.html"
+ },
+ {
+  "slug": "saher",
+  "house": "Saher",
+  "to": "sh@saher.co",
+  "greet": "Saher",
+  "subject": "Saher, in six cities",
+  "file": "x/c/saher.html"
+ },
+ {
+  "slug": "sanasabini",
+  "house": "Sanasabini",
+  "to": "sana@sanasabini.com",
+  "greet": "Sanasabini",
+  "subject": "Sanasabini, in six cities",
+  "file": "x/c/sanasabini.html"
+ },
+ {
+  "slug": "sharbelazarcouture",
+  "house": "Sharbel Azar Couture",
+  "to": "sharbel.azar@hotmail.com",
+  "greet": "Sharbel Azar Couture",
+  "subject": "Sharbel Azar Couture, in six cities",
+  "file": "x/c/sharbelazarcouture.html"
+ }
+]
