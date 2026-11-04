@@ -91,7 +91,7 @@ a{color:inherit;text-decoration:none}
 .hero .reel video{width:100%;display:block;outline:1px solid rgba(201,168,92,.5);outline-offset:10px;background:#000}
 .hero .reel .cap{text-align:center;margin-top:22px;color:#7E7A70}
 .pair>img.ph{aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;object-position:50% 40%}.pair>video{aspect-ratio:9/16;width:100%;height:auto;object-fit:contain;background:#1a1815}.pair:has(>video){grid-template-columns:0.8fr 0.5625fr;align-items:start}.pair.solo>img.ph{max-width:62%}.pair>img.ph[src*="paris."]{object-position:50% 58%}.pair>img.ph[src*="milano"]{object-position:50% 85%}.pair>img.ph[src*="istanbul"]{object-position:50% 88%}.pair>img.ph[src*="dubai"]{object-position:50% 65%}.pair>img.ph[src*="barcelona"]{object-position:50% 75%}
-.pair:has(>figure){grid-template-columns:0.8fr 0.5625fr;align-items:start}.pair>figure{margin:0}.pair>figure video{aspect-ratio:9/16;width:100%;height:auto;object-fit:cover;background:#1a1815;cursor:pointer}
+.pair:has(>figure){grid-template-columns:0.8fr 0.5625fr;align-items:start}.pair>figure{margin:0}.pair>figure{position:relative}.pair>figure video{aspect-ratio:9/16;width:100%;height:auto;object-fit:cover;background:#1a1815;cursor:pointer}.pair>figure video:fullscreen{object-fit:contain;background:#000}.wch{position:absolute;right:8px;bottom:8px;font-family:Archivo,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#EDE9E0;background:rgba(19,17,14,.6);border:1px solid rgba(237,233,224,.55);padding:7px 9px;cursor:pointer}
 </style>
 <meta name="robots" content="noindex">
 </head>
@@ -109,7 +109,7 @@ a{color:inherit;text-decoration:none}
   <div class="head"><span class="lab">Choose the city</span><span class="lab">The season · 2027</span></div>
   <div class="grid cities">
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/beirut.jpg?v=2" alt=""><figure><video data-city="Beirut" src="../../films/beirut-couture.mp4" poster="../../films/poster-beirut-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/beirut.jpg?v=2" alt=""><figure><video data-city="Beirut" src="../../films/beirut-couture.mp4" poster="../../films/poster-beirut-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">I · Atelier season · November – December</div>
       <h2>Beirut</h2>
       <div class="tag">Where the light is learned</div>
@@ -117,7 +117,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Beirut chosen" href="../mood/beirut/?h=Your%20next%20collection&amp;r=act-six-cities">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/istanbul.jpg?v=5" alt=""><figure><video data-city="Istanbul" src="../../films/istanbul.mp4" poster="../../films/poster-istanbul.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/istanbul.jpg?v=5" alt=""><figure><video data-city="Istanbul" src="../../films/istanbul.mp4" poster="../../films/poster-istanbul.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">II · Campaign season · 12–19 January</div>
       <h2>Istanbul</h2>
       <div class="tag">Where it crosses</div>
@@ -125,7 +125,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Istanbul chosen" href="../mood/istanbul/?h=Your%20next%20collection&amp;r=act-six-cities">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/paris.jpg?v=2" alt=""><figure><video data-city="Paris" src="../../films/paris-couture.mp4" poster="../../films/poster-paris-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/paris.jpg?v=2" alt=""><figure><video data-city="Paris" src="../../films/paris-couture.mp4" poster="../../films/poster-paris-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">III · SS27 Haute Couture · 21–29 January</div>
       <h2>Paris</h2>
       <div class="tag">Where it is judged</div>
@@ -133,7 +133,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Paris chosen" href="../mood/paris/?h=Your%20next%20collection&amp;r=act-six-cities">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/milano.jpg?v=2" alt=""><figure><video data-city="Milano" src="../../films/milano.mp4" poster="../../films/poster-milano.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/milano.jpg?v=2" alt=""><figure><video data-city="Milano" src="../../films/milano.mp4" poster="../../films/poster-milano.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">IV · FW27 Fashion Week · 23 Feb – 1 March</div>
       <h2>Milano</h2>
       <div class="tag">Where it is sold</div>
@@ -141,7 +141,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Milano chosen" href="../mood/milano/?h=Your%20next%20collection&amp;r=act-six-cities">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/dubai.jpg?v=2" alt=""><figure><video data-city="Dubai" src="../../films/dubai-16.mp4" poster="../../films/poster-dubai-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/dubai.jpg?v=2" alt=""><figure><video data-city="Dubai" src="../../films/dubai-16.mp4" poster="../../films/poster-dubai-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">V · AW27 Fashion Week · March</div>
       <h2>Dubai</h2>
       <div class="tag">Where it is wanted</div>
@@ -149,7 +149,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Dubai chosen" href="../mood/dubai/?h=Your%20next%20collection&amp;r=act-six-cities">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/barcelona.jpg?v=5" alt=""><figure><video data-city="Barcelona" src="../../films/barcelona-16.mp4" poster="../../films/poster-barcelona-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>
+      <div class="pair"><img class="ph" src="../couture/barcelona.jpg?v=5" alt=""><figure><video data-city="Barcelona" src="../../films/barcelona-16.mp4" poster="../../films/poster-barcelona-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="wch" type="button">▶ Watch</button></figure></div>
       <div class="n">VI · Bridal Fashion Week · 14–18 April</div>
       <h2>Barcelona</h2>
       <div class="tag">Where it breathes</div>
@@ -179,12 +179,22 @@ a{color:inherit;text-decoration:none}
 <script>
 document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){cmsEv(a.getAttribute('data-ev'));});});
 document.querySelectorAll('.snd').forEach(function(b){var v=b.previousElementSibling;b.addEventListener('click',function(){document.querySelectorAll('video').forEach(function(o){if(o!==v){o.muted=true;}});document.querySelectorAll('.snd').forEach(function(o){if(o!==b)o.textContent='Sound on';});v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play();cmsEv((v.dataset.city||'Film')+' sound');}b.textContent=v.muted?'Sound on':'Sound off';});});
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){});cmsEv((v.dataset.city||'Film')+' seen');}else{v.pause();}});},{threshold:.4});document.querySelectorAll('.pair video').forEach(function(v){io.observe(v);});}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){});cmsEv((v.dataset.city||'Film')+' seen');}else if(!document.fullscreenElement&&!v.webkitDisplayingFullscreen){v.pause();}});},{threshold:.4});document.querySelectorAll('.pair video').forEach(function(v){io.observe(v);});}
 document.querySelectorAll('.pair video').forEach(function(v){v.addEventListener('timeupdate',function(){if(v.currentTime>12)cmsEv((v.dataset.city||'Film')+' watched');});});
 </script>
 <script>
 (function(){var r=(new URLSearchParams(location.search).get('r')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40);if(!r)return;
 document.querySelectorAll('a.btn[href*="/mood/"]').forEach(function(a){a.href=a.href.replace(/([?&]r=)[^&]*/,'$1'+r);});})();
+</script>
+<script>
+document.querySelectorAll('.pair>figure').forEach(function(f){var v=f.querySelector('video');
+function open(e){e.preventDefault();e.stopPropagation();document.querySelectorAll('video').forEach(function(o){if(o!==v){o.muted=true;}});
+v.muted=false;v.controls=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});
+if(v.webkitEnterFullscreen&&!v.requestFullscreen){v.webkitEnterFullscreen();}else if(v.requestFullscreen){v.requestFullscreen().catch(function(){if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();});}
+cmsEv((v.dataset.city||'Film')+' full screen');}
+function close(){v.muted=true;v.controls=false;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+v.addEventListener('click',function(e){if(!v.controls)open(e);});f.querySelector('.wch').addEventListener('click',open);
+v.addEventListener('webkitendfullscreen',close);document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&v.controls)close();});});
 </script>
 <!--cms-bar-->
 <style>
@@ -214,6 +224,19 @@ function ev(n){try{window.clarity('event',n)}catch(e){}}
 b.querySelector('.wa').addEventListener('click',function(){ev('Bar WhatsApp')});b.querySelector('.cal').addEventListener('click',function(){ev('Bar Book a call')});
 document.body.classList.add('cms-has-bar');
 function u(){b.classList.toggle('on',window.scrollY>280)}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+<script>
+/* Films open full screen when the visitor presses play (not when they autoplay muted on scroll). */
+(function(){var tap=0;function mark(){tap=Date.now()}
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('video,.snd');if(!t)return;mark();var v=t.tagName==='VIDEO'?t:t.previousElementSibling;if(v&&v.tagName==='VIDEO'&&!v.paused)full(v)},true);
+document.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('video,.snd'))mark()},true);
+document.addEventListener('touchstart',function(e){if(e.target.closest&&e.target.closest('video,.snd'))mark()},{capture:true,passive:true});
+function full(v){if(document.fullscreenElement||document.webkitFullscreenElement)return;
+ try{if(v.requestFullscreen){v.requestFullscreen().catch(function(){if(v.webkitEnterFullscreen)v.webkitEnterFullscreen()})}else if(v.webkitRequestFullscreen){v.webkitRequestFullscreen()}else if(v.webkitEnterFullscreen){v.webkitEnterFullscreen()}}catch(e){}}
+document.querySelectorAll('video').forEach(function(v){v.addEventListener('play',function(){if(Date.now()-tap<1500){if(v.muted&&!v.closest('.pair'))v.muted=false;full(v)}});
+ v.addEventListener('webkitendfullscreen',function(){v.pause()});});
+var fsv=null;document.addEventListener('fullscreenchange',function(){var f=document.fullscreenElement;if(f&&f.tagName==='VIDEO'){fsv=f}else if(!f&&fsv){fsv.pause();fsv=null}});
+})();
 </script>
 <!--/cms-bar-->
 </body>
