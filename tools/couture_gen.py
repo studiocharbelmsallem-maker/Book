@@ -8,6 +8,13 @@ CITIES=[
  ("VI","Barcelona","barcelona","14–18 April","Where it breathes","Modernist stone at Mediterranean noon, Gothic shadow at night. Couture with air around it.","center 30%"),
 ]
 BOOK='/home/claude/book'
+
+def _with_bar(s):
+    """Every client page carries the sticky WhatsApp / Book a call bar (tools/cms_bar.html)."""
+    import os as _o
+    b=open(_o.path.join(_o.path.dirname(_o.path.abspath(__file__)),'cms_bar.html'),encoding='utf-8').read().strip()+'\n'
+    i=s.rindex('</body>'); return s[:i]+b+s[i:]
+
 def media(img,city):
     if os.path.exists(f'{BOOK}/films/cities/{img}-20.mp4'):
         return f'<div class="pair"><img class="ph" src="../couture/{img}.jpg" alt=""><figure><video data-city="{city}" src="../../films/cities/{img}-20.mp4" poster="../couture/{img}-film.jpg" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>'
@@ -32,4 +39,4 @@ def page(d):
     return t
 if __name__=='__main__':
     d=json.loads(sys.argv[1]); out=sys.argv[2]
-    os.makedirs(out,exist_ok=True); open(os.path.join(out,'index.html'),'w').write(page(d)); print('ok',out)
+    os.makedirs(out,exist_ok=True); open(os.path.join(out,'index.html'),'w').write(_with_bar(page(d))); print('ok',out)

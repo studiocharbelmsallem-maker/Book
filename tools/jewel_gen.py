@@ -3,6 +3,13 @@ from PIL import Image
 BOOK='/home/claude/book'
 src=open(f'{BOOK}/acts/rutana/index.html').read()
 ROMAN=['I','II','III']
+
+def _with_bar(s):
+    """Every client page carries the sticky WhatsApp / Book a call bar (tools/cms_bar.html)."""
+    import os as _o
+    b=open(_o.path.join(_o.path.dirname(_o.path.abspath(__file__)),'cms_bar.html'),encoding='utf-8').read().strip()+'\n'
+    i=s.rindex('</body>'); return s[:i]+b+s[i:]
+
 def build(d):
     H=d['house'];slug=d['slug'];dirn=d['dir']
     s=src
@@ -34,7 +41,7 @@ def build(d):
 '''
     s=head+acts+tail
     out=f'{BOOK}/acts/{dirn}'; os.makedirs(out,exist_ok=True)
-    open(f'{out}/index.html','w').write(s)
+    open(f'{out}/index.html','w').write(_with_bar(s))
     for name,srcimg in [('cover',d['cover'])]+[(f'act{k+1}',a['img']) for k,a in enumerate(d['acts'])]:
         im=Image.open(srcimg).convert('RGB')
         if im.width>900: im=im.resize((900,round(900*im.height/im.width)),Image.LANCZOS)

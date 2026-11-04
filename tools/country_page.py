@@ -47,6 +47,13 @@ figure video{display:block;width:100%;aspect-ratio:9/16;background:#000}figcapti
 """
 
 
+
+def _with_bar(s):
+    """Every client page carries the sticky WhatsApp / Book a call bar (tools/cms_bar.html)."""
+    import os as _o
+    b=open(_o.path.join(_o.path.dirname(_o.path.abspath(__file__)),'cms_bar.html'),encoding='utf-8').read().strip()+'\n'
+    i=s.rindex('</body>'); return s[:i]+b+s[i:]
+
 def film(f):
     p, m, label, dur = f
     name = m[6:-4]
@@ -120,5 +127,5 @@ if __name__ == "__main__":
     for key in ORDER:
         out = ROOT / "acts" / "mood" / key
         out.mkdir(parents=True, exist_ok=True)
-        (out / "index.html").write_text(page(key), encoding="utf-8")
+        (out / "index.html").write_text(_with_bar(page(key)), encoding="utf-8")
         print(out)
