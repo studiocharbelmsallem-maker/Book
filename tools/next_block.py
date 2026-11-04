@@ -17,7 +17,7 @@ def tile(img,credit,when,city,tag,txt,H,slug):
     </div>
 '''
 def block(H,slug):
-    return '  <div class="head" id="next"><span class="lab">Next</span><span class="lab">November · December</span></div>\n  <div class="grid cities">\n'+tile('istanbul-2.jpg?v=1','','Bridal Week · 24–27 November','Izmir','Where it is shot live','I am in Izmir for Bridal Week. A few collections photographed and filmed on site, stills and film delivered as one.',H,slug)+tile('egypt.jpg?v=1','Photo: Radosław Botev, CC BY 3.0, adapted','Two days · 9–10 December','Egypt','Where it is remembered','The Egyptian Museum and Abdeen Palace. A few collections photographed and filmed in rooms that have outlived every season.',H,slug)+'  </div>\n  <div class="nxgap"></div>\n'
+    return '  <div class="head" id="next"><span class="lab">Next</span><span class="lab">November · December</span></div>\n  <div class="grid cities">\n'+tile('istanbul-2.jpg?v=1','','Bridal Week · 24–27 November','Izmir','Where it is shot live','I am in Izmir for Bridal Week. A few collections photographed and filmed on site, stills and film delivered as one.',H,slug)+tile('egypt.jpg?v=2','Photo: Richard Mortel, CC BY 2.0, adapted','Two days · 9–10 December','Egypt','Where it is remembered','The Grand Egyptian Museum and Abdeen Palace. A few collections photographed and filmed in rooms that have outlived every season.',H,slug)+'  </div>\n  <div class="nxgap"></div>\n'
 def apply(s,H,slug):
     if 'id="next"' in s: return s
     a=s.find('    <div class="city izmir">')
