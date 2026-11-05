@@ -91,6 +91,7 @@ a{color:inherit;text-decoration:none}
 .hero .reel video{width:100%;display:block;outline:1px solid rgba(201,168,92,.5);outline-offset:10px;background:#000}
 .hero .reel .cap{text-align:center;margin-top:22px;color:#7E7A70}
 .pair>img.ph{aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;object-position:50% 40%}.pair>video{aspect-ratio:9/16;width:100%;height:auto;object-fit:contain;background:#1a1815}.pair:has(>video){grid-template-columns:0.8fr 0.5625fr;align-items:start}.pair.solo>img.ph{max-width:62%}.pair>img.ph[src*="paris."]{object-position:50% 58%}.pair>img.ph[src*="milano"]{object-position:50% 85%}.pair>img.ph[src*="istanbul"]{object-position:50% 88%}.pair>img.ph[src*="dubai"]{object-position:50% 65%}.pair>img.ph[src*="barcelona"]{object-position:50% 75%}
+.pair:has(>figure){grid-template-columns:0.8fr 0.5625fr;align-items:start}.pair>figure{margin:0}.pair>figure{position:relative}.pair>figure video{aspect-ratio:9/16;width:100%;height:auto;object-fit:cover;background:#1a1815;cursor:pointer}.pair>figure video:fullscreen{object-fit:contain;background:#000}
 </style>
 <style id="next-css">.nxf{position:relative;margin:0 0 14px}.nxi{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}.nxc{position:absolute;right:8px;bottom:6px;font-size:9px;letter-spacing:.02em;color:#fff;opacity:.6}.nxgap{height:56px}</style></head>
 <body>
@@ -127,7 +128,7 @@ a{color:inherit;text-decoration:none}
   <div class="head"><span class="lab">Choose the city</span><span class="lab">The season · 2027</span></div>
   <div class="grid cities">
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/beirut.jpg?v=2" alt=""><video controls playsinline preload="none" poster="../../films/poster-beirut-couture.jpg?v=2" src="../../films/beirut-couture.mp4" data-ev="Beirut film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/beirut.jpg?v=2" alt=""><figure><video data-city="Beirut" src="../../films/beirut-couture.mp4" poster="../../films/poster-beirut-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">I · Atelier season · November – December</div>
       <h2>Beirut</h2>
       <div class="tag">Where the light is learned</div>
@@ -135,7 +136,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Beirut chosen" href="../mood/beirut/?h=Wadha&amp;r=act-wadha">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/istanbul.jpg?v=5" alt=""><video controls playsinline preload="none" poster="../../films/poster-istanbul.jpg?v=2" src="../../films/istanbul.mp4" data-ev="Istanbul film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/istanbul.jpg?v=5" alt=""><figure><video data-city="Istanbul" src="../../films/istanbul.mp4" poster="../../films/poster-istanbul.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">II · Campaign season · 12–19 January</div>
       <h2>Istanbul</h2>
       <div class="tag">Where it crosses</div>
@@ -143,7 +144,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Istanbul chosen" href="../mood/istanbul/?h=Wadha&amp;r=act-wadha">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/paris.jpg?v=2" alt=""><video controls playsinline preload="none" poster="../../films/poster-paris-couture.jpg?v=2" src="../../films/paris-couture.mp4" data-ev="Paris film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/paris.jpg?v=2" alt=""><figure><video data-city="Paris" src="../../films/paris-couture.mp4" poster="../../films/poster-paris-couture.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">III · SS27 Haute Couture · 21–29 January</div>
       <h2>Paris</h2>
       <div class="tag">Where it is judged</div>
@@ -151,7 +152,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Paris chosen" href="../mood/paris/?h=Wadha&amp;r=act-wadha">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/milano.jpg?v=2" alt=""><video controls playsinline preload="none" poster="../../films/poster-milano.jpg?v=2" src="../../films/milano.mp4" data-ev="Milano film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/milano.jpg?v=2" alt=""><figure><video data-city="Milano" src="../../films/milano.mp4" poster="../../films/poster-milano.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">IV · FW27 Fashion Week · 23 Feb – 1 March</div>
       <h2>Milano</h2>
       <div class="tag">Where it is sold</div>
@@ -159,7 +160,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Milano chosen" href="../mood/milano/?h=Wadha&amp;r=act-wadha">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/dubai.jpg?v=2" alt=""><video controls playsinline preload="none" poster="../../films/poster-dubai-16.jpg?v=2" src="../../films/dubai-16.mp4" data-ev="Dubai film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/dubai.jpg?v=2" alt=""><figure><video data-city="Dubai" src="../../films/dubai-16.mp4" poster="../../films/poster-dubai-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">V · AW27 Fashion Week · March</div>
       <h2>Dubai</h2>
       <div class="tag">Where it is wanted</div>
@@ -167,7 +168,7 @@ a{color:inherit;text-decoration:none}
       <a class="btn" data-ev="Dubai chosen" href="../mood/dubai/?h=Wadha&amp;r=act-wadha">This city →</a>
     </div>
     <div class="city">
-      <div class="pair"><img class="ph" src="../couture/barcelona.jpg?v=5" alt=""><video controls playsinline preload="none" poster="../../films/poster-barcelona-16.jpg?v=2" src="../../films/barcelona-16.mp4" data-ev="Barcelona film"></video></div>
+      <div class="pair"><img class="ph" src="../couture/barcelona.jpg?v=5" alt=""><figure><video data-city="Barcelona" src="../../films/barcelona-16.mp4" poster="../../films/poster-barcelona-16.jpg?v=2" muted loop playsinline preload="metadata"></video><button class="fsb" type="button">▶ Full screen</button></figure></div>
       <div class="n">VI · Bridal Fashion Week · 14–18 April</div>
       <h2>Barcelona</h2>
       <div class="tag">Where it breathes</div>
@@ -239,5 +240,15 @@ var fsv=null;document.addEventListener('fullscreenchange',function(){var f=docum
 })();
 </script>
 <!--/cms-bar-->
+<div id="fso" hidden><button id="fsx" type="button" aria-label="Close">×</button><video id="fsv" controls playsinline></video></div>
+<style>.fsb{position:absolute;right:6px;bottom:6px;font-family:Archivo,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#EDE9E0;background:rgba(19,17,14,.6);border:1px solid rgba(237,233,224,.5);padding:7px 8px;cursor:pointer}
+#fso{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center}#fso[hidden]{display:none}#fsv{width:100%;height:100%;max-height:100dvh;object-fit:contain;background:#000}
+#fsx{position:absolute;top:calc(12px + env(safe-area-inset-top));right:14px;z-index:2;width:44px;height:44px;font-size:30px;line-height:1;color:#fff;background:rgba(0,0,0,.45);border:0;border-radius:50%;cursor:pointer}</style>
+<script>(function(){var o=document.getElementById('fso'),f=document.getElementById('fsv'),c=document.getElementById('fsx'),seen=0;
+function open(v){document.querySelectorAll('.pair video').forEach(function(x){x.pause();});f.src=v.currentSrc||v.src;f.poster=v.poster;f.dataset.city=v.dataset.city||'Film';f.currentTime=0;o.hidden=false;document.body.style.overflow='hidden';f.muted=false;f.play().catch(function(){});try{cmsEv(f.dataset.city+' full screen');}catch(e){}}
+function close(){f.pause();f.removeAttribute('src');f.load();o.hidden=true;document.body.style.overflow='';}
+document.querySelectorAll('.pair figure').forEach(function(g){var v=g.querySelector('video');g.addEventListener('click',function(){open(v);});});
+c.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!o.hidden)close();});
+f.addEventListener('timeupdate',function(){if(f.currentTime>12){try{cmsEv((f.dataset.city||'Film')+' watched');}catch(e){}}});})();</script>
 </body>
 </html>

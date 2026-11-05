@@ -41,4 +41,4 @@ def page(d):
     return next_block.apply(t,H,slug)
 if __name__=='__main__':
     d=json.loads(sys.argv[1]); out=sys.argv[2]
-    os.makedirs(out,exist_ok=True); open(os.path.join(out,'index.html'),'w').write(_with_bar(page(d))); print('ok',out)
+    os.makedirs(out,exist_ok=True); open(os.path.join(out,'index.html'),'w').write(__import__('film_autoplay').fix(_with_bar(page(d)))[0]); print('ok',out)
