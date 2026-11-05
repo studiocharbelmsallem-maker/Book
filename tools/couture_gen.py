@@ -15,10 +15,11 @@ def _with_bar(s):
     b=open(_o.path.join(_o.path.dirname(_o.path.abspath(__file__)),'cms_bar.html'),encoding='utf-8').read().strip()+'\n'
     i=s.rindex('</body>'); return s[:i]+b+s[i:]
 
+FILMS={'beirut':'beirut-couture','istanbul':'istanbul','paris':'paris-couture','milano':'milano','dubai':'dubai-16','barcelona':'barcelona-16'}
 def media(img,city):
-    if os.path.exists(f'{BOOK}/films/cities/{img}-20.mp4'):
-        return f'<div class="pair"><img class="ph" src="../couture/{img}.jpg" alt=""><figure><video data-city="{city}" src="../../films/cities/{img}-20.mp4" poster="../couture/{img}-film.jpg" muted loop playsinline preload="metadata"></video><button class="snd" type="button">Sound on</button></figure></div>'
-    return f'<div class="pair solo"><img class="ph" src="../couture/{img}.jpg?v=2" alt=""></div>'
+    f=FILMS[img]
+    assert os.path.exists(f'{BOOK}/films/{f}.mp4'),f
+    return f'<div class="pair"><img class="ph" src="../couture/{img}.jpg?v=2" alt=""><video controls playsinline preload="none" poster="../../films/poster-{f}.jpg?v=2" src="../../films/{f}.mp4" data-ev="{city} film"></video></div>'
 def page(d):
     H=d['house']; slug=d['slug']
     tiles=''
