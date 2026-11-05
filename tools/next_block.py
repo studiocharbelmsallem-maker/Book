@@ -5,10 +5,12 @@ CSS='<style id="next-css">.nxf{position:relative;margin:0 0 14px}.nxi{display:bl
 def cal(H,slug,city):
     n=urllib.parse.quote_plus(f"{H} · {city} shoot")
     return f'https://cal.com/charbelmsallem/concept-call?notes={n}&amp;utm_source=acts&amp;utm_campaign={slug}&amp;utm_content={city.lower()}'
+FILM={'Izmir':'istanbul','Egypt':'paris-couture'}
+ON="""onplay="this.style.aspectRatio='9/16';this.style.objectFit='contain';var c=this.nextElementSibling;if(c)c.style.display='none'\""""
 def tile(img,credit,when,city,tag,txt,H,slug):
     c=f'<div class="nxc">{credit}</div>' if credit else ''
     return f'''    <div class="city nx">
-      <div class="nxf"><img class="nxi" src="../couture/{img}" alt="">{c}</div>
+      <div class="nxf"><video class="nxi" controls playsinline preload="none" poster="../couture/{img}" src="../../films/{FILM[city]}.mp4" data-ev="{city} film" {ON}></video>{c}</div>
       <div class="n">{when}</div>
       <h2>{city}</h2>
       <div class="tag">{tag}</div>
