@@ -1,0 +1,51 @@
+name: speed-fix
+on:
+  push:
+    paths:
+      - .github/workflows/speed-fix.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply the mobile speed fix to every page
+        run: |
+          python3 - <<'PY'
+          import re, pathlib
+          changed = 0
+          for p in pathlib.Path('.').rglob('*.html'):
+              if '.git' in p.parts:
+                  continue
+              s = p.read_text(encoding='utf-8', errors='surrogateescape')
+              o = s
+              # 1. videos that are not autoplay stop pre-loading
+              def vid(m):
+                  t = m.group(0)
+                  if 'autoplay' in t:
+                      return t
+                  return t.replace('preload="metadata"', 'preload="none"')
+              s = re.sub(r'<video\b[^>]*>', vid, s)
+              # 2. the personal six-cities pages
+              if 'couture/egypt.jpg?v=2' in s or '<img class="ph" src' in s:
+                  s = s.replace('couture/egypt.jpg?v=2', 'couture/egypt.jpg?v=3')
+                  s = s.replace('couture/istanbul-2.jpg?v=1', 'couture/istanbul-2.jpg?v=2')
+                  s = s.replace('<img class="ph" src', '<img class="ph" loading="lazy" decoding="async" src')
+                  s = s.replace(
+                      '<meta property="og:image" content="https://studiocharbelmsallem-maker.github.io/Book/acts/couture/paris.jpg">',
+                      '<meta property="og:image" content="https://studiocharbelmsallem-maker.github.io/Book/acts/six-cities/og.jpg">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">')
+              if s != o:
+                  p.write_text(s, encoding='utf-8', errors='surrogateescape')
+                  changed += 1
+          print('pages changed:', changed)
+          PY
+      - name: Commit and remove this workflow
+        run: |
+          git config user.name "studiocharbelmsallem-maker"
+          git config user.email "studiocharbelmsallem@gmail.com"
+          git rm -q .github/workflows/speed-fix.yml
+          git add -A
+          git commit -m "Speed fix on every page: lazy posters, no video preload, og card, cache keys"
+          git push
