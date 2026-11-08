@@ -37,7 +37,7 @@ def org_graph(page_url, page_name, page_desc, image):
       {"@type":["ProfessionalService","Organization"],"@id":BASE+"#studio","name":"Charbel Msallem Studios",
        "url":BASE,"logo":BASE+"cover.jpg","image":image,"email":EMAIL,"telephone":PHONE,
        "description":"Fashion films and couture campaign photography for couture houses and jewellery maisons — concept, filming, photography and full production. Arabic couture, seen with a European eye.",
-       "foundingDate":"2012","founder":{"@id":BASE+"#charbel"},
+       "foundingDate":"2009","founder":{"@id":BASE+"#charbel"},
        "address":{"@type":"PostalAddress","addressLocality":"Beirut","addressCountry":"LB"},
        "areaServed":[{"@type":"City","name":c} for c in ["Beirut","Dubai","Paris","Milan","Istanbul","Barcelona","Doha","Kuwait City"]],
        "knowsAbout":["Fashion film","Couture campaign photography","Jewellery photography","Fashion week coverage","Bridal campaigns","Creative direction"],
@@ -121,7 +121,7 @@ def run():
     f="index.html"; s=open(f,encoding="utf-8").read()
     s=set_head(s,
       "Charbel Msallem Studios — Couture Fashion Films & Campaign Photography | Beirut · Paris · Milan · Dubai",
-      "Fashion films and couture campaign photography by Charbel Msallem, Beirut-based fashion director since 2012. Concept, filming and full production for couture houses and jewellery maisons in Beirut, Dubai, Paris, Milan, Istanbul and Barcelona.",
+      "Fashion films and couture campaign photography by Charbel Msallem, Beirut-based fashion director since 2009. Concept, filming and full production for couture houses and jewellery maisons in Beirut, Dubai, Paris, Milan, Istanbul and Barcelona.",
       BASE, BASE+"cover.jpg", "Couture on a Beirut hillside — Charbel Msallem Studios")
     s=contact(alts_book(s)); open(f,"w",encoding="utf-8").write(s)
 
@@ -129,7 +129,7 @@ def run():
     f="jewellery.html"; s=open(f,encoding="utf-8").read()
     s=set_head(s,
       "Jewellery Campaign Photography & Films — Charbel Msallem Studios | Beirut · Paris · Dubai",
-      "Jewellery campaign photography and films for jewellery maisons by Charbel Msallem Studios. High jewellery on the body, studio still life and campaign films, directed from Beirut, Paris and Dubai since 2012.",
+      "Jewellery campaign photography and films for jewellery maisons by Charbel Msallem Studios. High jewellery on the body, studio still life and campaign films, directed from Beirut, Paris and Dubai since 2009.",
       BASE+"jewellery.html", BASE+"cover-jewellery.jpg", None)
     s=contact(alts_book(s)); open(f,"w",encoding="utf-8").write(s)
 
@@ -137,7 +137,7 @@ def run():
     f="service.html"; s=open(f,encoding="utf-8").read()
     s=set_head(s,
       "The Maison Service — Couture Campaign, Fashion Film & Fashion Week Production | Charbel Msallem",
-      "One shoot, the whole season: concept, campaign and fashion film, a runway in Paris or Milan, bridal fairs in Barcelona and Izmir, campaigns in Beirut and Dubai, showroom and press. Charbel Msallem Studios, couture campaigns since 2012.",
+      "One shoot, the whole season: concept, campaign and fashion film, a runway in Paris or Milan, bridal fairs in Barcelona and Izmir, campaigns in Beirut and Dubai, showroom and press. Charbel Msallem Studios, couture campaigns since 2009.",
       BASE+"service.html", BASE+"cover.jpg", None)
     s=contact(s); open(f,"w",encoding="utf-8").write(s)
 
