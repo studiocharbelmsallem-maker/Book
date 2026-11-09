@@ -21,6 +21,7 @@
 <button id="b17" data-s="saher">COPY 17 saher</button>
 <button id="b18" data-s="sanasabini">COPY 18 sanasabini</button>
 <button id="b19" data-s="sharbelazarcouture">COPY 19 sharbelazarcouture</button>
+<button id="b20" data-s="../mail-paris-geyannayouness">COPY 20 geyanna</button>
 <script>
 document.querySelectorAll('button').forEach(function(b){b.addEventListener('click',async function(){
  try{const s=b.dataset.s;const h=await (await fetch(s+'.html?v='+Date.now(),{cache:'no-store'})).text();
